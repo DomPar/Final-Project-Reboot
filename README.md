@@ -13,13 +13,18 @@ POST   | /auth/login      | -     | user | User Login               | `email`, `
 
 ### User Endpoints
 
-METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS
--------|------------------|-------|------|--------------------------|-------------------------------------------------|--------------------
-GET    | /user/profile    | YES   | user | Get Own profile          |                                                 | { message: `string`, result: `object` }
-GET    |/user/profile/others| YES | user | Get others profiles      |                                                 | { message: `string`, result: `object` }
-PUT    | /user/profile    | YES   | user | Update own Profile       |    `name`, `email`, `username`,                 | { message: `string`, result: `object` }
-PUT    |/user/me/password | YES   | user | Change Own Password      |    `password`                                   | { message: `string`, result: `object` }
-DELETE | /user/profile    | YES   | user | Delete Own Profile       |    `name`, `email`, `password`, `username`      | { message: `string`, result: `object` }
+METHOD | ENDPOINT          | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS
+-------|------------------ |-------|------|--------------------------|-------------------------------------------------|--------------------
+GET    | /user/            | YES   | all  | Get All users            |                                                 | { message: `string`, result: `object` }
+GET    | /user/profile     | YES   | all  | Get Own profile          |                                                 | { message: `string`, result: `object` }
+GET    | /user/profile/:id | YES   | all  | Get one profiles         |                                                 | { message: `string`, result: `object` }
+PUT    | /user/profile     | YES   | all  | Update own Profile       |    `name`, `email`, `username`,                 | { message: `string`, result: `object` }
+PUT    | /user/me/password | YES   | all  | Change Own Password      |    `password`                                   | { message: `string`, result: `object` }
+DELETE | /user/profile     | YES   | all  | Delete Own Profile       |    `name`, `email`, `password`, `username`      | { message: `string`, result: `object` }
+POST   | /user/            | YES   | admin| Create One User          |    `name`, `email`, `password`, `role`          | { message: `string`, result: `object` }
+DELETE | /user/profile/:id | YES   | admin | Delete one profile      |                                                 | { message: `string`, result: `object` }
+PUT    | /user/profile     | YES   | admin | Update one profile      |                                                 | 
+
 
 ### Post Endpoints
 
@@ -27,9 +32,19 @@ METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAM
 -------|------------------|-------|------|--------------------------|-------------------------------------------------|--------------------
 GET    | /post            | YES   | user | Get All Post             |                                                 | { message: `string`, result: `array` }
 GET    | /post/:id        | YES   | user | Get One Post             |                                                 | { message: `string`, result: `object` }
-POST   | /post            | YES   | user | Create One Post          |  `media`, `description`, `title`, `id_users`    |  { message: `string`, result: `object` } 
-PUT    | /post/:id        | YES   | user | Update One Post          |  `media`, `description`, `title`, `id_users`    | { message: `string`, result: `object` }   -
+POST   | /post            | YES   | user | Create One Post          |  `media`, `description`, `title`, `id_users`    | { message: `string`, result: `object` } 
+PUT    | /post/:id        | YES   | user | Update One Post          |  `media`, `description`, `title`, `id_users`    | { message: `string`, result: `object` }   
 DELETE | /post/:id        | YES   | user | Delete his own Post      |                          -                      | { message: `string`, result: `object` }
+
+
+
+
+
+
+
+
+
+
 
 ### Shelters Endpoints
 
