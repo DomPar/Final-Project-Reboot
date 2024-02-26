@@ -79,6 +79,10 @@ const updateUser = async (req, res) => {
 
 const updatePassword = async (req, res) => {
     try {
+        const salt = bcrypt.genSaltSync(parseInt(process.env.SALT))
+        const hash = bcrypt.hashSync(req.body.password, salt)
+        req.body.password = hash
+        
         const [result] = await User.update(req.body, {
             where: {
                 id: req.params.id
@@ -125,11 +129,64 @@ const deleteUser = async (req, res) => {
     }
 }
 
+const updateEmail = async (req, res) => {
+    try {
+        
+        const [result] = await User.update(req.body, {
+            where: {
+                id: req.params.id
+            }, 
+            fields: ["email"]
+        })
+        if(!result) {
+            return res.status(404).send('Email not found')
+        } else {
+        res.status(200).json({
+            message: 'Email updated succesfully',
+            result: req.body
+        }) 
+    }
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error updating Email',
+            result: error 
+            })
+    }
+}
+
+const updateUserName = async (req, res) => {
+    try {
+        
+        const [result] = await User.update(req.body, {
+            where: {
+                id: req.params.id
+            }, 
+            fields: ["userName"]
+        })
+        if(!result) {
+            return res.status(404).send('Username not found')
+        } else {
+        res.status(200).json({
+            message: 'Username updated succesfully',
+            result: req.body
+        }) 
+    }
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error updating Username',
+            result: error 
+            })
+    }
+}
+
+
 module.exports = {
     createUser,
     getAllUsers,
     getOneUser,
     updateUser,
     updatePassword,
-    deleteUser
+    deleteUser,
+    updateEmail,
+    updateUserName
 }
