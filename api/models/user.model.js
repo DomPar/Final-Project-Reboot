@@ -26,11 +26,11 @@ const User = connection.define(
         },
         role: {
             type: DataTypes.ENUM("admin", "user", "manager"),
-            allowNull: false
+            defaultValue: 'user'
         },
         followers: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            defaultValue: '0'
         },
     }
 )
