@@ -34,7 +34,10 @@ const startExpress = () => {
     }
 }
 
+const addRelations = require('./database/relations')
+
 ;(async () => {
     await connectToDB()
+    addRelations()
     startExpress()
 })()

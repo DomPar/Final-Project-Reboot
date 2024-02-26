@@ -17,9 +17,6 @@ const checkDB = async () => {
 }
 
 const syncModels = async () => {
-    const {User} = require ('../api/models/user.model')
-    const {Post} = require ('../api/models/post.model')
-    const {Shelter} = require ('../api/models/shelter.model')
     try {
         await connection.sync()
         console.log("Model syncronized")
