@@ -11,21 +11,26 @@ const {
     updateUserName
 } = require ('../controllers/user.controller')
 
-router.post('/', createUser)
+const {
+    checkAuth,
+    CheckAdmin
+} = require('../utils/middlewares')
 
-router.get('/', getAllUsers)
+router.post('/', checkAuth, CheckAdmin, createUser)
 
-router.get('/:id', getOneUser)
+router.get('/', checkAuth, getAllUsers)
 
-router.put('/:id', updateUser)
+router.get('/:id', checkAuth, getOneUser)
 
-router.patch('/:id', updatePassword)
+router.put('/:id', checkAuth, updateUser)
 
-router.patch('/email/:id', updateEmail)
+router.patch('/:id', checkAuth, updatePassword)
 
-router.patch('/username/:id', updateUserName)
+router.patch('/email/:id', checkAuth, updateEmail)
 
-router.delete('/:id', deleteUser)
+router.patch('/username/:id', checkAuth, updateUserName)
+
+router.delete('/:id', checkAuth, deleteUser)
 
 
 module.exports = router
