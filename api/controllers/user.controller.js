@@ -23,6 +23,38 @@ const createUser = async (req, res) => {
     }
 }
 
+const getAllUsers = async (req, res) => {
+    try {
+        const users = await User.findAll()
+        res.status(200).json({
+            message: 'Here are the Users',
+            result: users
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting users',
+            result: error 
+            })
+    }
+}
+
+const getOneUser = async (req, res) => {
+    try {
+        const users = await User.findByPk(req.params.id)
+        res.status(200).json({
+            message: 'Here is the User',
+            result: users
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting one user',
+            result: error 
+            })
+    }
+}
+
 module.exports = {
-    createUser
+    createUser,
+    getAllUsers,
+    getOneUser
 }
