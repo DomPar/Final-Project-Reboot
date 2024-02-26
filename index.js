@@ -18,13 +18,13 @@ const startExpress = () => {
    try { 
     const app = express()
 
+    const mainRouter = require('./api/routers/routers')
+
     app.use(morgan("dev"))
     app.use(cors())
     app.use(express.json())
 
-    app.get('/api', (req, res) => {
-        res.send('Request received succefully')
-    })
+    app.use('/api', mainRouter )
 
     app.listen(process.env.PORT, () => {
         console.log(`Express started. Listening on ${process.env.PORT}`)
