@@ -1,0 +1,17 @@
+:root {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100vh;
+}
+
+.no-margin {
+    margin: 0;
+}

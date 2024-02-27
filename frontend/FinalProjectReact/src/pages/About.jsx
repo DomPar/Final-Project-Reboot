@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const About = () => {
   return (
     <>
-    <h1>About</h1>
+    <h1 className="no-margin">About</h1>
     <Link to='/'>
         <button>Ir a Home</button>
     </Link>
