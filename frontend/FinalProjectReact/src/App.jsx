@@ -1,12 +1,17 @@
-
 import './App.css'
+import { Outlet } from 'react-router-dom'
+import Header from './componentes/Header/Header'
+import Footer from './componentes/Footer/Footer'
 
 function App() {
 
-
   return (
     <>
-      <h1>Pachuru</h1>
+      <Header/>
+      <div id="main-container">
+      <Outlet/>
+      </div>
+      <Footer/>
     </>
   )
 }
