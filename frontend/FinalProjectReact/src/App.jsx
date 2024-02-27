@@ -2,6 +2,7 @@ import './App.css'
 import { Outlet } from 'react-router-dom'
 import Header from './componentes/Header/Header'
 import Footer from './componentes/Footer/Footer'
+import Sidebar from './componentes/Sidebar/Sidebar'
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <>
       <Header/>
       <div id="main-container">
-      <Outlet/>
+        <Sidebar/>
+        <Outlet/>
       </div>
       <Footer/>
     </>
