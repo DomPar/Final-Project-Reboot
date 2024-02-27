@@ -1,30 +1,34 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Welcome from "../pages/Welcome";
-import About from "../pages/About";
-import App from "../App";
+import Welcome from "../pages/Welcome/Welcome";
+import About from "../pages/About/About";
+import App from "../pages/App/App";
 import OwnProfile from "../pages/OwnProfile";
+import SignUp from "../pages/SignUp/SignUp.jsx";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/app',
         element: <App/>,
         children: [
             {
-                path: '/',
-                element: <Welcome/>
-            },
-            {
-                path: '/about',
+                path: '/app/about',
                 element: <About/>
             },
             {
-                path: '/ownprofile',
+                path: '/app/ownprofile',
                 element: <OwnProfile/>
             },
         ]
+    }, 
+    {
+        path: '/',
+        element: <Welcome/>
+    },
+    {
+        path: '/signup',
+        element: <SignUp/>
     }
-
 ])
 
 export default router;
