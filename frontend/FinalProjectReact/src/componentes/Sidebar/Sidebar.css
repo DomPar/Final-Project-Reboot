@@ -1,0 +1,17 @@
+#sidebar-container {
+    display: flex;
+    flex-direction: column;
+    width: 5%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    height: 80%;
+}
+
+.sidebar-nav-button {
+    background-color: red;
+    width: 80px;
+    height: 80px;
+    border-radius: 90px;
+    
+}
