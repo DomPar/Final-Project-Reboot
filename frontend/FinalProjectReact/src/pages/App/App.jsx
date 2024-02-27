@@ -1,8 +1,8 @@
 import './App.css'
 import { Outlet } from 'react-router-dom'
-import Header from './componentes/Header/Header'
-import Footer from './componentes/Footer/Footer'
-import Sidebar from './componentes/Sidebar/Sidebar'
+import Header from '../../componentes/Header/Header'
+import Footer from '../../componentes/Footer/Footer'
+import Sidebar from '../../componentes/Sidebar/Sidebar'
 
 function App() {
 

@@ -1,0 +1,8 @@
+#welcome-container {
+    background-color: lightgreen;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
