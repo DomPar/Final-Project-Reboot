@@ -10,8 +10,8 @@ function LoginCard() {
   const [password, setPassword] = useState('')
 
   const onLogin = async () => {
-    const result = await login({email, password})
-    console.log('coñoq')
+    const { result } = await login({email, password})
+    localStorage.setItem('token', result)
   }
  
   return (
