@@ -8,7 +8,7 @@ async function signup(req, res) {
         const hash = bcrypt.hashSync(req.body.password, salt)
         req.body.password = hash
         const user = await User.create(req.body, {
-            fields: ['name', 'userName', 'email', 'password']
+            fields: ['name', 'userName', 'email', 'password','role', 'followers']
         })
         const token = jwt.sign({email: user.email}, process.env.JWT_SECRET, {expiresIn: '3h'})
 
