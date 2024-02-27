@@ -8,7 +8,9 @@ const {
     updatePassword,
     deleteUser,
     updateEmail,
-    updateUserName
+    updateUserName,
+    AddToUser,
+    RestToUser
 } = require ('../controllers/user.controller')
 
 const {
@@ -31,6 +33,10 @@ router.patch('/email/:id', checkAuth, updateEmail)
 router.patch('/username/:id', checkAuth, updateUserName)
 
 router.delete('/:id', checkAuth, deleteUser)
+
+router.put('/add/:id', AddToUser)
+
+router.delete('/rest/:id', RestToUser)
 
 
 module.exports = router
