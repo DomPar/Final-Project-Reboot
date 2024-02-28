@@ -6,12 +6,14 @@ import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} 
 import { login } from '../../services/authService'
 
 function LoginCard() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const onLogin = async () => {
     const { result } = await login({email, password})
     localStorage.setItem('token', result)
+    navigate('/app')
   }
  
   return (

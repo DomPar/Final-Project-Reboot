@@ -5,7 +5,6 @@ import SignUpCard from "../../componentes/SignUpForm/SignUpForm"
 
 const SignUp = () => {
 
-    console.log("pocholo")
   return (
     <div id="signup-container">
     <SignUpCard/>
