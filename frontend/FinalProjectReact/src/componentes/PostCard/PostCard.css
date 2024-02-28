@@ -1,0 +1,21 @@
+#postcard-container {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    grid-template-rows: 2fr 0.5fr;
+}
+#postcard-img {
+    background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 100%;
+}
+
+#portcard-title {
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
