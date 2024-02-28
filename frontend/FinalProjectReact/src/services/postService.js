@@ -1,16 +1,16 @@
 import api from "./index_service";
 
 
-const createPost = async (id) => {
+const createPost = async (body) => {
     try {
-        const {data} = await api.post('/post/')
+        const {data} = await api.post('/post/', body)
     return data;
     } catch (error) {
         console.log(error.response.data)
     }   
 }
 
-const getAllPost = async () => {
+const getAllPosts = async () => {
     try {
         const {data} = await api.get('/post/')
     return data
@@ -28,9 +28,9 @@ const getOnePost = async (id) => {
     }
 }
 
-const updatePost = async (id) => {
+const updatePost = async (id, body) => {
     try {
-        const {data} = await api.put(`/post/${id}`)
+        const {data} = await api.put(`/post/${id}`, body)
     return data;
     } catch (error) {
         console.log(error.response.data)
@@ -48,4 +48,4 @@ const deleteOnePost = async (id) => {
 
 
 
-export {createPost, getAllPost, getOnePost, updatePost, deleteOnePost}
+export { createPost, getAllPosts, getOnePost, updatePost, deleteOnePost }
