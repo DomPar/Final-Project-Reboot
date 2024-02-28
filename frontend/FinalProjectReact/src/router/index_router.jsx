@@ -7,6 +7,7 @@ import OwnProfile from "../pages/OwnProfile/OwnProfile.jsx";
 import SignUp from "../pages/SignUp/SignUp.jsx";
 import NewPost from "../pages/NewPost/NewPost.jsx";
 import OthersUserProfile from "../pages/OthersUserProfile/OthersUserProfile.jsx"
+import ShelterProfileFromUser from "../pages/ShelterProfileFromUser/ShelterProfileFromUser.jsx";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: '/app/otherprofile',
                 element: <OthersUserProfile/>
+            },
+            {
+                path: '/app/shelterprofile',
+                element: <ShelterProfileFromUser/>
             },
         ]
     }, 
