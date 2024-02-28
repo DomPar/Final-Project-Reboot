@@ -9,7 +9,7 @@ const Header = () => {
           <div className="header-nav-button"></div>
           <div className="header-nav-button"></div>
           <Link to="/app/ownprofile">
-          <div id='profile-button'></div>
+            <div id='profile-button'></div>
           </Link>
       </div>
     </div>

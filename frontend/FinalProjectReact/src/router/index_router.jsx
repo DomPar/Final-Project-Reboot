@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 
 import Welcome from "../pages/Welcome/Welcome";
 import About from "../pages/About/About";
@@ -12,8 +12,15 @@ const router = createBrowserRouter([
         element: <App/>,
         children: [
             {
-                path: '/app/about',
-                element: <About/>
+                path: '/app',
+                element: <About/>,
+                loader: () => {
+                    if (!localStorage.getItem('token')) {
+                        return redirect('/')
+                    } else {
+                        return null
+                    }
+                }
             },
             {
                 path: '/app/ownprofile',

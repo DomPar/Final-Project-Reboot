@@ -2,8 +2,9 @@ const {User} = require('../models/user.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-async function signup(req, res) {
-    try {
+async function signup(req, res) {  
+  console.log(req)
+  try {
         const salt = bcrypt.genSaltSync(parseInt(process.env.SALT))
         const hash = bcrypt.hashSync(req.body.password, salt)
         req.body.password = hash
@@ -44,7 +45,10 @@ async function login(req, res) {
             const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '3h' })
             return res.status(200).json({
                 message: "Login succesful",
-                result: token })
+                result: {
+                  token,
+                  role: user.role
+                } })
         } else {
             return res.status(404).json('Error: Email or Password incorrect')
       }
