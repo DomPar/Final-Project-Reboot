@@ -1,5 +1,5 @@
 
-#profile-container{
+#other-profile{
     display: flex;
     justify-content: center;
     max-height: 90%;
@@ -8,7 +8,7 @@
 
 }
 
-#square-pictures{
+#others-square-pictures{
     display: flex;
     flex-direction: column;
     align-items:flex-end;
@@ -16,7 +16,7 @@
 }
 
 
-#profile-description{
+#others-profile-description{
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -24,11 +24,13 @@
 
 }
 
-#description{
+
+#others-description{
     width: 50%;
     text-align: center;
 }
 
-#newpost{
-    width: 5%;
+#follow{
+    width: 15%;
+    float: left;
 }

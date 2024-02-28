@@ -1,0 +1,49 @@
+#newpostcontainer{
+    margin-left: 10%;
+    width:70%;
+    height: 80%;
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+#textdescription{
+    width:25%;
+    left: 60%;
+    top: 20%;
+    height: 40%;
+    resize: none;
+    position: absolute;
+}
+
+#titledescription{
+    width:25%;
+    height: 10%;
+    resize: none;
+    position: absolute;
+    top:5%;
+    left: 60%;
+}
+
+#myphoto{
+    width:30%;
+    height: 60%;
+    background-color: beige;
+    position: absolute;
+    left: 10%;
+    top:5%
+}
+#addpictures{
+    height: 10%;
+    position: absolute;
+    left: 10%;
+    top: 70%;
+}
+#submit{
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    left: 75%;
+    top: 80%; 
+}
