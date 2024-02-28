@@ -5,6 +5,7 @@ import About from "../pages/About/About";
 import App from "../pages/App/App";
 import OwnProfile from "../pages/OwnProfile/OwnProfile.jsx";
 import SignUp from "../pages/SignUp/SignUp.jsx";
+import NewPost from "../pages/NewPost/NewPost.jsx";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path: '/app/ownprofile',
                 element: <OwnProfile/>
+            },
+            {
+                path: '/app/newpost',
+                element: <NewPost/>
             },
         ]
     }, 

@@ -1,6 +1,4 @@
-import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import { Link } from 'react-router-dom'
 import './OwnProfile.css'
 import StandardImageList from '../../componentes/SquarePictures/SquarePicture'
 import CardLayers3d from '../../componentes/CardLayers/CardLayers'
@@ -10,7 +8,9 @@ function OwnProfile() {
   
     <div id='profile-container' >
       <div id='square-pictures'>
+        <Link to="/app/newpost">
         <button>New Post</button>
+        </Link>
       <StandardImageList/>
       </div>
 
