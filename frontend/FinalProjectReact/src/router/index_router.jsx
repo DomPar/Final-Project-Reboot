@@ -5,6 +5,8 @@ import About from "../pages/About/About";
 import App from "../pages/App/App";
 import OwnProfile from "../pages/OwnProfile/OwnProfile.jsx";
 import SignUp from "../pages/SignUp/SignUp.jsx";
+import PetCard from "../componentes/PetCard/PetCard.jsx";
+import ChooseUser from "../componentes/ChooseUser/ChooseUser.jsx"
 
 const router = createBrowserRouter([
     {
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
                 path: '/app/ownprofile',
                 element: <OwnProfile/>
             },
+            {
+                path: '/app/petprofile',
+                element: <PetCard/>
+            }
         ]
     }, 
     {
@@ -28,6 +34,10 @@ const router = createBrowserRouter([
     {
         path: '/signup',
         element: <SignUp/>
+    },
+    {
+        path: '/chooseuser/',
+        element: <ChooseUser/>
     }
 ])
 
