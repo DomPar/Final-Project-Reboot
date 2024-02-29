@@ -1,5 +1,3 @@
-import './HeartsRating.css'
-
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -17,20 +15,14 @@ const StyledRating = styled(Rating)({
   },
 });
 
-const VerticalHeartsWrapper = styled('div')({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  });
-
-export default function HeartsRating() {
+export default function CustomizedRating() {
   return (
     <Box
       sx={{
-        '& > legend': { mt: 2 }
+        '& > legend': { mt: 2 },
       }}
     >
-      <VerticalHeartsWrapper>
+      <Typography component="legend">Custom icon and color</Typography>
       <StyledRating
         name="customized-color"
         defaultValue={2}
@@ -39,7 +31,8 @@ export default function HeartsRating() {
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
-      </VerticalHeartsWrapper>
+      <Typography component="legend">10 stars</Typography>
+      <Rating name="customized-10" defaultValue={2} max={10} />
     </Box>
   );
 }
