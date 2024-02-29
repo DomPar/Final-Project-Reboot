@@ -1,4 +1,4 @@
-import api from "./index_service";
+import api from "./config";
 
 
 const createShelter = async (body) => {
