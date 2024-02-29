@@ -1,10 +1,12 @@
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import PostCard from '../PostCard/PostCard';
+import { display, flexbox } from '@mui/system';
+import './SquarePosts.css'
 
 export default function StandardImageList() {
   return (
-    <ImageList sx={{ width: 700, height: 600 }} cols={1} rowHeight={100}>
+    <ImageList id='image-list' sx={{ width: 700, height: 600 }} cols={1} rowHeight={500}>
 {/*       {itemData.map((item) => (
         <ImageListItem key={item.img} style={{margin:50, padding: 200}}>
           <img
@@ -15,11 +17,21 @@ export default function StandardImageList() {
           />
         </ImageListItem>
       ))} */}
-      <PostCard/>
+      {arrayPost.map((post) => {
+        return post;
+      })}
     </ImageList>
   );
 }
 
+const arrayPost = [
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>
+]
 
 const itemData = [
     {

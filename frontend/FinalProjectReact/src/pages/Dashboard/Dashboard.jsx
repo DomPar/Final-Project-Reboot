@@ -7,8 +7,11 @@ const Dashboard = () => {
         <div id="main-feed">
           <StandardImageList/>
         </div>
+        <div id="weekly-title">
+        <h4>Cutest pet of the week </h4>
+        </div>
         <div id="weekly-container">
-          <h4>Cutest pet of the week </h4>
+          
           <div id="weekly-pet-img"></div>
         </div>
     </div>
