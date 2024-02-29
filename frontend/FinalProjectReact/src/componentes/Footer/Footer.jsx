@@ -3,8 +3,9 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div id='footer-container'>
-        <h1>Footer</h1>
-        <p>La pepa.</p>
+      <div class="copyright">
+        <p>&copy; 2024 BestFriends. Todos los derechos reservados.</p>
+      </div>
     </div>
   )
 }

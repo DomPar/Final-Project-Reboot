@@ -27,7 +27,7 @@ export default function CustomizedRating() {
         name="customized-color"
         defaultValue={2}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-        precision={0.5}
+        precision={1}
         icon={<FavoriteIcon className='heart-size' fontSize='large' />}
         emptyIcon={<FavoriteBorderIcon className='heart-size' fontSize="large" />}
       />
