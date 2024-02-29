@@ -5,6 +5,7 @@ import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
+import './HeartsRating.css'
 
 const StyledRating = styled(Rating)({
   '& .MuiRating-iconFilled': {
@@ -17,22 +18,19 @@ const StyledRating = styled(Rating)({
 
 export default function CustomizedRating() {
   return (
-    <Box
+    <Box id='heart-box'
       sx={{
         '& > legend': { mt: 2 },
       }}
     >
-      <Typography component="legend">Custom icon and color</Typography>
-      <StyledRating
+      <StyledRating id='hearts'
         name="customized-color"
         defaultValue={2}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-        precision={0.5}
-        icon={<FavoriteIcon fontSize="inherit" />}
-        emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+        precision={1}
+        icon={<FavoriteIcon className='heart-size' fontSize='large' />}
+        emptyIcon={<FavoriteBorderIcon className='heart-size' fontSize="large" />}
       />
-      <Typography component="legend">10 stars</Typography>
-      <Rating name="customized-10" defaultValue={2} max={10} />
     </Box>
   );
 }
