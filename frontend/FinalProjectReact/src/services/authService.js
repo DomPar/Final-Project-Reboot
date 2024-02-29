@@ -1,4 +1,4 @@
-import api from './config'
+import api from './config.js'
 
 export const login = async (body) => {
     try {

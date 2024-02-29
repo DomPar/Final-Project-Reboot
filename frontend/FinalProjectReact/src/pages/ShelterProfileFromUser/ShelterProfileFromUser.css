@@ -32,6 +32,6 @@
   @media(max-height: 1200px) {
    
     #picturesandcard{
-        height: %;
+        height: 50%;
     }
   }
