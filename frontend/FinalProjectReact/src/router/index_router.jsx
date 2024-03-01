@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             
             {
-                path: '/app/shelterprofile',
+                path: '/app/shelter/:shelterId',
                 element: <ShelterProfileFromUser/>
             },
             {

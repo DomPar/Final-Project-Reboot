@@ -4,7 +4,10 @@ import SquarePicturesWithMargin from '../../componentes/SquarePicturesWithMargin
 import CardLayers3d from '../../componentes/CardLayers/CardLayers'
 import './ShelterProfileFromUser.css'
 
+
 function ShelterProfileFromUser() {
+
+
   return (
     <div id='shelter-container'>
         <ShelterCard/>
