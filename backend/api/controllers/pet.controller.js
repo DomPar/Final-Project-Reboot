@@ -19,7 +19,25 @@ const createPet = async (req, res) => {
 
 const getAllPets = async (req, res) => {
     try {
-        const pets = await Post.findAll()
+        const pets = await Pet.findAll()
+        res.status(200).json({
+            message: 'Here are the Pets',
+            result: pets
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting Pets',
+            result: error 
+            })
+    }
+}
+
+const getAllPetsByShelter = async (req, res) => {
+    try {
+       
+        const pets = await Pet.findAll({
+            where: req.params.id
+          })
         res.status(200).json({
             message: 'Here are the Pets',
             result: pets
@@ -99,5 +117,6 @@ module.exports = {
     getAllPets,
     getOnePet,
     updatePet,
-    deletePet
+    deletePet,
+    getAllPetsByShelter
 }
