@@ -19,6 +19,9 @@
    flex-direction: column;
    align-items: center;
 }
+#description-shelter{
+  width: 50%;
+}
 
 @media(max-width: 1200px) {
     #shelter-card {

@@ -12,7 +12,7 @@ function ShelterProfileFromUser() {
             <SquarePicturesWithMargin/>
             <div id='shelter-card'>
             <CardLayers3d/>
-        <p id='description'>Description soy bla bla bla etc etc etc bfjkb. vmfv afdn.mf dfdfmnbknd vkjbvkbf,d vnf.vnv  vk.naev jnv.a v</p>
+        <p id='description-shelter'>Description soy bla bla bla etc etc etc bfjkb. vmfv afdn.mf dfdfmnbknd vkjbvkbf,d vnf.vnv  vk.naev jnv.a v</p>
         <a href="https://www.google.es/maps/@28.1271824,-15.4412337,15z?entry=ttu">Encuentranos Aqui</a>
             </div>
       </div>
