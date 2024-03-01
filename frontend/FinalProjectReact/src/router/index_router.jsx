@@ -10,6 +10,7 @@ import OthersUserProfile from "../pages/OthersUserProfile/OthersUserProfile.jsx"
 import Dashboard from "../pages/Dashboard/Dashboard.jsx";
 import ShelterProfileFromUser from "../pages/ShelterProfileFromUser/ShelterProfileFromUser.jsx";
 import PetCard from "../componentes/Petcard/PetCard.jsx";
+import ViewPost from "../pages/ViewPost/ViewPost.jsx";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: '/app/petprofile',
                 element: <PetCard/>
+            },
+            {
+                path: '/app/viewpost',
+                element: <ViewPost/>
             },
         ]
     }, 
