@@ -7,10 +7,8 @@ const SignUp = () => {
 
   return (
     <div id="signup-container">
-    <SignUpCard/>
-    <Link to='/'>
-        <button>Ir</button>
-    </Link>
+      <div id="signup-left"></div>
+      <div id="signup-right"><SignUpCard/></div>
     </div>
   )
 }

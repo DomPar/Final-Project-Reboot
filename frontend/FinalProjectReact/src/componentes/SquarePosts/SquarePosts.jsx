@@ -6,7 +6,7 @@ import './SquarePosts.css'
 
 export default function StandardImageList() {
   return (
-    <ImageList id='image-list' sx={{ width: 700, height: 600 }} cols={1} rowHeight={500}>
+    <ImageList id='image-list' sx={{ width: 700, height: 600 }} cols={1} rowHeight={100}>
 {/*       {itemData.map((item) => (
         <ImageListItem key={item.img} style={{margin:50, padding: 200}}>
           <img
@@ -25,6 +25,12 @@ export default function StandardImageList() {
 }
 
 const arrayPost = [
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
+  <PostCard/>,
   <PostCard/>,
   <PostCard/>,
   <PostCard/>,

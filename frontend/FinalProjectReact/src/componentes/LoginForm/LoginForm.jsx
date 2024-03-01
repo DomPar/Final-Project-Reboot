@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} from '@mui/material'
-
+import './LoginForm.css'
 import { login } from '../../services/authService'
 
 function LoginCard() {
@@ -17,7 +17,7 @@ function LoginCard() {
   }
  
   return (
-    <Card sx={{ maxWidth: '500px' }}>
+    <Card id="login-card" sx={{ maxWidth: '500px' }}>
       <CardHeader title="Login" />
       <CardContent>
         <TextField
@@ -25,13 +25,14 @@ function LoginCard() {
           label="Email"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px' }}
+          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
         <TextField
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
           variant="outlined"
           fullWidth={true}
+          sx={{ bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
 
       </CardContent>

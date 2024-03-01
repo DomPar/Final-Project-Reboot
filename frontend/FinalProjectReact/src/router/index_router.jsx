@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/app',
-                element: <About/>,
+                element: <Dashboard/>,
                 loader: () => {
                     if (!localStorage.getItem('token')) {
                         return redirect('/')
@@ -39,11 +39,6 @@ const router = createBrowserRouter([
                 path: '/app/otherprofile',
                 element: <OthersUserProfile/>
             },
-            {
-                path: '/app/dashboard',
-                element: <Dashboard/>
-            },
-            
             {
                 path: '/app/shelterprofile',
                 element: <ShelterProfileFromUser/>
