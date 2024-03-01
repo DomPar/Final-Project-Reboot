@@ -15,7 +15,7 @@ const UploadWidget = ({setter}) => {
             })
         }, []);
     return (
-    <button onClick={() => widgetRef.current.open()}>
+    <button style={{height: 30, width: 100 }} onClick={() => widgetRef.current.open()}>
         Upload
     </button>)
 }
