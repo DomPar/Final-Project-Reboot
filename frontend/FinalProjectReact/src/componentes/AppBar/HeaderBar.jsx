@@ -169,14 +169,16 @@ export default function HeaderBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
+          <Link to='/app'>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' } }}
+            >
+              MUI
+            </Typography>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -202,6 +204,8 @@ export default function HeaderBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+
+            <Link to='/app/ownprofile'>
             <IconButton
               size="large"
               edge="end"
@@ -213,6 +217,7 @@ export default function HeaderBar() {
             >
               <AccountCircle />
             </IconButton>
+            </Link>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
