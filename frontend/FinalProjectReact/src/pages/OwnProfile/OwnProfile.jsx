@@ -16,7 +16,7 @@ function OwnProfile() {
 
       <div id='profile-description'>
         <CardLayers3d/>
-        <p id='description'>Description soy bla bla bla etc etc etc bfjkb. vmfv afdn.mf dfdfmnbknd vkjbvkbf,d vnf.vnv  vk.naev jnv.a v</p>
+        <p id='description-user'>Description soy bla bla bla etc etc etc bfjkb. vmfv afdn.mf dfdfmnbknd vkjbvkbf,d vnf.vnv  vk.naev jnv.a v</p>
         <button id='edit-profile'>Edit Profile</button>
       </div>
 
