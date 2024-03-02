@@ -11,6 +11,7 @@ import Dashboard from "../pages/Dashboard/Dashboard.jsx";
 import ShelterProfileFromUser from "../pages/ShelterProfileFromUser/ShelterProfileFromUser.jsx";
 import PetCard from "../componentes/Petcard/PetCard.jsx";
 import ViewPost from "../pages/ViewPost/ViewPost.jsx";
+import SignUpShelter from "../pages/SignUpShelter/SignUpShelter.jsx";
 
 const router = createBrowserRouter([
     {
@@ -66,7 +67,12 @@ const router = createBrowserRouter([
     {
         path: '/signup',
         element: <SignUp/>
+    },
+    {
+        path: '/signups',
+        element: <SignUpShelter/>
     }
+    
 ])
 
 export default router;

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} from '@mui/material'
 import './LoginForm.css'
 import { login } from '../../services/authService'
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 function LoginCard() {
   const navigate = useNavigate()
@@ -18,32 +19,49 @@ function LoginCard() {
  
   return (
     <Card id="login-card" sx={{ maxWidth: '500px' }}>
-      <CardHeader title="Login" />
+      <CardHeader id="text-login" title="Welcome to PetFriends!"/>
       <CardContent>
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
           label="Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
+        
 
       </CardContent>
-      <Divider />
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <Button onClick={onLogin} color="success">
+            Log Ig
+          </Button> 
       <Link to='/signup'>
-        <Button>Register</Button>
-       </Link>
-          <Button onClick={onLogin} color="success">
-            Login
-          </Button>
+        <Button>Don't have an account? Sign Up </Button>
+      </Link>
+          
  
       </CardActions>
     </Card>
