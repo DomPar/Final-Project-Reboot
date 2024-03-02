@@ -1,8 +1,8 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 
-import Welcome from "../pages/Welcome/Welcome";
-import About from "../pages/About/About";
-import App from "../pages/App/App";
+import Welcome from "../pages/Welcome/Welcome.jsx";
+import About from "../pages/About/About.jsx";
+import App from "../pages/App/App.jsx";
 import OwnProfile from "../pages/OwnProfile/OwnProfile.jsx";
 import SignUp from "../pages/SignUp/SignUp.jsx";
 import NewPost from "../pages/NewPost/NewPost.jsx";
@@ -10,6 +10,7 @@ import OthersUserProfile from "../pages/OthersUserProfile/OthersUserProfile.jsx"
 import Dashboard from "../pages/Dashboard/Dashboard.jsx";
 import ShelterProfileFromUser from "../pages/ShelterProfileFromUser/ShelterProfileFromUser.jsx";
 import PetCard from "../componentes/Petcard/PetCard.jsx";
+import ViewPost from "../pages/ViewPost/ViewPost.jsx";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: '/app/petprofile',
                 element: <PetCard/>
+            },
+            {
+                path: '/app/viewpost',
+                element: <ViewPost/>
             },
         ]
     }, 
