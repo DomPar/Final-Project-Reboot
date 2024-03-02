@@ -12,6 +12,10 @@ const Shelter = connection.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         cif: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -19,6 +23,10 @@ const Shelter = connection.define(
         tlf: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        role: {
+            type: DataTypes.ENUM("manager", "user"),
+            defaultValue: 'manager'
         },
     }, {
         timestamps:false
