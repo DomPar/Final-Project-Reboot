@@ -17,6 +17,33 @@ const createPet = async (req, res) => {
     }
 }
 
+
+const createPetWithShelter = async (req, res) => {
+
+    try {
+        const {shelterId} = req.body
+        console.log(shelterId)
+        if(!shelterId){
+            return res.status(400).json({
+                message: 'Shelter ID is required'
+            })
+        }
+        const pet = await Pet.create({
+            ...req.body ,
+            shelterId: shelterId
+        })  
+        res.status(200).json({
+            message: 'Pet created',
+            result: pet
+        })      
+    } catch (error) {
+       res.status(500).json({
+        message: 'Error creating Pet',
+        result: error.message 
+        })
+    }
+}
+
 const getAllPets = async (req, res) => {
     try {
         const pets = await Pet.findAll()
@@ -117,5 +144,6 @@ module.exports = {
     getOnePet,
     updatePet,
     deletePet,
-    getAllPetsByShelter
+    getAllPetsByShelter,
+    createPetWithShelter
 }
