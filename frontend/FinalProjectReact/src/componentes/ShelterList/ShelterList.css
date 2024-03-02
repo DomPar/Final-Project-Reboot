@@ -1,0 +1,16 @@
+#shelter {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    border: 1px solid;
+    height: 80px;
+
+}
+
+#shelter-profile {
+    grid-column: 1/2;
+    background-size: cover;
+}
+
+#shelter-name {
+    grid-column: 2/3;
+}
