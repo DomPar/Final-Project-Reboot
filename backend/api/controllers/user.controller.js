@@ -199,12 +199,12 @@ const updateUserName = async (req, res) => {
 
 async function AddToUser(req, res) {
 	try {
-		const { userId, petId } = req.body
-		const user = await User.findByPk(userId)
+		
+		const user = await User.findByPk(res.locals.user.id)
 		if (!user) {
 			return res.status(404).send('User not found');
 		}
-		const pet = await Pet.findByPk(petId);
+		const pet = await Pet.findByPk(req.params.id);
 		if (!pet) {
 			return res.status(404).send('Pet not found');
 		}

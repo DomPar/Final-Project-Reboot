@@ -3,18 +3,27 @@ import './PetCard.css'
 import { ImageListItem } from '@mui/material'
 import ListPicture from '../ListPicture/ListPicture'
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import {addUserToFavorites} from '../../services/userService.js'
+import { useParams } from 'react-router';
 
 
 function PetCard() {
+const petId = useParams()
+    const handleClick = () => {
+           addUserToFavorites(petId.petId) 
+           console.log(petId.petId)
+      }
+
   return (
     <div id='petcard-container' >
         <div id="box-container">
             <img id="pet-picture" src="" alt="myphoto" />
            <div id="fav-icon"> 
-           <FavoriteIcon/>
+           <FavoriteIcon />
             </div>
             <div id="pet-description">
                 <h1>Coco, 5</h1>
+                <button onClick={handleClick} >Add</button>
                 <span>Raza Canina: Mestizo bardino Edad: de 1 a 7 años jddjdjjddjdj ndjdijhawleuif qlctiugh kjg j hgrg gau i g higq  uigq hg g  huq gro ojif og hgr h qgh uq g hugqfdafafsdfadafdafdsasfdfadsfasfdas dfsafdafsdadsffddss ryukt ktnkbtnuik ryukydafdcadasfdafsd adfadaffdasfafa dafadsafdffdfsdfsfdfda afdadsdaafddfdfa afdadfadfassfsdfsdfsd</span>
             </div>
             <div id="hobbiesbox">

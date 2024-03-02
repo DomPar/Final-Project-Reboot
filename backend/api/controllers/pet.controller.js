@@ -1,5 +1,5 @@
 const { Pet } = require ('../models/pet.model')
-
+const {Shelter} = require ('../models/shelter.model.js')
 
 const createPet = async (req, res) => {
 
@@ -35,12 +35,11 @@ const getAllPets = async (req, res) => {
 const getAllPetsByShelter = async (req, res) => {
     try {
        
-        const pets = await Pet.findAll({
-            where: req.params.id
-          })
+        const {dataValues} = await Shelter.findByPk(req.params.shelterId, {include: Pet})
+        const allPets = dataValues.pets
         res.status(200).json({
             message: 'Here are the Pets',
-            result: pets
+            result: allPets
         }) 
     } catch (error) {
         res.status(500).json({

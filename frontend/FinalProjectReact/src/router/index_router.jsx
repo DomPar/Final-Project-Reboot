@@ -50,7 +50,7 @@ const router = createBrowserRouter([
                 element: <ShelterProfileFromUser/>
             },
             {
-                path: '/app/petprofile',
+                path: '/app/petprofile/:petId',
                 element: <PetCard/>
             },
             {

@@ -7,6 +7,9 @@ const About = () => {
     <Link to='/'>
         <button>Ir a Home</button>
     </Link>
+    <Link to='/app/shelter/1'>
+    <button>pet profile</button>
+    </Link>
     </>
   )
 }
