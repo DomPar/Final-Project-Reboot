@@ -19,6 +19,18 @@
    flex-direction: column;
    align-items: center;
 }
+#description-shelter{
+  width: 50%;
+}
+
+#pet-fav{
+  background-color: rgb(242, 11, 11);
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  left: 5%;
+  top:5%
+}
 
 @media(max-width: 1200px) {
     #shelter-card {

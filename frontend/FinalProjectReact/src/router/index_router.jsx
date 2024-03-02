@@ -41,11 +41,16 @@ const router = createBrowserRouter([
                 element: <OthersUserProfile/>
             },
             {
-                path: '/app/shelterprofile',
+
+                path: '/app',
+                element: <Dashboard/>
+            },
+            {
+                path: '/app/shelter/:shelterId'
                 element: <ShelterProfileFromUser/>
             },
             {
-                path: '/app/petprofile',
+                path: '/app/petprofile/:petId',
                 element: <PetCard/>
             },
             {

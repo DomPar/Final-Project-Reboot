@@ -34,9 +34,9 @@ router.patch('/username/:id', checkAuth, updateUserName)
 
 router.delete('/:id', checkAuth, deleteUser)
 
-router.put('/add/:id', AddToUser)
+router.put('/add/:id', checkAuth, AddToUser)
 
-router.delete('/rest/:id', RestToUser)
+router.delete('/rest/:id',checkAuth, RestToUser)
 
 
 module.exports = router

@@ -5,12 +5,15 @@ const {
     getAllPets,
     getOnePet,
     updatePet,
-    deletePet
+    deletePet,
+    getAllPetsByShelter
 } = require ('../controllers/pet.controller')
 
 router.post('/', createPet)
 
 router.get('/', getAllPets)
+
+router.get('/shelter/:shelterId', getAllPetsByShelter)
 
 router.get('/:id', getOnePet)
 

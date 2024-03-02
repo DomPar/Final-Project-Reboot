@@ -1,4 +1,4 @@
-import api from "./index_service";
+import api from "./config";
 
 
 const createPet = async (body) => {
@@ -17,6 +17,15 @@ const getAllPets = async () => {
     } catch (error) {
         console.log(error.response.data)
     }   
+}
+
+const getAllPetsByShelter = async (shelterId) =>{
+    try {
+        const {data} = await api.get(`/pet/shelter/${shelterId}`)
+    return data
+    } catch (error) {
+        console.log(error.response.data)
+    }  
 }
 
 const getOnePet = async (id) => {
@@ -48,4 +57,4 @@ const deleteOnePet = async (id) => {
 
 
 
-export { createPet, getAllPets, getOnePet, updatePet, deleteOnePet }
+export { createPet, getAllPets, getOnePet, updatePet, deleteOnePet, getAllPetsByShelter }

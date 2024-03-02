@@ -8,14 +8,20 @@ const Shelter = connection.define(
             type: DataTypes.STRING,
             allowNull: false
         },
-        cif: {
+        email: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        cif: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         tlf: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
+    }, {
+        timestamps:false
     }
 )
 
