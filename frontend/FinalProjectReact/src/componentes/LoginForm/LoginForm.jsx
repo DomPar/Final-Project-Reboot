@@ -24,25 +24,40 @@ function LoginCard() {
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
-          variant="standard"
+          variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 6 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
           label="Password"
-          variant="standard"
+          variant="outlined"
           fullWidth={true}
-          sx={{ bgcolor: 'whitesmoke', borderRadius: 6 }}
+          sx={{ 
+            width: 300,
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         
 
       </CardContent>
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Button onClick={onLogin} color="success">
-            Log In
+            Log Ig
           </Button> 
-          <br></br>
       <Link to='/signup'>
         <Button>Don't have an account? Sign Up </Button>
       </Link>
