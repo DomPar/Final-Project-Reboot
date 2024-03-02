@@ -1,8 +1,8 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 
-import Welcome from "../pages/Welcome/Welcome";
-import About from "../pages/About/About";
-import App from "../pages/App/App";
+import Welcome from "../pages/Welcome/Welcome.jsx";
+import About from "../pages/About/About.jsx";
+import App from "../pages/App/App.jsx";
 import OwnProfile from "../pages/OwnProfile/OwnProfile.jsx";
 import SignUp from "../pages/SignUp/SignUp.jsx";
 import NewPost from "../pages/NewPost/NewPost.jsx";
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/app',
-                element: <About/>,
+                element: <Dashboard/>,
                 loader: () => {
                     if (!localStorage.getItem('token')) {
                         return redirect('/')
@@ -41,12 +41,12 @@ const router = createBrowserRouter([
                 element: <OthersUserProfile/>
             },
             {
-                path: '/app/dashboard',
+
+                path: '/app',
                 element: <Dashboard/>
             },
-            
             {
-                path: '/app/shelter/:shelterId',
+                path: '/app/shelter/:shelterId'
                 element: <ShelterProfileFromUser/>
             },
             {

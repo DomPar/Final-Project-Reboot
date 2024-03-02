@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import './SignUpForm.css'
 import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} from '@mui/material'
 import { signup } from '../../services/authService'
 
@@ -41,7 +41,7 @@ function SignUpCard() {
   }
  
   return (
-    <Card sx={{ maxWidth: '500px' }}>
+    <Card id='signup-card' sx={{ maxWidth: '500px' }}>
       <CardHeader title="Sign Up" />
       <CardContent>
         <TextField
@@ -49,35 +49,35 @@ function SignUpCard() {
           label="Name"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px' }}
+          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
         <TextField
           onChange={(e) => setUsername(e.target.value)}
           label="Username"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px' }}
+          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px' }}
+          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
           <TextField
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px' }}
+          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
         <TextField
           onChange={(e) => setPasswordR(e.target.value)}
           label="Repeat Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px' }}
+          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
 
       </CardContent>

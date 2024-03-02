@@ -6,10 +6,10 @@ import './Welcome.css'
 const Welcome = () => {
   return (
     <div id="welcome-container">
-    <LoginCard/>
-    <Link to='/app/about'>
-        <button>Ir a About</button>
-    </Link>
+      <div id="welcome-left"></div>
+      <div id="welcome-right">
+        <LoginCard/>
+        </div>
     </div>
   )
 }

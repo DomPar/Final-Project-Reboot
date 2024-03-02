@@ -1,3 +1,4 @@
+import PostListDash from '../../componentes/PostListDash/PostListDash'
 import StandardImageList from '../../componentes/SquarePosts/SquarePosts'
 import './Dashboard.css'
 
@@ -5,10 +6,11 @@ const Dashboard = () => {
   return (
     <div id="dashboard-container">
         <div id="main-feed">
-          <StandardImageList/>
+          {/* <StandardImageList/> */}
+          <PostListDash/>
         </div>
         <div id="weekly-title">
-        <h4>Cutest pet of the week </h4>
+        <h4>Cutests pet ofs the week </h4>
         </div>
         <div id="weekly-container">
           

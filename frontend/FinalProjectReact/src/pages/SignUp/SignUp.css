@@ -1,8 +1,20 @@
 #signup-container {
-    background-color: lightgreen;
+    background-image: url('https://housing.com/news/wp-content/uploads/2023/07/Cute-dog-breeds-that-make-the-best-pets-f.jpg');
+    background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+}
+
+#signup-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
 }

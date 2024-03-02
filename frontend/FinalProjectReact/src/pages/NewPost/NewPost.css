@@ -3,47 +3,72 @@
     width:70%;
     height: 80%;
     display: grid;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    grid-template-columns: 1fr 2fr 0.5fr 2fr 1fr;
+    grid-template-rows: 0.5fr 0.3fr 0.5fr 2fr 1fr;
     position: relative;
 }
 
 #textdescription{
-    width:25%;
-    left: 60%;
-    top: 20%;
-    height: 40%;
+    grid-column: 4/5;
+    grid-row: 4/5;
     resize: none;
-    position: absolute;
+
 }
 
 #titledescription{
-    width:25%;
-    height: 10%;
     resize: none;
-    position: absolute;
-    top:5%;
-    left: 60%;
+    grid-column: 4/5;
+    grid-row: 2/3;
+    height: 50px;
 }
 
-#myphoto{
-    width:30%;
-    height: 60%;
+#media-container{
     background-color: beige;
-    position: absolute;
-    left: 10%;
-    top:5%
+    grid-column: 2/3;
+    grid-row: 2/5;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center
+    
 }
-#addpictures{
-    height: 10%;
-    position: absolute;
-    left: 10%;
-    top: 70%;
+
+#media {
+
+}
+#add-picture-container{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#add-picture-button{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #submit{
-    height: 10%;
-    width: 10%;
-    position: absolute;
-    left: 75%;
-    top: 80%; 
+    grid-column: 4/5;
+    grid-row: 5/6;
+    height: 30px;
+    width: 100px; 
+}
+
+#submit-container{
+    grid-column: 4/5;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#submit-button{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
