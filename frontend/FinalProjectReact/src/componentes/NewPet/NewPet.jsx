@@ -16,7 +16,7 @@ function NewPet() {
     
     const createPet = async () => {
     const sendPet = await createPetWithShelter({media: media, description: description, name:name, age:age, preferences:preferences})
-    navigate('/app')
+    navigate('/app/shelterownprofile')
 }
   return (
     <div id='newpostcontainer'>
