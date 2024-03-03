@@ -2,14 +2,26 @@ import HeaderBar from '../AppBar/HeaderBar'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { useState } from 'react';
 
-const Header = () => {
+const Header = ({setter}) => {
+  const [toggle, setToggle] = useState(false)
+  const handleClick = () => {
+    if (toggle === false) {
+      setter('visible')
+      setToggle(!toggle)
+    } else {
+      setter('hidden')
+      setToggle(!toggle)
+    }
+    console.log(toggle)
+  }
   return (
     <div id='header-container'>
       <div id="sidebar-button-container">
-        <div id="sidebar-button">
+        <button id="sidebar-button" onClick={handleClick}>
           <MenuRoundedIcon fontSize='large'/>
-        </div>
+        </button>
       </div>
 
       <div id="header-logo-container">
