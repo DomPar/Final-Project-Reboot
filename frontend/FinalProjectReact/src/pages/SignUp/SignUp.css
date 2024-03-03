@@ -1,5 +1,5 @@
 #signup-container {
-    background-image: url('https://housing.com/news/wp-content/uploads/2023/07/Cute-dog-breeds-that-make-the-best-pets-f.jpg');
+    background-image: url('../../../Public/Images/UserRegister.png');
     background-size: cover;
     height: 100vh;
     display: flex;

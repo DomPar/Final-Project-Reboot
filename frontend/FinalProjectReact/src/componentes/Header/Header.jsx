@@ -1,19 +1,30 @@
 import HeaderBar from '../AppBar/HeaderBar'
 import './Header.css'
 import { Link } from 'react-router-dom'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+
 const Header = () => {
   return (
     <div id='header-container'>
-{/*       <div id="header-logo"></div>
-      <div id="header-navbar">
-          <div className="header-nav-button"></div>
-          <div className="header-nav-button"></div>
-          <div className="header-nav-button"></div>
-          <Link to="/app/ownprofile">
-            <div id='profile-button'></div>
-          </Link>
-      </div> */}
-      <HeaderBar id="header-bar"/>
+      <div id="sidebar-button-container">
+        <div id="sidebar-button">
+          <MenuRoundedIcon fontSize='large'/>
+        </div>
+      </div>
+
+      <div id="header-logo-container">
+        <Link to='/app'>
+        <div id="header-logo">
+        </div>
+        </Link>
+      </div>   
+
+      <div id="header-titulo">
+        
+      </div>
+      <div id="link-profile">
+        <Link to='/app/ownprofile'><div id='profile-button'></div></Link>
+      </div>
     </div>
   )
 }

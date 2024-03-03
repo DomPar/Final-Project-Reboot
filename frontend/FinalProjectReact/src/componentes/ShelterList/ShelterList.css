@@ -2,13 +2,13 @@
     display: grid;
     grid-template-columns: 0.25fr 1fr;
     border: 1px solid;
-    height: 80px;
-
+    height: 100px;
 }
 
 #shelter-profile {
     grid-column: 1/2;
     background-size: cover;
+    background-position: center;
 }
 
 #shelter-name {
