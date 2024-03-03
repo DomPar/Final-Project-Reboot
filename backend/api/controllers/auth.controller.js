@@ -62,7 +62,7 @@ async function login(req, res) {
   }
 
   async function signupShelter(req, res) {  
-    console.log(req)
+    console.log(req, "Hello")
     try {
           const salt = bcrypt.genSaltSync(parseInt(process.env.SALT))
           const hash = bcrypt.hashSync(req.body.password, salt)
@@ -81,7 +81,7 @@ async function login(req, res) {
       } catch (error) {
           res.status(500).json({
               message: 'Error signing up',
-              result: error 
+              result: error.message 
               })
       }
   }

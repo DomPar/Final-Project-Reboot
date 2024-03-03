@@ -56,5 +56,19 @@ const deleteOnePet = async (id) => {
 }
 
 
+const createPetWithShelter =  async (body) => {
+    try {
+        const {data} = await api.post('/pet/createpetwithshelter', body,{
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
 
-export { createPet, getAllPets, getOnePet, updatePet, deleteOnePet, getAllPetsByShelter }
+
+
+export {createPetWithShelter, createPet, getAllPets, getOnePet, updatePet, deleteOnePet, getAllPetsByShelter }

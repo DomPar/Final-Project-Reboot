@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function SquarePicturesWithMargin() {
+function SquarePicturesWithMarginShelter() {
   const { shelterId } = useParams();
   const [pets, setPets] = useState([]);
   useEffect(() => {
@@ -18,14 +18,10 @@ function SquarePicturesWithMargin() {
   }, []);
 
   return (
-    <ImageList sx={{ width: 1000, height: 400 }} cols={5} rowHeight={164}>
+    <div>
       {pets.map((pet, index) => (
-        <Link to={`/app/petprofile/${pet.id}`}>
-          <ImageListItem
-            key={pet.index}
-            style={{ margin: 20, alignItems: "center" }}
-          >
-            
+          <div key={pet.index}
+          style={{ margin: 20, alignItems: "center" }}>
             <img
               srcSet={`${pet.media}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               src={`${pet.media}?w=164&h=164&fit=crop&auto=format`}
@@ -35,11 +31,10 @@ function SquarePicturesWithMargin() {
 
             <div>{`Nombre: ${pet.name}`}</div>
             <div>{`Edad: ${pet.age}`}</div>
-          </ImageListItem>
-        </Link>
+            </div>
       ))}
-    </ImageList>
+    </div>
   );
 }
 
-export default SquarePicturesWithMargin;
+export default SquarePicturesWithMarginShelter;
