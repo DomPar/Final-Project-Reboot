@@ -32,19 +32,3 @@ const PostListDash = () => {
 }
 
 export default PostListDash
-
-
-const arrayPost = [
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>,
-  <PostCard/>
-]
