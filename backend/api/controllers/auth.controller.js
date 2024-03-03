@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 async function signup(req, res) {  
-  console.log(req)
   try {
         const salt = bcrypt.genSaltSync(parseInt(process.env.SALT))
         const hash = bcrypt.hashSync(req.body.password, salt)

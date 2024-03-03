@@ -67,8 +67,16 @@
 }
 
 #profile-button {
-    background-color: red;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
     width: 90px;
     height: 90px;
-    border-radius: 90px;
+    border-radius: 50px;
+}
+
+#profile-button-photo {
+    max-width: 100%;
+    max-height: 100%;
 }
