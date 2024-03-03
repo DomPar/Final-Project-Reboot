@@ -29,8 +29,8 @@ function SignUpSCard() {
     } else {
       const {result}  = await signupShelter({shelterName, email, password, cif, tlf})
       console.log(result)
-      localStorage.setItem('token', result)
-      navigate('/app/createpet')
+      localStorage.setItem('token', result.token)
+      navigate(`/app/shelterownprofile/${result.id}`)
     }
   }
 

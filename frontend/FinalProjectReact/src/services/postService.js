@@ -3,7 +3,11 @@ import api from "./config";
 
 const createPost = async (body) => {
     try {
-        const {data} = await api.post('/post/', body)
+        const {data} = await api.post('/post/', body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)

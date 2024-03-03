@@ -13,7 +13,7 @@ function NewPost() {
     const[description, setDescription]= useState('')
 
     const create = async () => {
-    const sendPost = await createPost({media, title, description})
+    const sendPost = await createPost({media: media, title: title, description: description})
     navigate('/app')
 }
   return (

@@ -8,6 +8,10 @@ const Shelter = connection.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        avatar: {
+            type: DataTypes.STRING,
+            defaultValue: 'https://miro.medium.com/v2/resize:fit:720/1*W35QUSvGpcLuxPo3SRTH4w.png'
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false
@@ -28,6 +32,7 @@ const Shelter = connection.define(
             type: DataTypes.ENUM("manager", "user"),
             defaultValue: 'manager'
         },
+        
     }, {
         timestamps:false
     }

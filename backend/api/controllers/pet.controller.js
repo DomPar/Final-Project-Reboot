@@ -30,7 +30,6 @@ const createPetWithShelter = async (req, res) => {
             })
         }
         const {name, media, description, age, preferences}= req.body
-        console.log(req.body)
         const pet = await Pet.create({
             name,
             media,
