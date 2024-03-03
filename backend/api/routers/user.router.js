@@ -10,7 +10,8 @@ const {
     updateEmail,
     updateUserName,
     AddToUser,
-    RestToUser
+    RestToUser,
+    getOwnUser
 } = require ('../controllers/user.controller')
 
 const {
@@ -21,6 +22,8 @@ const {
 router.post('/', checkAuth, CheckAdmin, createUser)
 
 router.get('/', checkAuth, getAllUsers)
+
+router.get('/profile/:email', checkAuth, getOwnUser)
 
 router.get('/:id', checkAuth, getOneUser)
 

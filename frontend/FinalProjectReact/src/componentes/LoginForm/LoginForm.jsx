@@ -14,12 +14,28 @@ function LoginCard() {
   const onLogin = async () => {
     const { result } = await login({email, password})
     localStorage.setItem('token', result.token)
+    localStorage.setItem('email', email)
     navigate('/app')
   }
  
   return (
     <Card id="login-card" sx={{ maxWidth: '500px' }}>
-      <CardHeader id="text-login" title="Welcome to PetFriends!"/>
+      <CardHeader
+       id="text-login"
+       sx={{
+        display: 'flex!important',
+        justifyContent: 'center!important',
+        alignItems: 'center!important',
+       }}
+       avatar={<img
+                src="../../Public/Images/LogoPetFriends.png" 
+                alt="Logo" 
+                style={{ 
+                  width: '100px', 
+                  height: '100px',
+                  marginLeft: '136px',               
+                }} />}
+      />
       <CardContent>
         <TextField
           onChange={(e) => setEmail(e.target.value)}
@@ -51,18 +67,14 @@ function LoginCard() {
             border: 'none' }}
               }}
         />
-        
-
       </CardContent>
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Button onClick={onLogin} color="success">
-            Log Ig
-          </Button> 
+        <Button sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} onClick={onLogin} color="success">
+            Log In
+        </Button> 
       <Link to='/signup'>
-        <Button>Don't have an account? Sign Up </Button>
+        <Button sx={{ textTransform: 'none' }}>Don't have an account? Sign Up </Button>
       </Link>
-          
- 
       </CardActions>
     </Card>
   )

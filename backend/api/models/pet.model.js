@@ -23,7 +23,10 @@ const Pet = connection.define(
         preferences: {
             type: DataTypes.STRING,
             allowNull: false,
-            
+        },
+        species: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     }
 )

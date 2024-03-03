@@ -32,6 +32,10 @@ const User = connection.define(
             type: DataTypes.INTEGER,
             defaultValue: '0'
         },
+        avatar: {
+            type: DataTypes.STRING,
+            defaultValue: 'https://miro.medium.com/v2/resize:fit:720/1*W35QUSvGpcLuxPo3SRTH4w.png'
+        }
     }
 )
 
