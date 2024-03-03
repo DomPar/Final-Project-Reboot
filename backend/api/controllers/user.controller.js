@@ -1,6 +1,5 @@
 const {User} = require ('../models/user.model')
 const {Pet} = require ('../models/pet.model')
-
 const bcrypt = require ('bcrypt')
 
 
@@ -149,7 +148,6 @@ const deleteUser = async (req, res) => {
             })
     }
 }
-
 const updateEmail = async (req, res) => {
     try {
         

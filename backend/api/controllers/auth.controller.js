@@ -45,7 +45,7 @@ async function login(req, res) {
       if (user) {
         const comparePassUser = bcrypt.compareSync(req.body.password, user.password)
         if (comparePassUser) {
-          const payload = { email: user.email }
+          const payload = { email: user.email, type: 'user' }
           const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '3h' })
           return res.status(200).json({
             message: "Login succesful",
@@ -61,7 +61,7 @@ async function login(req, res) {
     if (shelter) {
       const comparePassShelter = bcrypt.compareSync(req.body.password, shelter.password)
       if (comparePassShelter) {
-        const payload = { email: shelter.email }
+        const payload = { email: shelter.email, type: 'manager' }
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '3h' })
         return res.status(200).json({
           message: "Login succesful",

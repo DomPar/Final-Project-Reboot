@@ -1,5 +1,8 @@
 const router = require('express').Router()
-
+const {
+    checkAuth,
+    CheckAdmin
+} = require('../utils/middlewares')
 const { 
     createPost,
     getAllPosts,
@@ -8,7 +11,7 @@ const {
     deletePost
 } = require ('../controllers/post.controller')
 
-router.post('/', createPost)
+router.post('/', checkAuth, createPost)
 
 router.get('/', getAllPosts)
 

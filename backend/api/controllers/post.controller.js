@@ -2,9 +2,17 @@ const {Post} = require ('../models/post.model')
 const bcrypt = require ('bcrypt')
 
 const createPost = async (req, res) => {
-
+    
     try {
-        const post = await Post.create(req.body)  
+        const {dataValues} = res.locals.user
+      
+        const {media, title, description} = req.body
+        const post = await Post.create({
+            title,
+            media,
+            description,
+            userId: dataValues.id
+        })  
         res.status(200).json({
             message: 'Post created',
             result: post
