@@ -1,5 +1,5 @@
 const router = require('express').Router()
-
+const {checkAuth} = require ('../utils/middlewares.js')
 const {
     createPet,
     getAllPets,
@@ -12,7 +12,7 @@ const {
 
 router.post('/', createPet)
 
-router.post('/createpetbyshelter', createPetWithShelter)
+router.post('/createpetwithshelter', checkAuth, createPetWithShelter)
 
 router.get('/', getAllPets)
 
