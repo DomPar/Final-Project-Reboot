@@ -2,9 +2,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import './OwnProfile.css'
 import StandardImageList from '../../componentes/SquarePictures/SquarePicture'
 import CardLayers3d from '../../componentes/CardLayers/CardLayers'
+import { getOwnUser } from '../../services/userService';
 
 function OwnProfile() {
   const navigate = useNavigate();
+  const getProfile = async () => {
+    const  result = await getOwnUser(localStorage.getItem('email'))
+      console.log(result)
+    }
+    getProfile()
   
   
   return (

@@ -54,6 +54,25 @@ const getOneUser = async (req, res) => {
     }
 }
 
+const getOwnUser = async (req, res) => {
+    try {
+        const user = await User.findOne({
+            where: {
+                email: req.params.email
+            }
+        })
+        res.status(200).json({
+            message: 'Here is the User',
+            result: user
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting one user',
+            result: error 
+            })
+    }
+}
+
 const updateUser = async (req, res) => {
     try {
         const [result] = await User.update(req.body, {
@@ -247,5 +266,6 @@ module.exports = {
     updateEmail,
     updateUserName,
     RestToUser,
-    AddToUser
+    AddToUser,
+    getOwnUser
 }
