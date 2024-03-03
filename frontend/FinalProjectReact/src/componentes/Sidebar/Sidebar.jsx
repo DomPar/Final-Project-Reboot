@@ -1,14 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Sidebar.css'
 import { useState } from 'react'
 
 const Sidebar = ({sidebarDisplay}) => {
-console.log(sidebarDisplay)
+const navigate = useNavigate()
   return (
-    <div id='sidebar-container' style={{visibility:`${sidebarDisplay}`}}>
-        <Link to='/app/shelterprofile'>
-        <div className="sidebar-nav-button"></div>
-        </Link>
+    <div id='sidebar-container' className={sidebarDisplay}>
+        <button id='shelters-button' onClick={()=>{navigate('/app/shelter/1')}}></button>
         <div className="sidebar-nav-button"></div>
         <div className="sidebar-nav-button"></div>
         <div className="sidebar-nav-button"></div>

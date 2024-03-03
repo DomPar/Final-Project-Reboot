@@ -14,6 +14,7 @@ function LoginCard() {
   const onLogin = async () => {
     const { result } = await login({email, password})
     localStorage.setItem('token', result.token)
+    localStorage.setItem('email', email)
     navigate('/app')
   }
  
