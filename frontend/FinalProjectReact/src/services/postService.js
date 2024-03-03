@@ -19,6 +19,19 @@ const getAllPosts = async () => {
     }   
 }
 
+const getAllPostsByUser = async (userId, name) => {
+    try {
+        const {data} = await api.get(`/post/${name}/${userId}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
+
 const getOnePost = async (id) => {
     try {
         const {data} = await api.get(`/post/${id}`)
@@ -48,4 +61,4 @@ const deleteOnePost = async (id) => {
 
 
 
-export { createPost, getAllPosts, getOnePost, updatePost, deleteOnePost }
+export { createPost, getAllPosts, getOnePost, updatePost, deleteOnePost, getAllPostsByUser }

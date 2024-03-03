@@ -32,6 +32,25 @@ const getAllPosts = async (req, res) => {
     }
 }
 
+const getAllPostsById = async (req, res) => {
+    try {
+        const posts = await Post.findAll({
+            where: {
+                userId: req.params.userId,
+            }
+        })
+        res.status(200).json({
+            message: 'Here are the Posts',
+            result: posts
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting Posts',
+            result: error 
+            })
+    }
+}
+
 const getOnePost = async (req, res) => {
     try {
         const posts = await Post.findByPk(req.params.id)
@@ -99,5 +118,6 @@ module.exports = {
     getAllPosts,
     getOnePost,
     updatePost,
-    deletePost
+    deletePost,
+    getAllPostsById
 }

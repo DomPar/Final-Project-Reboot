@@ -22,7 +22,11 @@ const getOneUser = async (id) => {
 
 const getOwnUser = async (email) => {
     try {
-        const {data} = await api.get(`/user/profile/${email}`)
+        const {data} = await api.get(`/user/profile/${email}`,{
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)

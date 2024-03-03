@@ -5,12 +5,15 @@ const {
     getAllPosts,
     getOnePost,
     updatePost,
-    deletePost
+    deletePost,
+    getAllPostsById,
 } = require ('../controllers/post.controller')
 
 router.post('/', createPost)
 
 router.get('/', getAllPosts)
+
+router.get('/:name/:userId', getAllPostsById)
 
 router.get('/:id', getOnePost)
 
