@@ -51,7 +51,7 @@ function getMydatas() {
     getDatas();
   }, []);
 
-  return shelterDatas.shelterName
+  return shelterDatas.shelterName // Añadir un .map
 }
 
 
