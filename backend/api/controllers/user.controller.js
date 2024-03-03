@@ -1,5 +1,6 @@
 const {User} = require ('../models/user.model')
 const {Pet} = require ('../models/pet.model')
+
 const bcrypt = require ('bcrypt')
 
 
@@ -146,23 +147,6 @@ const deleteUser = async (req, res) => {
             message: 'Error updating User',
             result: error 
             })
-    }async function AddToActor(req, res) {
-        try {
-            const { actorId, movieId } = req.body
-            const actor = await Actor.findByPk(actorId)
-            if (!actor) {
-                return res.status(404).send('Actor not found');
-            }
-            const movie = await Movie.findByPk(movieId);
-            if (!movie) {
-                return res.status(404).send('Movie not found');
-            }
-            await actor.addMovie(movie);
-    
-            return res.status(200).json({ actor: actor, movie: movie });
-        } catch (error) {
-            return res.status(500).send(error.message)
-        }
     }
 }
 
@@ -240,7 +224,7 @@ async function RestToUser(req, res) {
 	try {
 		const { userId, petId } = req.body
 		const user = await User.findByPk(userId)
-		if (!actor) {
+		if (!user) {
 			return res.status(404).send('User not found');
 		}
 		const pet = await Pet.findByPk(petId);
