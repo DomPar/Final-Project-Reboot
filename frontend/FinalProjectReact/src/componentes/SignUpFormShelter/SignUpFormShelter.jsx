@@ -46,63 +46,141 @@ function SignUpSCard() {
  
   return (
     <Card id='signup-card' sx={{ maxWidth: '500px' }}>
-      <CardHeader title="Sign Up" />
+      <CardHeader 
+        sx={{
+          display: 'flex!important',
+          justifyContent: 'center!important',
+          alignItems: 'center!important',
+         }}
+         avatar={<img
+                  src="../../Public/Images/LogoPetFriends.png" 
+                  alt="Logo" 
+                  style={{ 
+                    width: '100px', 
+                    height: '100px',
+                    marginLeft: '136px',               
+                  }} />}
+      />
       <CardContent>
         <TextField
           onChange={(e) => setName(e.target.value)}
           label="Name"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setUsername(e.target.value)}
           label="Username"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
-          <TextField
+         <TextField
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
-        <TextField
+         <TextField
           onChange={(e) => setPasswordR(e.target.value)}
           label="Repeat Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setShelterName(e.target.value)}
-          label="ShelterName"
+          label="Shelter Name"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setCif(e.target.value)}
           label="CIF"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setTlf(e.target.value)}
           label="Phone number"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
 
       </CardContent>
