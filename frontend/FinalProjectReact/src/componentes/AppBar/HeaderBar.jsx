@@ -17,6 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import './HeaderBar.css'
 import { Link } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -61,6 +62,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function HeaderBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const handleToggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -165,6 +170,7 @@ export default function HeaderBar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
+            onClick={handleToggleSidebar}
             sx={{ mr: 2 }}
           >
             <MenuIcon />
@@ -233,6 +239,7 @@ export default function HeaderBar() {
           </Box>
         </Toolbar>
       </AppBar>
+
       {renderMobileMenu}
       {renderMenu}
     </Box>

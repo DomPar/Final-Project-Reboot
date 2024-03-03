@@ -42,42 +42,96 @@ function SignUpCard() {
  
   return (
     <Card id='signup-card' sx={{ maxWidth: '500px' }}>
-      <CardHeader title="Sign Up" />
+      <CardHeader 
+        sx={{
+          display: 'flex!important',
+          justifyContent: 'center!important',
+          alignItems: 'center!important',
+         }}
+         avatar={<img
+                  src="../../Public/Images/LogoPetFriends.png" 
+                  alt="Logo" 
+                  style={{ 
+                    width: '100px', 
+                    height: '100px',
+                    marginLeft: '136px',               
+                  }} />}
+      />
       <CardContent>
         <TextField
           onChange={(e) => setName(e.target.value)}
           label="Name"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setUsername(e.target.value)}
           label="Username"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
           <TextField
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setPasswordR(e.target.value)}
           label="Repeat Password"
           variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
 
       </CardContent>
@@ -85,7 +139,9 @@ function SignUpCard() {
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end'}}>
       <div> <input id="checkbox" onChange={(e) => handleTerms(e)} type="checkbox"/> <label htmlFor="checkbox"> I agree to these <a href="#">Terms and Conditions</a>.</label></div>
       <div> <input id="checkbox" onChange={(e) => handleAge(e)} type="checkbox"/> <label htmlFor="checkbox"> I am over 18 years old</label></div>
-        <Button onClick={onSignUp}>Register</Button>
+        <Button onClick={onSignUp}sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} color="success">
+          Register
+        </Button>
       </CardActions>
     </Card>
   )

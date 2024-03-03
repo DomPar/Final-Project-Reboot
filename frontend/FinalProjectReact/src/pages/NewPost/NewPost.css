@@ -1,6 +1,5 @@
 #newpostcontainer{
-    margin-left: 10%;
-    width:70%;
+    width:90%;
     height: 80%;
     display: grid;
     grid-template-columns: 1fr 2fr 0.5fr 2fr 1fr;
@@ -32,9 +31,6 @@
     
 }
 
-#media {
-
-}
 #add-picture-container{
     grid-column: 2/3;
     grid-row: 5/6;
