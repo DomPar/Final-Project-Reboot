@@ -22,7 +22,7 @@ function SquarePicturesWithMargin() {
       {pets.map((pet, index) => (
         <Link to={`/app/petprofile/${pet.id}`}>
           <ImageListItem
-            key={pet.index}
+            key={index}
             style={{ margin: 20, alignItems: "center" }}
           >
             

@@ -17,10 +17,10 @@ export default function CardLayers3d() {
         '&:hover': {
           '& > div': {
             transform: 'rotateY(30deg)',
-            '& > div:nth-child(2)': {
+            '& > div:nth-of-type(2)': {
               transform: 'scaleY(0.9) translate3d(20px, 30px, 40px)',
             },
-            '& > div:nth-child(3)': {
+            '& > div:nth-of-type(3)': {
               transform: 'translate3d(45px, 50px, 40px)',
             },
           },

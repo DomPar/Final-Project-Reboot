@@ -30,6 +30,8 @@ function SignUpSCard() {
       const {result}  = await signupShelter({shelterName, email, password, cif, tlf})
       console.log(result)
       localStorage.setItem('token', result.token)
+      localStorage.setItem('id', result.id)
+      localStorage.setItem('email', email)
       navigate(`/app/shelterownprofile/${result.id}`)
     }
   }

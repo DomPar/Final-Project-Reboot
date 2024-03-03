@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './OwnProfile.css'
-import StandardImageList from '../../componentes/SquarePictures/SquarePicture'
+import SquarePicture from '../../componentes/SquarePictures/SquarePicture'
 import CardLayers3d from '../../componentes/CardLayers/CardLayers'
 import { getOwnUser } from '../../services/userService';
 
@@ -17,7 +17,7 @@ function OwnProfile() {
     <div id='profile-container' >
       <div id='square-pictures'>
         <button onClick={() => {navigate('/app/newpost')}} id='new-post-button'>New Post 🐾</button>
-        <StandardImageList/>
+        <SquarePicture/>
       </div>
 
       <div id='profile-description'>

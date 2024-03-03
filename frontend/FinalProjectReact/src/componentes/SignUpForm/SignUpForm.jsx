@@ -26,8 +26,9 @@ function SignUpCard() {
       return window.alert('You have to be over 18 years old.')  
     } else {
       const { result } = await signup({name, userName, email, password})
-      localStorage.setItem('token', result)
+      localStorage.setItem('token', result.token)
       localStorage.setItem('email', email)
+      localStorage.setItem('id', result.id)
       navigate('/app')
     }
   }

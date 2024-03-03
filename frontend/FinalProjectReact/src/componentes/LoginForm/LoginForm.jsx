@@ -15,6 +15,8 @@ function LoginCard() {
     const { result } = await login({email, password})
     localStorage.setItem('token', result.token)
     localStorage.setItem('email', email)
+    localStorage.setItem('id', result.id)
+
     if (result.role === 'user'){
       navigate('/app')
     } else {
