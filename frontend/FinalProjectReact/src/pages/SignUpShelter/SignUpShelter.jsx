@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import './SignUpShelter.css'
-import SignUpSCard from "../../componentes/SignUpFormShelter/SignUpFormShelter"
+import  SignUpSCard  from "../../componentes/SignUpFormShelter/SignUpFormShelter.jsx"
 
 
 

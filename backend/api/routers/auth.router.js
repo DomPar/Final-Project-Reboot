@@ -7,7 +7,7 @@ const {
 } = require ('../controllers/auth.controller')
 
 router.post('/signup', signup)
-router.post('/signup/shelter', signupShelter)
+router.post('/signupshelter/signup', signupShelter)
 router.post('/login', login)
 
 

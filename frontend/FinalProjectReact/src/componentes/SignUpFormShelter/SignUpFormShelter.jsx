@@ -2,15 +2,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './SignUpFormShelter.css'
 import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} from '@mui/material'
-import { signup } from '../../services/authService'
+import { signupShelter } from '../../services/authService'
 
 function SignUpSCard() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
   const [passwpordR, setPasswordR] = useState('')
-  const [userName, setUsername] = useState('')
   const [shelterName, setShelterName] = useState('')
   const [cif, setCif] = useState('')
   const [tlf, setTlf] = useState('')
@@ -20,18 +18,19 @@ function SignUpSCard() {
 
   const onSignUp = async () => {
     if (password !== passwpordR) {
-      navigate('/signup')
+      navigate('/signups')
       return window.alert('Password must be the same.')
     } else if (!terms) {
-      navigate('/signup')
+      navigate('/signups')
       return window.alert('You have to accept Terms and Conditions.')
     } else if (!age) {
-      navigate('/signup')
+      navigate('/signups')
       return window.alert('You have to be over 18 years old.')  
     } else {
-      const { result } = await signup({name, userName, email, password})
+      const {result}  = await signupShelter({shelterName, email, password, cif, tlf})
+      console.log(result)
       localStorage.setItem('token', result)
-      navigate('/app')
+      navigate('/app/createpet')
     }
   }
 
@@ -49,19 +48,13 @@ function SignUpSCard() {
       <CardHeader title="Sign Up" />
       <CardContent>
         <TextField
-          onChange={(e) => setName(e.target.value)}
-          label="Name"
+          onChange={(e) => setShelterName(e.target.value)}
+          label="Shelter Name"
           variant="outlined"
           fullWidth={true}
           sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
-        <TextField
-          onChange={(e) => setUsername(e.target.value)}
-          label="Username"
-          variant="outlined"
-          fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
-        />
+        
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
@@ -83,13 +76,7 @@ function SignUpSCard() {
           fullWidth={true}
           sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
         />
-        <TextField
-          onChange={(e) => setShelterName(e.target.value)}
-          label="ShelterName"
-          variant="outlined"
-          fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 1 }}
-        />
+       
         <TextField
           onChange={(e) => setCif(e.target.value)}
           label="CIF"
