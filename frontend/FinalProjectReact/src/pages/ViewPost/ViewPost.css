@@ -1,0 +1,43 @@
+#post-container{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#picture-hearts {
+    height: 100%;
+    width: 40%;
+   
+    
+}
+#picture{
+    height: 90%;
+    border: solid black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+#title-description{
+    height: 100%;
+    width: 25%;
+    margin-left: 1%;
+    
+}
+
+#title{
+    border: solid black;
+    height: 15%;
+    margin-bottom: 4%;
+    width: 100%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+#description{
+    border: solid black;
+    height: 60%;
+    width: 100%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+#heart-box{
+    justify-content: flex-start;
+    
+}

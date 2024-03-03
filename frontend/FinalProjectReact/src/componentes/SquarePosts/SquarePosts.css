@@ -1,6 +1,5 @@
 #image-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.3fr;
+    
 }

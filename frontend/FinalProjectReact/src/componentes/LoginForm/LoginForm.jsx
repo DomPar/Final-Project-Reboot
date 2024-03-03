@@ -13,41 +13,67 @@ function LoginCard() {
 
   const onLogin = async () => {
     const { result } = await login({email, password})
-    localStorage.setItem('token', result)
+    localStorage.setItem('token', result.token)
     navigate('/app')
   }
  
   return (
     <Card id="login-card" sx={{ maxWidth: '500px' }}>
-      <CardHeader id="text-login" title="Welcome to PetFriends!"/>
+      <CardHeader
+       id="text-login"
+       sx={{
+        display: 'flex!important',
+        justifyContent: 'center!important',
+        alignItems: 'center!important',
+       }}
+       avatar={<img
+                src="../../Public/Images/LogoPetFriends.png" 
+                alt="Logo" 
+                style={{ 
+                  width: '100px', 
+                  height: '100px',
+                  marginLeft: '136px',               
+                }} />}
+      />
       <CardContent>
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
-          variant="standard"
+          variant="outlined"
           fullWidth={true}
-          sx={{ marginBottom: '20px', bgcolor: 'whitesmoke', borderRadius: 6 }}
+          sx={{ 
+            width: 300,
+            marginBottom: '20px', 
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
         <TextField
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
           label="Password"
-          variant="standard"
+          variant="outlined"
           fullWidth={true}
-          sx={{ bgcolor: 'whitesmoke', borderRadius: 6 }}
+          sx={{ 
+            width: 300,
+            bgcolor: 'whitesmoke', 
+            borderRadius: 6,
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+            border: 'none' }}
+              }}
         />
-        
-
       </CardContent>
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Button onClick={onLogin} color="success">
+        <Button sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} onClick={onLogin} color="success">
             Log In
-          </Button> 
-          <br></br>
+        </Button> 
       <Link to='/signup'>
-        <Button>Don't have an account? Sign Up </Button>
+        <Button sx={{ textTransform: 'none' }}>Don't have an account? Sign Up </Button>
       </Link>
-          
- 
       </CardActions>
     </Card>
   )

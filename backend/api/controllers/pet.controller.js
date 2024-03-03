@@ -1,5 +1,5 @@
 const { Pet } = require ('../models/pet.model')
-
+const {Shelter} = require ('../models/shelter.model.js')
 
 const createPet = async (req, res) => {
 
@@ -17,12 +17,56 @@ const createPet = async (req, res) => {
     }
 }
 
+
+const createPetWithShelter = async (req, res) => {
+
+    try {
+        const {shelterId} = req.body
+        console.log(shelterId)
+        if(!shelterId){
+            return res.status(400).json({
+                message: 'Shelter ID is required'
+            })
+        }
+        const pet = await Pet.create({
+            ...req.body ,
+            shelterId: shelterId
+        })  
+        res.status(200).json({
+            message: 'Pet created',
+            result: pet
+        })      
+    } catch (error) {
+       res.status(500).json({
+        message: 'Error creating Pet',
+        result: error.message 
+        })
+    }
+}
+
 const getAllPets = async (req, res) => {
     try {
-        const pets = await Post.findAll()
+        const pets = await Pet.findAll()
         res.status(200).json({
             message: 'Here are the Pets',
             result: pets
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting Pets',
+            result: error 
+            })
+    }
+}
+
+const getAllPetsByShelter = async (req, res) => {
+    try {
+       
+        const {dataValues} = await Shelter.findByPk(req.params.shelterId, {include: Pet})
+        const allPets = dataValues.pets
+        res.status(200).json({
+            message: 'Here are the Pets',
+            result: allPets
         }) 
     } catch (error) {
         res.status(500).json({
@@ -99,5 +143,7 @@ module.exports = {
     getAllPets,
     getOnePet,
     updatePet,
-    deletePet
+    deletePet,
+    getAllPetsByShelter,
+    createPetWithShelter
 }

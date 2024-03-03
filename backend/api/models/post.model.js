@@ -19,7 +19,7 @@ const Post = connection.define(
         likes: {
             type: DataTypes.INTEGER,
             defaultValue: 0
-        },
+        }
     }
 )
 

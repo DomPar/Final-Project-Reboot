@@ -56,9 +56,14 @@ const updateUserName = async (id, body) => {
     }   
 }
 
-const addUserToFavorites = async (userId, petId) => {
+const addUserToFavorites = async (petId) => {
     try {
-        const {data} = await api.put(`/user/add/${userId}`, {userId, petId})
+        const {data} = await api.put(`/user/add/${petId}`, {},{
+            headers: {
+              authorization: localStorage.getItem("token"),
+            }
+          })
+          
     return data;
     } catch (error) {
         console.log(error.response.data)

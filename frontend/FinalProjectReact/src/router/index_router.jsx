@@ -1,8 +1,8 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 
-import Welcome from "../pages/Welcome/Welcome";
-import About from "../pages/About/About";
-import App from "../pages/App/App";
+import Welcome from "../pages/Welcome/Welcome.jsx";
+import About from "../pages/About/About.jsx";
+import App from "../pages/App/App.jsx";
 import OwnProfile from "../pages/OwnProfile/OwnProfile.jsx";
 import SignUp from "../pages/SignUp/SignUp.jsx";
 import NewPost from "../pages/NewPost/NewPost.jsx";
@@ -10,6 +10,8 @@ import OthersUserProfile from "../pages/OthersUserProfile/OthersUserProfile.jsx"
 import Dashboard from "../pages/Dashboard/Dashboard.jsx";
 import ShelterProfileFromUser from "../pages/ShelterProfileFromUser/ShelterProfileFromUser.jsx";
 import PetCard from "../componentes/Petcard/PetCard.jsx";
+import ViewPost from "../pages/ViewPost/ViewPost.jsx";
+import SignUpShelter from "../pages/SignUpShelter/SignUpShelter.jsx";
 
 const router = createBrowserRouter([
     {
@@ -40,12 +42,21 @@ const router = createBrowserRouter([
                 element: <OthersUserProfile/>
             },
             {
-                path: '/app/shelterprofile',
+
+                path: '/app',
+                element: <Dashboard/>
+            },
+            {
+                path: '/app/shelter/:shelterId',
                 element: <ShelterProfileFromUser/>
             },
             {
-                path: '/app/petprofile',
+                path: '/app/petprofile/:petId',
                 element: <PetCard/>
+            },
+            {
+                path: '/app/viewpost',
+                element: <ViewPost/>
             },
         ]
     }, 
@@ -56,7 +67,12 @@ const router = createBrowserRouter([
     {
         path: '/signup',
         element: <SignUp/>
+    },
+    {
+        path: '/signups',
+        element: <SignUpShelter/>
     }
+    
 ])
 
 export default router;
