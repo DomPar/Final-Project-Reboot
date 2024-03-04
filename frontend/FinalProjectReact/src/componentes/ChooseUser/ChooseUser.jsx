@@ -34,13 +34,13 @@ function ChooseUser() {
       />
       <CardContent>
          <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Button onClick={onLogin} color="success">
-            User
-        </Button> 
+          <Link to= '/signup'>
+        <Button onClick={onLogin} color="success">User</Button> 
+        </Link>
         <span id="or">or</span>
-        <Button onClick={onLogin} color="success">
-            Shelter
-        </Button> 
+        <Link to= '/signups'>
+        <Button onClick={onLogin} color="success">Shelter</Button> 
+        </Link>
       </CardActions>
       </CardContent>
      
