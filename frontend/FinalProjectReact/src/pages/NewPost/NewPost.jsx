@@ -24,13 +24,13 @@ function NewPost() {
         </div>
       </div>
       <div id="media-container">
-        <img id='media' src={media} alt="MyPhoto"/>
+        <img id='media' src={media} alt="My Photo"/>
       </div>
       <textarea name="POST'S DESCRIPTION" id="textdescription" cols="30" rows="10" placeholder='Add Description...' onChange={(e) => setDescription(e.target.value)}></textarea>
       <textarea name="ADD TITLE" id="titledescription" cols="30" rows="10" placeholder='Add title...' onChange={(e) => setTitle(e.target.value)}></textarea>
-      <div id="submit-container">
-        <div id="submit-button">
-          <button id='submit' onClick= {create}>Submit</button>
+      <div id="share-container">
+        <div id="share-button">
+          <button id='share' onClick= {create}>Submit</button>
         </div>
       </div>
 
