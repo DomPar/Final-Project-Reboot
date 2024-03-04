@@ -22,7 +22,7 @@ router.get('/:id', getOneShelter)
 
 router.put('/:id',checkAuth, updateShelter)
 
-router.patch('/:id',checkAuth, updateShelterDescription)
+router.patch('/shelterdescription/:id', updateShelterDescription)
 
 router.delete('/:id', deleteShelter)
 
