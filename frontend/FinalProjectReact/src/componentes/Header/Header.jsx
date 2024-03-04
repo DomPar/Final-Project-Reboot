@@ -3,18 +3,36 @@ import { Link, useNavigate } from 'react-router-dom'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { useState, useEffect } from 'react';
 import { getOwnUser } from '../../services/userService';
+import { getOwnShelter } from '../../services/shelterService';
 
 const Header = ({setter}) => {
   const [toggle, setToggle] = useState(false)
   const [user, setUser] = useState({})
+  const [shelter, setShelter] = useState({})
+  const [avatar, setAvatar] = useState('')
   const navigate = useNavigate();
 
   useEffect(() => {
     const getProfile = async () => {
-      const {result} = await getOwnUser(localStorage.getItem('email'))
-      setUser(result)
+      if (localStorage.getItem('role') === 'user') {
+        const {result} = await getOwnUser(localStorage.getItem('email'))
+        setUser(result)
+      }
+      if (localStorage.getItem('role') === 'manager') {
+        const {result} = await getOwnShelter(localStorage.getItem('id'))
+        setShelter(result)
+      }
       }
       getProfile()
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem('role') === 'user') {
+      setAvatar(user.avatar)
+    }
+    if (localStorage.getItem('role') === 'manager') {
+      setAvatar(shelter.avatar)
+    }
   }, []);
 
   const handleClick = () => {
@@ -25,8 +43,18 @@ const Header = ({setter}) => {
       setter('hidden')
       setToggle(!toggle)
     }
-    console.log(toggle)
   }
+
+  const handleProfile = () => {
+    if (localStorage.getItem('role') === 'user') {
+      navigate('/app/ownprofile')
+    }
+    if (localStorage.getItem('role') === 'manager') {
+      navigate(`/app/shelterownprofile/${localStorage.getItem('id')}`)
+    }
+  }
+
+
   return (
     <div id='header-container'>
       <div id="sidebar-button-container">
@@ -46,9 +74,9 @@ const Header = ({setter}) => {
         
       </div>
       <div id="link-profile">
-        {/* <button id='profile-button' style={{backgroundImage:`url(${user.avatar})`}} onClick={()=>{navigate('/app/ownprofile')}}> */}
-          {/* <img id='profile-button-photo' src={user.avatar} />  */}
-        {/* </button> */}
+        <button id='profile-button' style={{backgroundImage:`url(${avatar})`}} onClick={handleProfile}>
+         {/*  <img id='profile-button-photo' src={user.avatar} /> */}
+        </button>
       </div>
     </div>
   )
