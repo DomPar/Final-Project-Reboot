@@ -78,7 +78,7 @@ function LoginCard() {
         <Button sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} onClick={onLogin} color="success">
             Log In
         </Button> 
-      <Link to='/signup'>
+      <Link to='/chooseuser'>
         <Button sx={{ textTransform: 'none' }}>Don't have an account? Sign Up </Button>
       </Link>
       </CardActions>
