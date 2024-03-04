@@ -188,7 +188,9 @@ function SignUpSCard() {
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end'}}>
       <div> <input id="checkbox" onChange={(e) => handleTerms(e)} type="checkbox"/> <label htmlFor="checkbox"> I agree to these <a href="#">Terms and Conditions</a>.</label></div>
       <div> <input id="checkbox" onChange={(e) => handleAge(e)} type="checkbox"/> <label htmlFor="checkbox"> I am over 18 years old</label></div>
-        <Button onClick={onSignUp}>Register</Button>
+      <Button onClick={onSignUp}sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} color="success">
+          Register
+        </Button>
       </CardActions>
     </Card>
   )
