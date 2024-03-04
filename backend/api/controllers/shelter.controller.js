@@ -47,6 +47,21 @@ const getOneShelter = async (req, res) => {
     }
 }
 
+const getOwnShelter = async (req, res) => {
+    try {
+        const shelters = await Shelter.findByPk(res.locals.shelter.id)
+        res.status(200).json({
+            message: 'Here is the Shelter',
+            result: shelters
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting own Shelter',
+            result: error 
+            })
+    }
+}
+
 const updateShelter = async (req, res) => {
     try {
         const [shelter] = await Shelter.update(req.body, {
@@ -99,5 +114,6 @@ module.exports = {
     getAllShelters,
     getOneShelter,
     updateShelter,
-    deleteShelter
+    deleteShelter,
+    getOwnShelter
 }

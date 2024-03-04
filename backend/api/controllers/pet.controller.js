@@ -29,13 +29,14 @@ const createPetWithShelter = async (req, res) => {
                 message: 'Shelter ID is required'
             })
         }
-        const {name, media, description, age, preferences}= req.body
+        const {name, media, description, age, preferences, species}= req.body
         const pet = await Pet.create({
             name,
             media,
             description,
             age,
             preferences,
+            species,
             shelterId: dataValues.id
         })  
         res.status(200).json({

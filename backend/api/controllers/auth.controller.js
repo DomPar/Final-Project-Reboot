@@ -18,7 +18,8 @@ async function signup(req, res) {
       .status(200)
       .json({
         message: 'User created',
-        result: token
+        result: { token: token, id: user.id }
+
       })
   } catch (error) {
     res.status(500).json({
@@ -53,6 +54,7 @@ async function login(req, res) {
             result: {
               token,
               role: user.role,
+              id: user.id
             }
           })
         }
@@ -93,12 +95,15 @@ async function signupShelter(req, res) {
       fields: ['shelterName', 'email', 'password', 'cif', 'role', 'tlf']
     })
     const token = jwt.sign({ email: shelter.email, type: 'manager' }, process.env.JWT_SECRET, { expiresIn: '3h' })
-    
+
     return res
       .status(200)
       .json({
         message: 'Shelter created',
-        result: {token: token, id: shelter.id },
+        result: {
+          token: token,
+          id: shelter.id
+        },
       })
   } catch (error) {
     res.status(500).json({
