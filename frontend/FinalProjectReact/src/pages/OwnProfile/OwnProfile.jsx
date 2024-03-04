@@ -7,11 +7,14 @@ import { useState, useEffect } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import { getAllPostsByUser } from '../../services/postService';
 import { updateUserDescription } from '../../services/userService';
+import UploadWidget from '../../componentes/UploadWidget/UploadWidget';
 
 function OwnProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useState({})
   const [posts, setPosts] = useState([])
+  const [avatar, setAvatar] = useState('') //Necesitamos una funcion para mandar esto al usuario
+  
 
   const [showTextBox, setShowTextBox] = useState(false)
   const [description, setDescription] = useState('')
@@ -67,7 +70,9 @@ function OwnProfile() {
 
       <div id='profile-description'>
         <div id="profile-avatar" style={{backgroundImage: `url(${user.avatar})`}}>
-          <button id='edit-avatar'><EditIcon/></button>
+          <button id='edit-avatar'><EditIcon/>
+            <UploadWidget id='change-avatar-button' setter={setAvatar}/>
+          </button>
         </div>
         <p id='description-user'>
           <h1>{user.name}</h1>
