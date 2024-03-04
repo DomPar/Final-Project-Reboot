@@ -71,7 +71,7 @@ function ShelterOwnProfile() {
           </div>
             <div id='shelter-card'>
             <CardLayers3d/>
-        <p id='description-shelter'>Description soy bla bla bla etc etc etc bfjkb. vmfv afdn.mf dfdfmnbknd vkjbvkbf,d vnf.vnv  vk.naev jnv.a v</p>
+        <p id='description-shelter'></p>
             </div>
       </div>
     </div>
