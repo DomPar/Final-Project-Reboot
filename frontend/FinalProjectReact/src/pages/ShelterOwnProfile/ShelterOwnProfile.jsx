@@ -63,6 +63,7 @@ function ShelterOwnProfile() {
 
   return (
     <div id='shelter-profile-container'>
+        <button id='edit-profile'>Edit Profile</button>
 
           <div id="shelter-profile-button-add-pet">
             <Link to="/app/createpet">
@@ -76,7 +77,6 @@ function ShelterOwnProfile() {
 
           <div id='shelter-profile-info'>
             <div id="shelter-profile-avatar"></div>
-            <p id='description-shelter'></p>
           </div>
     </div>
         
