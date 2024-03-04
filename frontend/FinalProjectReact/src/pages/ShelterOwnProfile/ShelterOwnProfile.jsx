@@ -2,7 +2,7 @@ import React from 'react'
 import SquarePicturesWithMarginShelter from '../../componentes/SquarePicturesWithMargin/SquarePicturesWithMargin'
 import CardLayers3d from '../../componentes/CardLayers/CardLayers'
 import './ShelterOwnProfile.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -12,6 +12,7 @@ import { getOwnShelter } from '../../services/shelterService'
 function SquarePicturesInShelter() {
   const { shelterId } = useParams();
   const [pets, setPets] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const getPets = async () => {
       const { result } = await getAllPetsByShelter(shelterId);
@@ -26,6 +27,7 @@ function SquarePicturesInShelter() {
           <div key={index}
           style={{ margin: 20, alignItems: "center" }}>
             <img
+              style={{maxHeight: '100px', maxWidth: '100px'}}
               src={pet.media}
               alt={pet.name}
             />
@@ -60,20 +62,22 @@ function ShelterOwnProfile() {
 
 
   return (
-    <div id='shelter-container'>
-        <div id='picturesandcard'>
-          <Link to="/app/createpet">
-          <button>Add Pet</button>
-          </Link>
-          <div id='prueba'>
-          {SquarePicturesInShelter()}
-          <div>{getMydatas()}</div>
+    <div id='shelter-profile-container'>
+        <button id='edit-profile'>Edit Profile</button>
+
+          <div id="shelter-profile-button-add-pet">
+            <Link to="/app/createpet">
+            <button>Add Pet</button>
+            </Link>
           </div>
-            <div id='shelter-card'>
-            <CardLayers3d/>
-        <p id='description-shelter'></p>
-            </div>
-      </div>
+          <div id='shelter-profile-pets'>
+            {SquarePicturesInShelter()}
+            <div>{getMydatas()}</div>
+          </div>
+
+          <div id='shelter-profile-info'>
+            <div id="shelter-profile-avatar"></div>
+          </div>
     </div>
         
   )
