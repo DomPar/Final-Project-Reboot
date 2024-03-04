@@ -15,7 +15,7 @@ import SignUpShelter from "../pages/SignUpShelter/SignUpShelter.jsx";
 import ChooseTypeUser from "../pages/ChooseTypeUser/ChooseTypeUser.jsx"
 import NewPet from "../componentes/NewPet/NewPet.jsx";
 import ShelterOwnProfile from "../pages/ShelterOwnProfile/ShelterOwnProfile.jsx"
-
+import ListOfShelters from "../pages/ListOfShelters/ListOfShelters.jsx";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +65,10 @@ const router = createBrowserRouter([
             {
                 path: '/app/createpet',
                 element: <NewPet/>
+            },
+            {
+                path: '/app/listofshelters',
+                element: <ListOfShelters/>
             },
             {
                 path: '/app/shelterownprofile/:shelterId',
