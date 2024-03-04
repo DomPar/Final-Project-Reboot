@@ -6,7 +6,7 @@ const Sidebar = ({sidebarDisplay}) => {
 const navigate = useNavigate()
   return (
     <div id='sidebar-container' className={sidebarDisplay}>
-        <button id='shelters-button' onClick={()=>{navigate('/app/shelter/1')}}></button>
+        <button id='shelters-button' onClick={()=>{navigate('/app/listofshelters')}}></button>
         <div className="sidebar-nav-button"></div>
         <div className="sidebar-nav-button"></div>
         <div className="sidebar-nav-button"></div>

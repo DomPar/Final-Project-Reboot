@@ -20,7 +20,7 @@ function NewPet() {
     navigate(`/app/shelterownprofile/${localStorage.getItem("id")}`)
 }
   return (
-    <div id='newpostcontainer'>
+    <div id='newpetcontainer'>
       <div id="add-picture-container">
         <div id="add-picture-button">
           <UploadWidget id='add-picture-button' setter={setMedia}/>
