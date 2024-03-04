@@ -1,0 +1,20 @@
+#signupS-container {
+    background-image: url('../../../Public/Images/ShelterRegister.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+
+}
+
+#signupS-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+}

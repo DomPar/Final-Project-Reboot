@@ -1,23 +1,49 @@
-
 #shelter-container{
     height: 90%;
     width: 90%;
-    margin-left: 2%;
+    display: grid;
+    grid-template-columns: 0.2fr 3fr 2fr 0.5fr;
+    grid-template-rows: 1fr 2fr;
 }
-
+#shelter-card-info {
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
 #picturesandcard{
+    border: 0.5px solid;
     margin-top: 10px;
+    grid-column: 2/3;
+    grid-row: 2/3;
     justify-content:space-around;
     display: flex;
-    height: 70%;
-    width: 100%;
 }
 
 #shelter-card{
    margin-top: 10px;
+   grid-column: 3/4;
+   grid-row: 2/3;
    display: flex;
    flex-direction: column;
    align-items: center;
+   border: 0.5px solid;
+}
+
+#shelter-image {
+  height: 300px;
+  width: 300px;
+}
+
+#description-shelter{
+  width: 50%;
+}
+
+#pet-fav{
+  background-color: rgb(242, 11, 11);
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  left: 5%;
+  top:5%
 }
 
 @media(max-width: 1200px) {

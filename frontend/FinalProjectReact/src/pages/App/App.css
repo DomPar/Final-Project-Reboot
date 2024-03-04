@@ -1,7 +1,17 @@
 #main-container {
     height: 85vh;
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr;
+    grid-template-rows: 0.5fr 5fr;
     margin: 0;
+}
+
+#sidebar-grid {
+    grid-row: 2/3;
+}
+
+#outlet-grid {
+    grid-row: 2/3;
+    grid-column: 3/4;
 }

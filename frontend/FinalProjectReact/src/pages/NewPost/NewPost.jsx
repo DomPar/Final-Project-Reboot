@@ -1,33 +1,39 @@
 import './NewPost.css'
 import {createPost} from '../../services/postService.js'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import UploadWidget from '../../componentes/UploadWidget/UploadWidget.jsx'
 
 
 function NewPost() {
-const[media, setMedia] = useState('')
-const[title, setTitle]= useState('')
-const[description, setDescription]= useState('')
+    const navigate = useNavigate()
+    
+    const[media, setMedia] = useState('')
+    const[title, setTitle]= useState('')
+    const[description, setDescription]= useState('')
 
-const handlePicture = (e) => {
-  const picture = e.target.files[0]
-  console.log(picture)
-  setMedia(picture)
-}
-
-const create = async () => {
-const sendPost = await createPost({media, title, description})
-
+    const create = async () => {
+    const sendPost = await createPost({media, title, description})
+    navigate('/app')
 }
   return (
     <div id='newpostcontainer'>
-      <input type="file" id='addpictures' accept="image/*" onChange={handlePicture}/>
-      <img id='myphoto' src={media ? URL.createObjectURL(media) : ''} alt="MyPhoto"/>
+      <div id="add-picture-container">
+        <div id="add-picture-button">
+          <UploadWidget id='add-picture-button' setter={setMedia}/>
+        </div>
+      </div>
+      <div id="media-container">
+        <img id='media' src={media} alt="My Photo"/>
+      </div>
       <textarea name="POST'S DESCRIPTION" id="textdescription" cols="30" rows="10" placeholder='Add Description...' onChange={(e) => setDescription(e.target.value)}></textarea>
       <textarea name="ADD TITLE" id="titledescription" cols="30" rows="10" placeholder='Add title...' onChange={(e) => setTitle(e.target.value)}></textarea>
-      <Link to='/app/dashboard'>
-      <button id='submit' onClick= {create}>Submit</button>
-      </Link>
+      <div id="share-container">
+        <div id="share-button">
+          <button id='share' onClick= {create}>Submit</button>
+        </div>
+      </div>
+
     </div>
   )
 }

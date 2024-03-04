@@ -1,0 +1,87 @@
+#create-pet-container{
+    width:90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr 2fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.3fr 0.5fr 2fr 1fr 0.5fr 0.5fr;
+    position: relative;
+}
+
+#create-pet-fields{
+    grid-area: 2/4/6/5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#petdescription{
+    resize: none;
+    height: 100px;
+}
+
+#petname{
+    resize: none;
+    height: 20px;
+}
+
+#petage{
+    resize: none;
+    height: 20px;
+}
+
+#petspecies{
+    resize: none;
+    height: 20px;
+}
+
+#petpreferences{
+    resize: none;
+    height: 100px;
+}
+
+#media-container{
+    background-color: beige;
+    grid-column: 2/3;
+    grid-row: 2/5;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center
+}
+
+#add-picture-container{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#add-picture-button{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit{
+    grid-column: 4/5;
+    grid-row: 5/6;
+    height: 30px;
+    width: 100px; 
+}
+
+#submit-container{
+    grid-column: 4/5;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#submit-button{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

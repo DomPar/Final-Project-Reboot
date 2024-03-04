@@ -1,7 +1,7 @@
 #sidebar-container {
     display: flex;
     flex-direction: column;
-    width: 5%;
+    width: 150px;
     align-items: center;
     justify-content: space-between;
     gap: 100px;
@@ -13,5 +13,28 @@
     width: 80px;
     height: 80px;
     border-radius: 90px;
-    
+}
+
+#shelters-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 90px;
+    border: none;
+    background-image: url('../../../Public/Images/ShelterRegister.jpg');
+    background-position: center;
+    background-size: contain;
+}
+
+#shelters-button:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0.5s;
 }

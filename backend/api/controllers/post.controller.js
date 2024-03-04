@@ -2,9 +2,17 @@ const {Post} = require ('../models/post.model')
 const bcrypt = require ('bcrypt')
 
 const createPost = async (req, res) => {
-
+    
     try {
-        const post = await Post.create(req.body)  
+        const {dataValues} = res.locals.user
+      
+        const {media, title, description} = req.body
+        const post = await Post.create({
+            title,
+            media,
+            description,
+            userId: dataValues.id
+        })  
         res.status(200).json({
             message: 'Post created',
             result: post
@@ -20,6 +28,25 @@ const createPost = async (req, res) => {
 const getAllPosts = async (req, res) => {
     try {
         const posts = await Post.findAll()
+        res.status(200).json({
+            message: 'Here are the Posts',
+            result: posts
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting Posts',
+            result: error 
+            })
+    }
+}
+
+const getAllPostsById = async (req, res) => {
+    try {
+        const posts = await Post.findAll({
+            where: {
+                userId: req.params.userId,
+            }
+        })
         res.status(200).json({
             message: 'Here are the Posts',
             result: posts
@@ -99,5 +126,6 @@ module.exports = {
     getAllPosts,
     getOnePost,
     updatePost,
-    deletePost
+    deletePost,
+    getAllPostsById
 }

@@ -8,6 +8,14 @@ const Pet = connection.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        media: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         description: {
             type: DataTypes.STRING,
             allowNull: false
@@ -15,7 +23,10 @@ const Pet = connection.define(
         preferences: {
             type: DataTypes.STRING,
             allowNull: false,
-            
+        },
+        species: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     }
 )

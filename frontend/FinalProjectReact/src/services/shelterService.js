@@ -28,9 +28,35 @@ const getOneShelter = async (id) => {
     }
 }
 
+const getOwnShelter = async (id) => {
+    try {
+        const {data} = await api.get(`/shelter/ownshelter/${id}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
+
 const updateShelter = async (id, body) => {
     try {
         const {data} = await api.put(`/shelter/${id}`, body)
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }   
+}
+
+const updateShelterDescription = async (id, body) => {
+    try {
+        const {data} = await api.patch(`/shelter/shelterdescription/${id}`, body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)
@@ -48,4 +74,4 @@ const deleteOneShelter = async (id) => {
 
 
 
-export { createShelter, getAllShelter, getOneShelter, updateShelter, deleteOneShelter }
+export { createShelter, getAllShelter, getOneShelter, updateShelter, deleteOneShelter, getOwnShelter, updateShelterDescription }
