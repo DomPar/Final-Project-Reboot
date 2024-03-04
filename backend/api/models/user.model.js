@@ -12,6 +12,10 @@ const User = connection.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        description: {
+            type: DataTypes.STRING,
+            defaultValue: ''
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
