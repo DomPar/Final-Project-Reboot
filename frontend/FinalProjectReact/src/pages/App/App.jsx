@@ -12,8 +12,12 @@ function App() {
     <>
       <Header setter={setSidebarDisplay}/>
       <div id="main-container">
-        <Sidebar sidebarDisplay={sidebarDisplay}/>
-        <Outlet/>
+        <div id="sidebar-grid">
+          <Sidebar sidebarDisplay={sidebarDisplay}/>
+        </div>
+        <div id="outlet-grid">
+          <Outlet/>
+        </div>
       </div>
       <Footer/>
     </>
