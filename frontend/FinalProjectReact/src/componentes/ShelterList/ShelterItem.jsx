@@ -1,15 +1,19 @@
 import './ShelterList.css'
+import { Link } from 'react-router-dom'
 
-const ShelterItem = () => {
+const ShelterItem = ({image , name, shelterId}) => {
+  
+  
   return (
+    <Link to={`/app/shelterownprofile/${shelterId}`}>
     <div id="shelter">
-      <div id="shelter-profile" style={{backgroundImage: `url('https://savehomelessanimals.org/wp-content/uploads/Home-Adopt-a-Dog-image-1024x1024.jpg.webp')`}}>
-
+      <div id="shelter-profile" style={{backgroundImage: `url(${image})`}}>
       </div>
       <div id="shelter-name">
-
+      {name}
       </div>
     </div>
+    </Link>
   )
 }
 
