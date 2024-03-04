@@ -6,11 +6,23 @@ import { getOwnUser } from '../../services/userService';
 import { useState, useEffect } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import { getAllPostsByUser } from '../../services/postService';
+import { updateUserDescription } from '../../services/userService';
 
 function OwnProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useState({})
   const [posts, setPosts] = useState([])
+
+  const [showTextBox, setShowTextBox] = useState(false)
+  const [description, setDescription] = useState('')
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value)
+  }
+
+  const handleButtonClick = () => {
+    setShowTextBox(!showTextBox)
+  }
 
   useEffect(() => {
     const getProfile = async () => {
@@ -18,7 +30,7 @@ function OwnProfile() {
         setUser(result)
       }
       getProfile()
-  }, []);
+  }, [])
 
   useEffect(() => {
     const getPosts = async () => {
@@ -34,6 +46,12 @@ function OwnProfile() {
         <div className="imagepost" style={{backgroundImage:`url(${post.media})`}}></div>
       )
     })
+    return result;
+  }
+
+  const sendDescription = async (e) => {
+    const {result} = await updateUserDescription({description})
+    console.log(result)
     return result;
   }
   
@@ -55,7 +73,14 @@ function OwnProfile() {
           <h1>{user.name}</h1>
           {user.description}
           </p>
-        <button id='edit-profile'>Edit Profile</button>
+        <button id='edit-profile' onClick={handleButtonClick}>Edit Profile</button>
+        <div>{showTextBox && (
+          <form onSubmit={sendDescription}>
+        <input type="text" value={description} onChange={handleDescriptionChange} placeholder="Ingrese Description..." cols="30" rows="10"/>
+        <button type='submit' id='submit-description'>Confirm Changes</button>
+        </form>
+        )}</div>
+
       </div>
 
     </div>
