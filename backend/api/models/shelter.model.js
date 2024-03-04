@@ -16,6 +16,10 @@ const Shelter = connection.define(
             type: DataTypes.STRING,
             allowNull: false
         },
+        description: {
+            type: DataTypes.STRING,
+            defaultValue: ''
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false

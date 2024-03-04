@@ -11,7 +11,8 @@ const {
     updateUserName,
     AddToUser,
     RestToUser,
-    getOwnUser
+    getOwnUser,
+    updateUserDescription
 } = require ('../controllers/user.controller')
 
 const {
@@ -34,6 +35,8 @@ router.patch('/:id', checkAuth, updatePassword)
 router.patch('/email/:id', checkAuth, updateEmail)
 
 router.patch('/username/:id', checkAuth, updateUserName)
+
+router.patch('/userdescription/:id', updateUserDescription)
 
 router.delete('/:id', checkAuth, deleteUser)
 

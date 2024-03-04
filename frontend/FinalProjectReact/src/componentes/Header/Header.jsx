@@ -54,6 +54,18 @@ const Header = ({setter}) => {
       navigate(`/app/shelterownprofile/${localStorage.getItem('id')}`)
     }
   }
+  let URL = ""
+  const handleHome = () => {
+    
+    if (localStorage.getItem('role') === 'user') {
+      URL ='/app'
+    }
+    if (localStorage.getItem('role') === 'manager') {
+      URL = `/app/shelterownprofile/${localStorage.getItem('id')}`
+    }
+    console.log(URL)
+  }
+  handleHome()
 
 
   return (
@@ -65,7 +77,7 @@ const Header = ({setter}) => {
       </div>
 
       <div id="header-logo-container">
-        <Link to='/app'>
+        <Link to ={URL}>
         <div id="header-logo">
         </div>
         </Link>
