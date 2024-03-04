@@ -1,43 +1,43 @@
-#post-container{
+#detailed-post-container{
     width: 90%;
     height: 80%;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 0.2fr 2fr 1.5fr;
+    grid-template-rows: 1fr 0.2fr 1fr 0.2fr 3fr 0.5fr;
 }
 
-#picture-hearts {
-    height: 100%;
-    width: 40%;
-   
+#detailed-post-hearts {
+    grid-column: 2/3;
+    grid-row: 6/7;
     
 }
-#picture{
-    height: 90%;
-    border: solid black;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+#detailed-post-picture{
+    background-color: whitesmoke;
+    grid-column: 2/3;
+    grid-row:1/6;
 }
 
-#title-description{
-    height: 100%;
-    width: 25%;
-    margin-left: 1%;
-    
-}
-
-#title{
-    border: solid black;
-    height: 15%;
-    margin-bottom: 4%;
+#detailed-post-title{
+    grid-column: 4/5;
+    grid-row: 3/4;
     width: 100%;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
-#description{
-    border: solid black;
-    height: 60%;
+#detailed-post-description{
     width: 100%;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    grid-column: 4/5;
+    grid-row: 5/6
 }
-#heart-box{
-    justify-content: flex-start;
-    
+
+#detailed-post-avatar {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    align-self: center;
+    background-color: red;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
 }
