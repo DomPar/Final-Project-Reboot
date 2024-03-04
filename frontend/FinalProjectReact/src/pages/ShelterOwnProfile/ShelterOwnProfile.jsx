@@ -48,12 +48,11 @@ function getMydatas() {
     const getDatas = async () => {
       const { result } = await getOwnShelter(shelterId);
       setShelterDatas(result);
-      console.log(result);
     };
     getDatas();
   }, []);
 
-  return shelterDatas.shelterName; // Añadir un .map
+  return shelterDatas.shelterName; 
 }
 
 function ShelterOwnProfile() {
