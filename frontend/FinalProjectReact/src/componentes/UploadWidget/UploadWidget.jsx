@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import "./UploadWidget.css"
 
 const UploadWidget = ({setter}) => {
     const cloudinaryRef = useRef();
@@ -15,7 +16,7 @@ const UploadWidget = ({setter}) => {
             })
         }, []);
     return (
-    <button style={{height: 30, width: 100 }} onClick={() => widgetRef.current.open()}>
+    <button id="button-upload" style={{height: 30, width: 100 }} onClick={() => widgetRef.current.open()}>
         Upload
     </button>)
 }
