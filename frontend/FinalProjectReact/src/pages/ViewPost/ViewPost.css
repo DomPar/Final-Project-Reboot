@@ -1,0 +1,43 @@
+#detailed-post-container{
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 0.2fr 2fr 1.5fr;
+    grid-template-rows: 1fr 0.2fr 1fr 0.2fr 3fr 0.5fr;
+}
+
+#detailed-post-hearts {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    
+}
+#detailed-post-picture{
+    background-color: whitesmoke;
+    grid-column: 2/3;
+    grid-row:1/6;
+}
+
+#detailed-post-title{
+    grid-column: 4/5;
+    grid-row: 3/4;
+    width: 100%;
+}
+#detailed-post-description{
+    width: 100%;
+    grid-column: 4/5;
+    grid-row: 5/6
+}
+
+#detailed-post-avatar {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    align-self: center;
+    background-color: red;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+}

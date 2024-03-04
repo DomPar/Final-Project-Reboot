@@ -1,0 +1,7 @@
+#button-upload {
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(179, 171, 171);
+    border: none;
+    background-color: white;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}

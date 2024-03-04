@@ -1,4 +1,4 @@
-import api from "./index_service";
+import api from "./config";
 
 
 const createPet = async (body) => {
@@ -17,6 +17,15 @@ const getAllPets = async () => {
     } catch (error) {
         console.log(error.response.data)
     }   
+}
+
+const getAllPetsByShelter = async (shelterId) =>{
+    try {
+        const {data} = await api.get(`/pet/shelter/${shelterId}`)
+    return data
+    } catch (error) {
+        console.log(error.response.data)
+    }  
 }
 
 const getOnePet = async (id) => {
@@ -47,5 +56,19 @@ const deleteOnePet = async (id) => {
 }
 
 
+const createPetWithShelter =  async (body) => {
+    try {
+        const {data} = await api.post('/pet/createpetwithshelter', body,{
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
 
-export { createPet, getAllPets, getOnePet, updatePet, deleteOnePet }
+
+
+export {createPetWithShelter, createPet, getAllPets, getOnePet, updatePet, deleteOnePet, getAllPetsByShelter }

@@ -20,6 +20,19 @@ const getOneUser = async (id) => {
     }
 }
 
+const getOwnUser = async (email) => {
+    try {
+        const {data} = await api.get(`/user/profile/${email}`,{
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
+
 const updateUser = async (id, body) => {
     try {
         const {data} = await api.put(`/user/${id}`, body)
@@ -56,9 +69,14 @@ const updateUserName = async (id, body) => {
     }   
 }
 
-const addUserToFavorites = async (userId, petId) => {
+const addUserToFavorites = async (petId) => {
     try {
-        const {data} = await api.put(`/user/add/${userId}`, {userId, petId})
+        const {data} = await api.put(`/user/add/${petId}`, {},{
+            headers: {
+              authorization: localStorage.getItem("token"),
+            }
+          })
+          
     return data;
     } catch (error) {
         console.log(error.response.data)
@@ -84,6 +102,19 @@ const restFromFavorites = async (userId, petId) => {
 }
 
 
+const updateUserDescription = async (body) => {
+    try {
+        const {data} = await api.patch(`/user/userdescription`, body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }   
+}
 
 
-export {updateUserName, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, updateEmail}
+
+export {updateUserName, updateUserDescription, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, getOwnUser, updateEmail}

@@ -11,7 +11,7 @@ export default function ShelterCard() {
   return (
     <Box
       sx={{
-        width: '100%',
+        width: '90%',
         position: 'relative',
         overflow: { xs: 'auto', sm: 'initial' },
       }}
@@ -34,7 +34,7 @@ export default function ShelterCard() {
           />
         </AspectRatio>
         <CardContent>
-        <Button variant="solid" color="primary" style={{marginLeft: '95%', width:'5%'}}>
+        <Button variant="solid" color="primary" style={{marginLeft: '85%', width:'10%'}}>
               Follow
             </Button>
           <Typography fontSize="xl" fontWeight="lg">
