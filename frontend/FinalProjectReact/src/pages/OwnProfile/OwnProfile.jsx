@@ -73,11 +73,11 @@ function OwnProfile() {
           <h1>{user.name}</h1>
           {user.description}
           </p>
-        <button id='edit-profile' onClick={handleButtonClick}>Edit Profile</button>
+        <button id='edit-profile-user' onClick={handleButtonClick}>Edit Profile</button>
         <div>{showTextBox && (
           <form onSubmit={sendDescription}>
         <input type="text" value={description} onChange={handleDescriptionChange} placeholder="Ingrese Description..." cols="30" rows="10"/>
-        <button type='submit' id='submit-description'>Confirm Changes</button>
+        <button type='submit' id='submit-description-user'>Confirm Changes</button>
         </form>
         )}</div>
 
