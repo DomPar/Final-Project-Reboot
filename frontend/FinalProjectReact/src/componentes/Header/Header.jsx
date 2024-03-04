@@ -46,9 +46,9 @@ const Header = ({setter}) => {
         
       </div>
       <div id="link-profile">
-        <button id='profile-button' style={{backgroundImage:`url(${user.avatar})`}} onClick={()=>{navigate('/app/ownprofile')}}>
+        {/* <button id='profile-button' style={{backgroundImage:`url(${user.avatar})`}} onClick={()=>{navigate('/app/ownprofile')}}> */}
           {/* <img id='profile-button-photo' src={user.avatar} />  */}
-        </button>
+        {/* </button> */}
       </div>
     </div>
   )

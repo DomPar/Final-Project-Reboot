@@ -79,22 +79,6 @@ function SignUpSCard() {
             border: 'none' }}
               }}
         />
-        <TextField
-          onChange={(e) => setUsername(e.target.value)}
-          label="Username"
-
-          variant="outlined"
-          fullWidth={true}
-          sx={{ 
-            width: 300,
-            marginBottom: '20px', 
-            bgcolor: 'whitesmoke', 
-            borderRadius: 6,
-              '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-            border: 'none' }}
-              }}
-        />
         
         <TextField
           onChange={(e) => setEmail(e.target.value)}
@@ -129,21 +113,6 @@ function SignUpSCard() {
          <TextField
           onChange={(e) => setPasswordR(e.target.value)}
           label="Repeat Password"
-          variant="outlined"
-          fullWidth={true}
-          sx={{ 
-            width: 300,
-            marginBottom: '20px', 
-            bgcolor: 'whitesmoke', 
-            borderRadius: 6,
-              '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-            border: 'none' }}
-              }}
-        />
-        <TextField
-          onChange={(e) => setShelterName(e.target.value)}
-          label="Shelter Name"
           variant="outlined"
           fullWidth={true}
           sx={{ 

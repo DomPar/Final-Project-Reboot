@@ -23,9 +23,6 @@ function LoginCard() {
     } else {
       navigate(`/app/shelterownprofile/${result.id}`)
     }
-    navigate('/app')
-
-   
   }
  
   return (

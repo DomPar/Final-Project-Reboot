@@ -65,7 +65,7 @@ function ShelterOwnProfile() {
           <Link to="/app/createpet">
           <button>Add Pet</button>
           </Link>
-          <div>
+          <div id='prueba'>
           {SquarePicturesInShelter()}
           <div>{getMydatas()}</div>
           </div>
