@@ -20,6 +20,19 @@ const getOneUser = async (id) => {
     }
 }
 
+const getOwnUser = async (email) => {
+    try {
+        const {data} = await api.get(`/user/profile/${email}`,{
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
+}
+
 const updateUser = async (id, body) => {
     try {
         const {data} = await api.put(`/user/${id}`, body)
@@ -91,4 +104,4 @@ const restFromFavorites = async (userId, petId) => {
 
 
 
-export {updateUserName, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, updateEmail}
+export {updateUserName, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, getOwnUser, updateEmail}

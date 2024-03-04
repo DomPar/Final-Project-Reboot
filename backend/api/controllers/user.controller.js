@@ -54,6 +54,25 @@ const getOneUser = async (req, res) => {
     }
 }
 
+const getOwnUser = async (req, res) => {
+    try {
+        const user = await User.findOne({
+            where: {
+                email: req.params.email
+            }
+        })
+        res.status(200).json({
+            message: 'Here is the User',
+            result: user
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting one user',
+            result: error 
+            })
+    }
+}
+
 const updateUser = async (req, res) => {
     try {
         const [result] = await User.update(req.body, {
@@ -127,26 +146,8 @@ const deleteUser = async (req, res) => {
             message: 'Error updating User',
             result: error 
             })
-    }async function AddToActor(req, res) {
-        try {
-            const { actorId, movieId } = req.body
-            const actor = await Actor.findByPk(actorId)
-            if (!actor) {
-                return res.status(404).send('Actor not found');
-            }
-            const movie = await Movie.findByPk(movieId);
-            if (!movie) {
-                return res.status(404).send('Movie not found');
-            }
-            await actor.addMovie(movie);
-    
-            return res.status(200).json({ actor: actor, movie: movie });
-        } catch (error) {
-            return res.status(500).send(error.message)
-        }
     }
 }
-
 const updateEmail = async (req, res) => {
     try {
         
@@ -221,7 +222,7 @@ async function RestToUser(req, res) {
 	try {
 		const { userId, petId } = req.body
 		const user = await User.findByPk(userId)
-		if (!actor) {
+		if (!user) {
 			return res.status(404).send('User not found');
 		}
 		const pet = await Pet.findByPk(petId);
@@ -247,5 +248,6 @@ module.exports = {
     updateEmail,
     updateUserName,
     RestToUser,
-    AddToUser
+    AddToUser,
+    getOwnUser
 }

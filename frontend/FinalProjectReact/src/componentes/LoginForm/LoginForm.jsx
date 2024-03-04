@@ -14,7 +14,14 @@ function LoginCard() {
   const onLogin = async () => {
     const { result } = await login({email, password})
     localStorage.setItem('token', result.token)
+    localStorage.setItem('email', email)
+    // if (result.role === 'user'){
+    //   navigate('/app')
+    // } else {
+    //   navigate(`/app/shelterownprofile/${result.id}`)
+    // }
     navigate('/app')
+   
   }
  
   return (

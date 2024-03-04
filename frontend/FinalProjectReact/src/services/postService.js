@@ -3,7 +3,11 @@ import api from "./config";
 
 const createPost = async (body) => {
     try {
-        const {data} = await api.post('/post/', body)
+        const {data} = await api.post('/post/', body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)
@@ -17,6 +21,19 @@ const getAllPosts = async () => {
     } catch (error) {
         console.log(error.response.data)
     }   
+}
+
+const getAllPostsByUser = async (userId, name) => {
+    try {
+        const {data} = await api.get(`/post/${name}/${userId}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }
 }
 
 const getOnePost = async (id) => {
@@ -48,4 +65,4 @@ const deleteOnePost = async (id) => {
 
 
 
-export { createPost, getAllPosts, getOnePost, updatePost, deleteOnePost }
+export { createPost, getAllPosts, getOnePost, updatePost, deleteOnePost, getAllPostsByUser }

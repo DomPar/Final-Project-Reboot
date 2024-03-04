@@ -21,16 +21,22 @@ const createPet = async (req, res) => {
 const createPetWithShelter = async (req, res) => {
 
     try {
-        const {shelterId} = req.body
-        console.log(shelterId)
-        if(!shelterId){
+        const {dataValues} = res.locals.shelter
+        console.log(dataValues.id)
+        
+        if(!dataValues.id){
             return res.status(400).json({
                 message: 'Shelter ID is required'
             })
         }
+        const {name, media, description, age, preferences}= req.body
         const pet = await Pet.create({
-            ...req.body ,
-            shelterId: shelterId
+            name,
+            media,
+            description,
+            age,
+            preferences,
+            shelterId: dataValues.id
         })  
         res.status(200).json({
             message: 'Pet created',

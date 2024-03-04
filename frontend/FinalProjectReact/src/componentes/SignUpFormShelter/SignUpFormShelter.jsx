@@ -2,15 +2,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './SignUpFormShelter.css'
 import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} from '@mui/material'
-import { signup } from '../../services/authService'
+import { signupShelter } from '../../services/authService'
 
 function SignUpSCard() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
   const [passwpordR, setPasswordR] = useState('')
-  const [userName, setUsername] = useState('')
   const [shelterName, setShelterName] = useState('')
   const [cif, setCif] = useState('')
   const [tlf, setTlf] = useState('')
@@ -20,18 +18,19 @@ function SignUpSCard() {
 
   const onSignUp = async () => {
     if (password !== passwpordR) {
-      navigate('/signup')
+      navigate('/signups')
       return window.alert('Password must be the same.')
     } else if (!terms) {
-      navigate('/signup')
+      navigate('/signups')
       return window.alert('You have to accept Terms and Conditions.')
     } else if (!age) {
-      navigate('/signup')
+      navigate('/signups')
       return window.alert('You have to be over 18 years old.')  
     } else {
-      const { result } = await signup({name, userName, email, password})
-      localStorage.setItem('token', result)
-      navigate('/app')
+      const {result}  = await signupShelter({shelterName, email, password, cif, tlf})
+      console.log(result)
+      localStorage.setItem('token', result.token)
+      navigate(`/app/shelterownprofile/${result.id}`)
     }
   }
 
@@ -63,6 +62,7 @@ function SignUpSCard() {
       />
       <CardContent>
         <TextField
+
           onChange={(e) => setName(e.target.value)}
           label="Name"
           variant="outlined"
@@ -80,6 +80,7 @@ function SignUpSCard() {
         <TextField
           onChange={(e) => setUsername(e.target.value)}
           label="Username"
+
           variant="outlined"
           fullWidth={true}
           sx={{ 
@@ -92,6 +93,7 @@ function SignUpSCard() {
             border: 'none' }}
               }}
         />
+        
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"

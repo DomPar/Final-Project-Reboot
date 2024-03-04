@@ -1,11 +1,22 @@
-import HeaderBar from '../AppBar/HeaderBar'
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getOwnUser } from '../../services/userService';
 
 const Header = ({setter}) => {
   const [toggle, setToggle] = useState(false)
+  const [user, setUser] = useState({})
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getProfile = async () => {
+      const {result} = await getOwnUser(localStorage.getItem('email'))
+      setUser(result)
+      }
+      getProfile()
+  }, []);
+
   const handleClick = () => {
     if (toggle === false) {
       setter('visible')
@@ -35,7 +46,9 @@ const Header = ({setter}) => {
         
       </div>
       <div id="link-profile">
-        <Link to='/app/ownprofile'><div id='profile-button'></div></Link>
+        <button id='profile-button' style={{backgroundImage:`url(${user.avatar})`}} onClick={()=>{navigate('/app/ownprofile')}}>
+          {/* <img id='profile-button-photo' src={user.avatar} />  */}
+        </button>
       </div>
     </div>
   )

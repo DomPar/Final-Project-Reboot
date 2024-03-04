@@ -27,6 +27,7 @@ function SignUpCard() {
     } else {
       const { result } = await signup({name, userName, email, password})
       localStorage.setItem('token', result)
+      localStorage.setItem('email', email)
       navigate('/app')
     }
   }
