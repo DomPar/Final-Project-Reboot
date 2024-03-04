@@ -25,7 +25,7 @@
 }
 
 #postcard-img {
-    background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg');
+    /* background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg'); */
     background-size: cover;
     background-position: center;
     grid-row: 2/3;

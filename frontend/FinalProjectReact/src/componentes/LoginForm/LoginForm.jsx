@@ -15,6 +15,7 @@ function LoginCard() {
     const { result } = await login({email, password})
     localStorage.setItem('token', result.token)
     localStorage.setItem('email', email)
+
     localStorage.setItem('id', result.id)
 
     if (result.role === 'user'){
@@ -22,6 +23,8 @@ function LoginCard() {
     } else {
       navigate(`/app/shelterownprofile/${result.id}`)
     }
+    navigate('/app')
+
    
   }
  
@@ -79,7 +82,7 @@ function LoginCard() {
         <Button sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} onClick={onLogin} color="success">
             Log In
         </Button> 
-      <Link to='/signup'>
+      <Link to='/chooseuser'>
         <Button sx={{ textTransform: 'none' }}>Don't have an account? Sign Up </Button>
       </Link>
       </CardActions>

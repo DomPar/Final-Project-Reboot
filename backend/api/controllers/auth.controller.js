@@ -3,7 +3,8 @@ const { Shelter } = require('../models/shelter.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-async function signup(req, res) {
+async function signup(req, res) {  
+
   try {
     const salt = bcrypt.genSaltSync(parseInt(process.env.SALT))
     const hash = bcrypt.hashSync(req.body.password, salt)
