@@ -4,19 +4,18 @@ import CustomizedRating from '../../componentes/HeartsRating/HeartsRating'
 import SizeAvatars from '../../componentes/SizeAvatars/SizeAvatars'
 function ViewPost() {
   return (
-    <div id='post-container'>
+    <div id='detailed-post-container'>
         
-        <div id='picture-hearts'>
-            <div id='picture'>
+        <div id='detailed-post-picture'>
                 <img src="" alt="Picture"/>
-            </div>
-            <CustomizedRating/>
         </div>
-        <div id='title-description'>
-        <SizeAvatars/>
-        <div id='title'> Title </div>
-        <div id='description'> Description </div>
+        <div id='detailed-post-hearts'>
+          <CustomizedRating/>
         </div>
+        <div id='detailed-post-avatar'>
+        </div>
+        <div id='detailed-post-title'> Title </div>
+        <div id='detailed-post-description'> Description </div>
     </div>
   )
 }

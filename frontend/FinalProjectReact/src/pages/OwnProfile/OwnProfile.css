@@ -14,14 +14,18 @@
     gap: 5px;
 }
 
-
 #profile-description{
     display: flex;
     flex-direction: column;
-    width: 30%;
     align-items: center;
     grid-column: 4/5;
-
+    height: 90%;
+    border-radius: 20px;
+    text-align: center;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 10px 5px 5px rgb(233, 222, 222);
+    border: none;
+    background-color: #FAFAFA;
 }
 
 #description-user{
@@ -30,23 +34,28 @@
 }
 
 #new-post-button {
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(253, 194, 139);
-
+    width: 110px;
+    height: 35px;
+    background-color:rgb(247, 244, 239);
+    border-radius: 20px;
+    font-size: 15px;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 10px 5px 5px rgb(233, 222, 222);
+    size: 20px;
 }
 
 #profile-avatar {
-    border: 1px solid;
-    width: 300px;
-    height: 300px;
+    background-color:#F9F1EA;
+    width: 100%;
+    height: 350px;
     background-size: contain;
     background-position: center;
     display: flex;
     justify-content: end;
     align-items: start;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(233, 222, 222);
 }
 
 #edit-avatar {
@@ -62,7 +71,7 @@
 
 #post-pictures {
     width: 620px;
-    height: 100%;
+    height: 600px;
     border: 1px solid;
     display: flex;
     overflow: hidden;
@@ -77,4 +86,15 @@
     height: 200px;
     background-size: cover;
     background-position: center;
+}
+
+#edit-profile {
+    background-color:rgb(247, 244, 239);
+    border-radius: 20px;
+    width: 110px;
+    height: 35px;
+    font-size: 15px;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 10px 5px 5px rgb(233, 222, 222);
+    size: 20px;
 }
