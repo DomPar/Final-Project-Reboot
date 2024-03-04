@@ -63,6 +63,7 @@ function SignUpSCard() {
                   }} />}
       />
       <CardContent>
+
         <TextField
 
           onChange={(e) => setName(e.target.value)}
