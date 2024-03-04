@@ -63,39 +63,7 @@ function SignUpSCard() {
                   }} />}
       />
       <CardContent>
-        <TextField
-
-          onChange={(e) => setName(e.target.value)}
-          label="Name"
-          variant="outlined"
-          fullWidth={true}
-          sx={{ 
-            width: 300,
-            marginBottom: '20px', 
-            bgcolor: 'whitesmoke', 
-            borderRadius: 6,
-              '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-            border: 'none' }}
-              }}
-        />
-        <TextField
-          onChange={(e) => setUsername(e.target.value)}
-          label="Username"
-
-          variant="outlined"
-          fullWidth={true}
-          sx={{ 
-            width: 300,
-            marginBottom: '20px', 
-            bgcolor: 'whitesmoke', 
-            borderRadius: 6,
-              '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-            border: 'none' }}
-              }}
-        />
-        
+                
         <TextField
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
