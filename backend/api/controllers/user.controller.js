@@ -100,9 +100,10 @@ const updateUserDescription = async (req, res) => {
     try {
         const [result] = await User.update(req.body, {
             where: {
-                id: req.params.id
+                id: res.locals.user.id
             }
         })
+        
         if(!result) {
             return res.status(404).send('User not found')
         } else {

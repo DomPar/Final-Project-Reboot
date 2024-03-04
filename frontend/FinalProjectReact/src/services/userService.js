@@ -102,6 +102,19 @@ const restFromFavorites = async (userId, petId) => {
 }
 
 
+const updateUserDescription = async (body) => {
+    try {
+        const {data} = await api.patch(`/user/userdescription`, body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }   
+}
 
 
-export {updateUserName, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, getOwnUser, updateEmail}
+
+export {updateUserName, updateUserDescription, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, getOwnUser, updateEmail}

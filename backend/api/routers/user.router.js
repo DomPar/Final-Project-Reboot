@@ -30,13 +30,13 @@ router.get('/:id', checkAuth, getOneUser)
 
 router.put('/:id', checkAuth, updateUser)
 
-router.patch('/:id', checkAuth, updatePassword)
+router.patch('/pass/:id', checkAuth, updatePassword)
 
 router.patch('/email/:id', checkAuth, updateEmail)
 
 router.patch('/username/:id', checkAuth, updateUserName)
 
-router.patch('/userdescription/:id', updateUserDescription)
+router.patch('/userdescription',checkAuth, updateUserDescription)
 
 router.delete('/:id', checkAuth, deleteUser)
 
