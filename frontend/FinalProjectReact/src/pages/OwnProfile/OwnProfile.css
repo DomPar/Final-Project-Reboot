@@ -18,7 +18,7 @@
 #profile-description{
     display: flex;
     flex-direction: column;
-    width: 30%;
+
     align-items: center;
     grid-column: 4/5;
 
@@ -62,7 +62,7 @@
 
 #post-pictures {
     width: 620px;
-    height: 100%;
+    height: 600px;
     border: 1px solid;
     display: flex;
     overflow: hidden;

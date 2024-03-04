@@ -29,11 +29,12 @@ const Header = ({setter}) => {
   useEffect(() => {
     if (localStorage.getItem('role') === 'user') {
       setAvatar(user.avatar)
+      console.log(user.avatar)
     }
     if (localStorage.getItem('role') === 'manager') {
       setAvatar(shelter.avatar)
     }
-  }, []);
+  }, [user, shelter]);
 
   const handleClick = () => {
     if (toggle === false) {
