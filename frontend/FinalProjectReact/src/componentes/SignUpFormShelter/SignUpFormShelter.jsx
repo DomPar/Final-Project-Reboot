@@ -66,7 +66,7 @@ function SignUpSCard() {
 
         <TextField
 
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setShelterName(e.target.value)}
           label="Name"
           variant="outlined"
           fullWidth={true}
