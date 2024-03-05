@@ -18,11 +18,15 @@
 #weekly-container {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border-radius: 25px;
+    background-color: rgba(250, 235, 224, 0.8);
+    height: 400px;
+    width: 400px;
     grid-column: 4/5;
     grid-row: 3/6;
     display: grid;
-    grid-template-rows: 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr 0.2fr;;
-    grid-template-columns: 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr 0.2fr;
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns: repeat(11, 1fr);
+    justify-self: center;
 }
 
 #weekly-title {
@@ -35,25 +39,34 @@
 }
 
 #weekly-pet-img1 {
-    background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg');
+    background-image: url('https://res.cloudinary.com/dytjoh7oh/image/upload/v1709668137/le5lou7imm9c5rrndgpj.jpg');
     background-size: cover;
     background-position: center;
-    grid-row: 2/3;
-    grid-column: 2/3;
+    grid-area: 2/2/5/5;
 }
+#most-popular1-name {
+    grid-area: 3/6/4/11;
+}
+
 #weekly-pet-img2 {
-    background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg');
+    background-image: url('https://res.cloudinary.com/dytjoh7oh/image/upload/v1709672318/piwlhqzdd61m4b97jjcy.jpg');
     background-size: cover;
     background-position: center;
-    grid-row: 4/5;
-    grid-column: 6/7;
+    grid-area: 5/8/8/11;
+}
+
+#most-popular2-name {
+    grid-area: 6/2/7/8;
 }
 #weekly-pet-img3 {
-    background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg');
+    background-image: url('https://res.cloudinary.com/dytjoh7oh/image/upload/v1709668093/mnpktfvdks9qdemlwanr.jpg');
     background-size: cover;
     background-position: center;
-    grid-row: 6/7;
-    grid-column: 2/3;
+    grid-area: 8/2/11/5;
+}
+
+#most-popular3-name {
+    grid-area: 9/6/10/12;
 }
 
 #shelter-list {

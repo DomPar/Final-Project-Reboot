@@ -108,6 +108,7 @@ function SignUpCard() {
         />
           <TextField
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
           label="Password"
           variant="outlined"
           fullWidth={true}

@@ -93,7 +93,6 @@ const Header = ({setter}) => {
       </div>
       <div id="link-profile">
         <button id='profile-button' style={{backgroundImage:`url(${avatar})`}} onClick={handleProfile}>
-         {/*  <img id='profile-button-photo' src={user.avatar} /> */}
         </button>
       </div>
       <div id="logout-button-container">

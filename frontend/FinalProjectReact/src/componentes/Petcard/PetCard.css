@@ -2,7 +2,7 @@
     width: 90%;
     height: 90%;
     display: grid;
-    grid-template-columns: 0.1fr 2fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.1fr 1fr 1fr 1fr 0.5fr;
     grid-template-rows: 0.5fr 2fr 0.5fr;
     flex-direction: column;
     justify-content: center;
@@ -11,8 +11,8 @@
 }
 
 #pet-picture {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     background-color: beige;
     border-radius: 20px;
     grid-area: 2/2/3/3;
@@ -21,17 +21,39 @@
 
 #pet-description {
     grid-area: 2/3/3/4;
+    border: 1px solid;
+    height: 50vh;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr;
+}
+
+#pet-description > h1 {
+    grid-area: 1/2/2/3
+}
+
+#pet-description > h6 {
+    grid-area: 2/2/3/4
+}
+
+#pet-description > p {
+    grid-area: 3/2/4/4
 }
 
 #petcard-add-fav {
     border: none;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0);
+    grid-area: 1/3/2/4;
+}
+
+#petcard-add-fav:hover {
+    cursor: pointer;
 }
 
 #hobbiesbox {
     grid-area: 2/4/3/5;
-    height: 100%;
+    height: 400px;
     background-color: antiquewhite;
     border-radius: 20px;
     align-items: center;

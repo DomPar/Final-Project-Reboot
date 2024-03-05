@@ -1,14 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './OwnProfile.css'
-import SquarePicture from '../../componentes/SquarePictures/SquarePicture'
-import CardLayers3d from '../../componentes/CardLayers/CardLayers'
 import { getOwnUser, updateUserAvatar } from '../../services/userService';
 import { useState, useEffect } from 'react';
 import { getAllPostsByUser } from '../../services/postService';
 import { updateUserDescription } from '../../services/userService';
-import UploadWidget from '../../componentes/UploadWidget/UploadWidget';
-import { useParams } from 'react-router-dom';
-import { getOnePost } from '../../services/postService';
+import UploadWidgetAvatar from '../../componentes/UploadWidgetAvatar/UploadWidgetAvatar';
 
 function OwnProfile() {
   const navigate = useNavigate();
@@ -85,7 +81,7 @@ function OwnProfile() {
       <div id='profile-description'>
         <div id="profile-avatar" style={{backgroundImage: `url(${user.avatar})`}}>
           <button id='edit-avatar'>
-            <UploadWidget id='change-avatar-button' setter={setAvatar}/>
+            <UploadWidgetAvatar id='change-avatar-button' setter={setAvatar}/>
           </button>
         </div>
         <p id='description-user'>

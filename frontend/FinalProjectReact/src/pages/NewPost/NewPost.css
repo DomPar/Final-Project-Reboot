@@ -1,23 +1,19 @@
 #new-post-container {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 0.5fr 5fr 0.5fr;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);   
     width: 100%;
     height: 100%;
 }
 
 #newpostcontainer{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    width: 80%;
-    height: 80%;
+    grid-area: 2/2/9/9;
     display: grid;
     grid-template-columns: 0.5fr 2fr 0.5fr 2fr 0.5fr;
     grid-template-rows: 0.5fr 0.3fr 0.5fr 2fr 1fr;
     position: relative;
     box-shadow: 10px 5px 5px rgb(179, 171, 171);
     border: none;
-    border-radius: 20px;
     background-color: rgb(243, 226, 205);
 }
 
@@ -49,8 +45,8 @@
     background-color: white;
     grid-column: 2/3;
     grid-row: 2/5;
-    max-width: 400px;
-    max-height: 400px;
+    width: 400px;
+    height: 400px;
     overflow: hidden;
     text-align: center;
     border-radius: 20px;
