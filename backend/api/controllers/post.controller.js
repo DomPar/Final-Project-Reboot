@@ -28,6 +28,7 @@ const createPost = async (req, res) => {
 const getAllPosts = async (req, res) => {
     try {
         const posts = await Post.findAll()
+        posts.sort((a,b) => b.id - a.id);
         res.status(200).json({
             message: 'Here are the Posts',
             result: posts
