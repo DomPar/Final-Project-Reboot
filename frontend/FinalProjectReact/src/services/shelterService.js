@@ -50,9 +50,9 @@ const updateShelter = async (id, body) => {
     }   
 }
 
-const updateShelterDescription = async (id, body) => {
+const updateShelterDescription = async (body) => {
     try {
-        const {data} = await api.patch(`/shelter/shelterdescription/${id}`, body, {
+        const {data} = await api.patch(`/shelter/shelterdescription`, body, {
             headers: {
                 authorization: localStorage.getItem("token"),
               }

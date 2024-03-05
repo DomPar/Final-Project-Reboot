@@ -32,6 +32,7 @@ function SignUpSCard() {
       localStorage.setItem('token', result.token)
       localStorage.setItem('id', result.id)
       localStorage.setItem('email', email)
+      localStorage.setItem('role', result.role)
       navigate(`/app/shelterownprofile/${result.id}`)
     }
   }

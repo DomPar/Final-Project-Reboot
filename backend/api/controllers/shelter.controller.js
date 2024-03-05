@@ -89,7 +89,7 @@ const updateShelterDescription = async (req, res) => {
     try {
         const [shelter] = await Shelter.update(req.body, {
             where: {
-                id: req.params.id
+                id: res.locals.shelter.id
             }
         })
         if(!shelter) {

@@ -34,6 +34,7 @@ const Header = ({setter}) => {
     }
     if (localStorage.getItem('role') === 'manager') {
       setAvatar(shelter.avatar)
+      console.log(shelter.avatar)
     }
   }, [user, shelter]);
 

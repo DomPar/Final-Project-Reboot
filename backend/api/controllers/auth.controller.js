@@ -18,7 +18,8 @@ async function signup(req, res) {
       .status(200)
       .json({
         message: 'User created',
-        result: { token: token, id: user.id, role: user.role }
+        result: { token: token, id: user.id, role: user.role,}
+
 
       })
   } catch (error) {
@@ -103,7 +104,7 @@ async function signupShelter(req, res) {
         result: {
           token: token,
           id: shelter.id,
-          role: shelter.role
+          role: shelter.role,
         },
       })
   } catch (error) {
