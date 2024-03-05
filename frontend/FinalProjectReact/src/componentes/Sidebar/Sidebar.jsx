@@ -9,7 +9,7 @@ const navigate = useNavigate()
         <button id='shelters-button' onClick={()=>{navigate('/app/listofshelters')}}></button>
         <div className="sidebar-nav-button"></div>
         <div className="sidebar-nav-button"></div>
-        <div className="sidebar-nav-button"></div>
+        
     </div>
   )
 }

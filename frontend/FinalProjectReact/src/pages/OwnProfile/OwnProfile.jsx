@@ -42,7 +42,6 @@ function OwnProfile() {
   useEffect(() => {
     const getPosts = async () => {
       const {result} = await getAllPostsByUser(user.id, user.name)
-      console.log(result, "result")
       setPosts(result)
     }
     getPosts()
@@ -59,7 +58,6 @@ function OwnProfile() {
 
   const sendDescription = async (e) => {
     const {result} = await updateUserDescription({description})
-    console.log(result)
     return result;
   }
   

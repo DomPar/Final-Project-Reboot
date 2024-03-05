@@ -1,7 +1,22 @@
 import HeartsRating from '../HeartsRating/HeartsRating'
 import './PostCard.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { getOneUser } from '../../services/userService'
+import { getAllUsers } from '../../services/userService'
+import { useEffect, useState } from 'react'
+
 const PostCard = ({title, media, postId, userId}) => {
+  const [user, setUser] = useState([])
+
+  useEffect(() => {
+    const getUser = async () => {
+      const {result} = await getOneUser(userId)//Llamar a los usuarios para mostar el avatar  
+    
+      setUser(result)
+      }
+      getUser()
+  }, []);
+  console.log(user)
 
   const navigate = useNavigate()
 
