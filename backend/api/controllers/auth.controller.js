@@ -20,6 +20,7 @@ async function signup(req, res) {
         message: 'User created',
         result: { token: token, id: user.id, role: user.role,}
 
+
       })
   } catch (error) {
     res.status(500).json({
