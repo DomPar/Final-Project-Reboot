@@ -1,12 +1,12 @@
 import HeartsRating from '../HeartsRating/HeartsRating'
 import './PostCard.css'
 import { Link, useNavigate } from 'react-router-dom'
-const PostCard = ({title, media}) => {
+const PostCard = ({title, media, postId, userId}) => {
 
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate(`/app/viewpost/${id}`)
+    navigate(`/app/viewpost/${postId}`)
   }
   return (
     <div id="postcard-container">
