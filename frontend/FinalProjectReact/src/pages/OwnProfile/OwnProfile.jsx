@@ -8,6 +8,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import { getAllPostsByUser } from '../../services/postService';
 import { updateUserDescription } from '../../services/userService';
 import UploadWidget from '../../componentes/UploadWidget/UploadWidget';
+import { useParams } from 'react-router-dom';
+import { getOnePost } from '../../services/postService';
 
 function OwnProfile() {
   const navigate = useNavigate();
@@ -18,6 +20,8 @@ function OwnProfile() {
 
   const [showTextBox, setShowTextBox] = useState(false)
   const [description, setDescription] = useState('')
+
+
 
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value)
@@ -38,6 +42,7 @@ function OwnProfile() {
   useEffect(() => {
     const getPosts = async () => {
       const {result} = await getAllPostsByUser(user.id, user.name)
+      console.log(result, "result")
       setPosts(result)
     }
     getPosts()
@@ -46,7 +51,7 @@ function OwnProfile() {
   const displayPosts = () => {
     const result = posts.map((post) => {
       return (
-        <div className="imagepost" style={{backgroundImage:`url(${post.media})`}}></div>
+        <div className="imagepost" style={{backgroundImage:`url(${post.media})`}} onClick={() => {navigate(`/app/viewpost/${post.id}`)}}></div>
       )
     })
     return result;
