@@ -29,6 +29,7 @@ function SignUpCard() {
       localStorage.setItem('token', result.token)
       localStorage.setItem('email', email)
       localStorage.setItem('id', result.id)
+      localStorage.setItem('id', result.role)
       navigate('/app')
     }
   }
