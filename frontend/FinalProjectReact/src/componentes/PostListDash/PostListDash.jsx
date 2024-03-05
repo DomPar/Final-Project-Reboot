@@ -17,7 +17,7 @@ const PostListDash = () => {
 
   const listPost = () => {
     const result = posts.map((post) => {
-        return <PostCard title={post.title} media={post.media}/>;
+        return <PostCard title={post.title} media={post.media} userid={post.userId}/>;
     })
     return result;
 }

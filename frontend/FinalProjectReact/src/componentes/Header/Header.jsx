@@ -1,6 +1,7 @@
 import './Header.css'
 import { Link, useNavigate } from 'react-router-dom'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import { useState, useEffect } from 'react';
 import { getOwnUser } from '../../services/userService';
 import { getOwnShelter } from '../../services/shelterService';
@@ -88,6 +89,11 @@ const Header = ({setter}) => {
       <div id="link-profile">
         <button id='profile-button' style={{backgroundImage:`url(${avatar})`}} onClick={handleProfile}>
          {/*  <img id='profile-button-photo' src={user.avatar} /> */}
+        </button>
+      </div>
+      <div id="logout-button-container">
+        <button id="logout-button">
+          <LogoutRoundedIcon sx={{color: 'black'}}/>
         </button>
       </div>
     </div>
