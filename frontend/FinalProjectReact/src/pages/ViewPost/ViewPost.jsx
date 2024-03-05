@@ -40,9 +40,8 @@ function ViewPost() {
         </div>
         <div id='detailed-post-avatar'>
           <img src={user.avatar} alt="Avatar" />
-          
         </div>
-        <div id='detailed-post-title'> {post.title} </div>
+        <div id='detailed-post-title'> <h1>{post.title}</h1> </div>
         <div id='detailed-post-description'> {post.description} </div>
     </div>
   )

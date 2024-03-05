@@ -1,8 +1,9 @@
-#postlist-container {
+#postlist-container{
     display: grid;
     grid-template-columns: 0.1fr 1fr 0.1fr;
     overflow: hidden;
 }
+
 #post-feed {
     grid-column: 2/3;
     overflow-y: auto;
