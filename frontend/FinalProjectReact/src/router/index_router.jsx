@@ -16,8 +16,10 @@ import ChooseTypeUser from "../pages/ChooseTypeUser/ChooseTypeUser.jsx"
 import NewPet from "../componentes/NewPet/NewPet.jsx";
 import ShelterOwnProfile from "../pages/ShelterOwnProfile/ShelterOwnProfile.jsx"
 import ListOfShelters from "../pages/ListOfShelters/ListOfShelters.jsx";
+import { useState } from "react";
 
 const router = createBrowserRouter([
+    
     {
         path: '/app',
         element: <App/>,

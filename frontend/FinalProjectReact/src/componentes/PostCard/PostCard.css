@@ -1,12 +1,10 @@
 #postcard-container {
     height: 400px;
     width: 400px;
-    border: solid 2px rgba(0, 0, 0, 0.407);
-    border-radius: 10px;
-    background-color: #ffffff;
+    background-color: rgb(248, 234, 216);
     display: grid;
-    grid-template-rows: 0.2fr 1fr 0.2fr;
-    grid-template-columns: 0.20fr 1fr;
+    grid-template-rows: repeat(10, 40px);
+    grid-template-columns: repeat(10, 40px);
     box-shadow: 5px 5px 10px #00000080;
     margin: 30px 0;
     align-self: center;
@@ -16,11 +14,10 @@
 #profile-picture {
     background-color: red;
     border-radius: 100px;
-    width: 80px;
-    height: 80px;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    margin: 5px 0 0 5px;
+    width: 70px;
+    height: 70px;
+    grid-area: 1/2/3/4;
+    align-self: center;
 
 }
 
@@ -28,23 +25,21 @@
     /* background-image: url('https://i.ytimg.com/vi/hu1ND_k-QeI/maxresdefault.jpg'); */
     background-size: cover;
     background-position: center;
-    grid-row: 2/3;
-    grid-column: 1/4;
+    grid-area: 3/2/9/10;
     height: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
 #portcard-title {
-    grid-row: 1/2;
-    grid-column: 2/3;
+    grid-area: 1/4/3/10;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #postcard-rating {
-    grid-row: 3/4;
-    grid-column: 1/4;
+    grid-area: 9/2/11/10;
+    align-self: center;
     
 }
