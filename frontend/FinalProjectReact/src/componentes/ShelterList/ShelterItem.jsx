@@ -5,7 +5,7 @@ const ShelterItem = ({image , name, shelterId}) => {
   
   
   return (
-    <Link to={`/app/shelterownprofile/${shelterId}`}>
+    <Link to={`/app/shelter/${shelterId}`}>
     <div id="shelter">
       <div id="shelter-profile" style={{backgroundImage: `url(${image})`}}>
       </div>
