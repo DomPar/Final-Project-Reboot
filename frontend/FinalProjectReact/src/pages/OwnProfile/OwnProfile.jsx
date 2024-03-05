@@ -2,9 +2,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import './OwnProfile.css'
 import SquarePicture from '../../componentes/SquarePictures/SquarePicture'
 import CardLayers3d from '../../componentes/CardLayers/CardLayers'
-import { getOwnUser } from '../../services/userService';
+import { getOwnUser, updateUserAvatar } from '../../services/userService';
 import { useState, useEffect } from 'react';
-import EditIcon from '@mui/icons-material/Edit';
 import { getAllPostsByUser } from '../../services/postService';
 import { updateUserDescription } from '../../services/userService';
 import UploadWidget from '../../componentes/UploadWidget/UploadWidget';
@@ -15,8 +14,8 @@ function OwnProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useState({})
   const [posts, setPosts] = useState([])
-  const [avatar, setAvatar] = useState('') //Necesitamos una funcion para mandar esto al usuario
-  
+  const [avatar, setAvatar] = useState(user.avatar) //Necesitamos una funcion para mandar esto al usuario
+  const [update, setUpdate] = useState(false)
 
   const [showTextBox, setShowTextBox] = useState(false)
   const [description, setDescription] = useState('')
@@ -37,7 +36,7 @@ function OwnProfile() {
         setUser(result)
       }
       getProfile()
-  }, [])
+  }, [update])
 
   useEffect(() => {
     const getPosts = async () => {
@@ -47,6 +46,11 @@ function OwnProfile() {
     }
     getPosts()
   }, [user]);
+
+  useEffect(() => {
+    sendAvatar()
+  }, [avatar]);
+
 
   const displayPosts = () => {
     const result = posts.map((post) => {
@@ -59,7 +63,12 @@ function OwnProfile() {
 
   const sendDescription = async (e) => {
     const {result} = await updateUserDescription({description})
-    console.log(result)
+    return result;
+  }
+
+  const sendAvatar = async (e) => {
+    const result = await updateUserAvatar({avatar})
+    setUpdate(!update)
     return result;
   }
   
@@ -75,7 +84,7 @@ function OwnProfile() {
 
       <div id='profile-description'>
         <div id="profile-avatar" style={{backgroundImage: `url(${user.avatar})`}}>
-          <button id='edit-avatar'><EditIcon/>
+          <button id='edit-avatar'>
             <UploadWidget id='change-avatar-button' setter={setAvatar}/>
           </button>
         </div>
