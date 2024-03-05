@@ -77,7 +77,7 @@ function OwnProfile() {
         <p id='description-user'>
           <h1>{user.name}</h1>
           {user.description}
-          </p>
+        </p>
         <button id='edit-profile-user' onClick={handleButtonClick}>Edit Profile</button>
         <div>{showTextBox && (
           <form onSubmit={sendDescription}>
