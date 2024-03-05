@@ -59,7 +59,7 @@ const router = createBrowserRouter([
                 element: <PetCard/>
             },
             {
-                path: '/app/viewpost',
+                path: '/app/viewpost/:postId',
                 element: <ViewPost/>
             },
             {
