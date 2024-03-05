@@ -1,43 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './PetCard.css'
 import { ImageListItem } from '@mui/material'
 import ListPicture from '../ListPicture/ListPicture'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {addUserToFavorites} from '../../services/userService.js'
 import { useParams } from 'react-router';
-
+import { getOnePet } from '../../services/petService.js';
+import { useEffect } from 'react';
 
 function PetCard() {
+const[petDatas, setPetDatas] = useState([])
+
 const petId = useParams()
     const handleClick = () => {
            addUserToFavorites(petId.petId) 
            console.log(petId.petId)
       }
 
+      useEffect(() => {
+        const getData = async () => {
+          const {result} = await getOnePet(petId.petId)
+          setPetDatas(result)
+          }
+          getData()
+      }, [])
+
   return (
     <div id='petcard-container' >
-        <div id="box-container">
-            <img id="pet-picture" src="" alt="myphoto" />
-           <div id="fav-icon"> 
-           <FavoriteIcon />
-            </div>
+        <img id="pet-picture" src={petDatas.media} alt="Pet Photo" />
+           
             <div id="pet-description">
-                <h1>Coco, 5</h1>
-                <button onClick={handleClick} >Add</button>
-                <span>Raza Canina: Mestizo bardino Edad: de 1 a 7 años jddjdjjddjdj ndjdijhawleuif qlctiugh kjg j hgrg gau i g higq  uigq hg g  huq gro ojif og hgr h qgh uq g hugqfdafafsdfadafdafdsasfdfadsfasfdas dfsafdafsdadsffddss ryukt ktnkbtnuik ryukydafdcadasfdafsd adfadaffdasfafa dafadsafdffdfsdfsfdfda afdadsdaafddfdfa afdadfadfassfsdfsdfsd</span>
+                <h1>{petDatas.name}: {petDatas.age} años</h1>
+                <button id="petcard-add-fav" onClick={handleClick} >
+                    <div id="fav-icon"> 
+                        <FavoriteIcon fontSize='large' sx={{color:'red'}}/>
+                    </div>
+                </button>
+                <span>Raza Canina: {petDatas.species} <div>{petDatas.description}</div></span>
             </div>
             <div id="hobbiesbox">
-                <h2 id= "hobbies">¡Conoce a Coco!</h2>
+                <h2 id= "hobbies">¡Conoce a {petDatas.name}!</h2>
                 <div id= "text"> 
-                <span> 🐾 Cuando hace solito me encanta ir a la playa y jugar con las olas</span> <br></br>  <br></br>
-                <span> 🐾 Cuando está nublado prefiero ir al campito y revolcarme en los charcos</span>  <br></br>  <br></br>
-                <span> 🐾 ¡Pero lo que más me gusta es pasar un día c </span>  <br></br>  <br></br>
+                <span> 🐾 {petDatas.preferences}</span> <br></br>  <br></br>
+                
                 </div>
             </div>
-        </div>
-        <div id="list-picture">
-            <ListPicture/>
-        </div>
+
         
     </div>
   )

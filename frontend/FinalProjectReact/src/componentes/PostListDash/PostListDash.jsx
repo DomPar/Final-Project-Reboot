@@ -2,10 +2,11 @@ import './PostListDash.css'
 import PostCard from '../PostCard/PostCard';
 import { useState, useEffect } from 'react';
 import { getAllPosts } from '../../services/postService';
-
+import { Link, useNavigate } from 'react-router-dom'
 
 const PostListDash = () => {
   const [posts, setPosts] = useState([]);
+ 
 
   useEffect(() => {
     const getPosts = async () => {
@@ -17,7 +18,7 @@ const PostListDash = () => {
 
   const listPost = () => {
     const result = posts.map((post) => {
-        return <PostCard title={post.title} media={post.media} userid={post.userId}/>;
+        return <PostCard title={post.title} media={post.media} userId={post.userId} postId={post.id}/>;
     })
     return result;
 }
