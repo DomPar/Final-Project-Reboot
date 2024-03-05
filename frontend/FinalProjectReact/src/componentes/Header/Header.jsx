@@ -38,6 +38,11 @@ const Header = ({setter}) => {
     }
   }, [user, shelter]);
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/')
+  }
+  
   const handleClick = () => {
     if (toggle === false) {
       setter('visible')
@@ -93,7 +98,7 @@ const Header = ({setter}) => {
         </button>
       </div>
       <div id="logout-button-container">
-        <button id="logout-button">
+        <button id="logout-button" onClick={handleLogout}>
           <LogoutRoundedIcon sx={{color: 'black'}}/>
         </button>
       </div>
