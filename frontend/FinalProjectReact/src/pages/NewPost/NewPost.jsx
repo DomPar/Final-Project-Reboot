@@ -30,7 +30,7 @@ function NewPost() {
       <textarea name="ADD TITLE" id="titledescription" cols="30" rows="10" placeholder='Add title...' onChange={(e) => setTitle(e.target.value)}></textarea>
       <div id="share-container">
         <div id="share-button">
-          <button id='share' onClick= {create}>Submit</button>
+          <button id='share' onClick= {create}>Share</button>
         </div>
       </div>
 
