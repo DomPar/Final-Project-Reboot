@@ -67,7 +67,6 @@ const Header = ({setter}) => {
   }
   handleHome()
 
-
   return (
     <div id='header-container'>
       <div id="sidebar-button-container">
