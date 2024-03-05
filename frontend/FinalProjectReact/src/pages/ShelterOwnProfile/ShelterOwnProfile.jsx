@@ -69,7 +69,6 @@ function ShelterOwnProfile() {
   };
 
   const sendDescription = async (e) => {
-    
     const { result } = await updateShelterDescription({ description });
     console.log(result);
     return result;
