@@ -10,7 +10,6 @@ const checkAuth = (req, res, next) => {
      process.env.JWT_SECRET,
       async (err, result) => {
     if (err) return res.status(401).send('Token not valid')
-    console.log(result, "result")
     if(result.type === 'user'){
       const user = await User.findOne({ where: { email: result.email } })
       if (!user) return res.status(401).send('Token not valid')

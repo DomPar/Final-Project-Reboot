@@ -63,7 +63,6 @@ const Header = ({setter}) => {
     if (localStorage.getItem('role') === 'manager') {
       URL = `/app/shelterownprofile/${localStorage.getItem('id')}`
     }
-    console.log(URL)
   }
   handleHome()
 
