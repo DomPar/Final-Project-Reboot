@@ -37,7 +37,6 @@ function OwnProfile() {
   useEffect(() => {
     const getPosts = async () => {
       const {result} = await getAllPostsByUser(user.id, user.name)
-      console.log(result, "result")
       setPosts(result)
     }
     getPosts()
