@@ -91,10 +91,3 @@
     justify-content: center;
     align-items: center;
 }
-
-#create-pet-container {
-  box-shadow: 10px 5px 5px rgb(179, 171, 171);
-  border: none;
-  border-radius: 20px;
-  background-color: rgb(243, 226, 205);
-}
