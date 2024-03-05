@@ -17,26 +17,51 @@
 #petdescription{
     resize: none;
     height: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(179, 171, 171);
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
 }
 
 #petname{
     resize: none;
     height: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(179, 171, 171);
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
 }
 
 #petage{
     resize: none;
     height: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(179, 171, 171);
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
 }
 
 #petspecies{
     resize: none;
     height: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(179, 171, 171);
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
 }
 
 #petpreferences{
     resize: none;
     height: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(179, 171, 171);
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
 }
 
 #media-container{
@@ -45,7 +70,6 @@
     grid-row: 2/5;
     max-width: 100%;
     overflow: hidden;
-    text-align: center
 }
 
 #add-picture-container{

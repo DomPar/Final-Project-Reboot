@@ -63,21 +63,21 @@ function ShelterOwnProfile() {
 
   return (
     <div id='shelter-profile-container'>
-        <button id='edit-profile'>Edit Profile</button>
+        
 
-          <div id="shelter-profile-button-add-pet">
+          <div >
             <Link to="/app/createpet">
-            <button>Add Pet</button>
+            <button id="shelter-profile-button-add-pet">Add Pet</button>
             </Link>
           </div>
           <div id='shelter-profile-pets'>
             {SquarePicturesInShelter()}
             <div>{getMydatas()}</div>
           </div>
-
           <div id='shelter-profile-info'>
             <div id="shelter-profile-avatar"></div>
           </div>
+          <button id='edit-profile-shelter'>Edit Profile</button>
     </div>
         
   )

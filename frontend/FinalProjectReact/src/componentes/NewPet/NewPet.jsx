@@ -36,9 +36,9 @@ function NewPet() {
         <textarea name="Pet's Description" id="petdescription" cols="30" rows="10" placeholder='Add Description...' onChange={(e) => setDescription(e.target.value)}></textarea>
         <textarea name="Preferences" id="petpreferences" cols="30" rows="10" placeholder='Add Preferences...' onChange={(e) => setPreferences(e.target.value)}></textarea>
       </div>
-      <div id="submit-container">
-        <div id="submit-button">
-          <button id='submit' onClick= {createPet}>Submit</button>
+      <div id="share-container">
+        <div id="share-button">
+          <button id='share' onClick= {createPet}>Share</button>
         </div>
       </div>
 
