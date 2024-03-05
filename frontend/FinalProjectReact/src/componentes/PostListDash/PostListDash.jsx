@@ -2,10 +2,11 @@ import './PostListDash.css'
 import PostCard from '../PostCard/PostCard';
 import { useState, useEffect } from 'react';
 import { getAllPosts } from '../../services/postService';
-
+import { Link, useNavigate } from 'react-router-dom'
 
 const PostListDash = () => {
   const [posts, setPosts] = useState([]);
+ 
 
   useEffect(() => {
     const getPosts = async () => {

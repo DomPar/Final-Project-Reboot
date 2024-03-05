@@ -2,7 +2,19 @@ import React from 'react'
 import './ViewPost.css'
 import CustomizedRating from '../../componentes/HeartsRating/HeartsRating' 
 import SizeAvatars from '../../componentes/SizeAvatars/SizeAvatars'
+import { useState, useEffect} from 'react'
+import { getOnePost } from '../../services/postService'
+
 function ViewPost() {
+  const [post, setPost] = useState([]);
+  
+  useEffect(() => {
+    const getPost = async () => {
+      const {result} = await getOnePost()
+      setPost(result)
+      }
+      getPost()
+  }, []);
   return (
     <div id='detailed-post-container'>
         
