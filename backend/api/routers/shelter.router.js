@@ -7,7 +7,8 @@ const {
     updateShelter,
     deleteShelter,
     getOwnShelter,
-    updateShelterDescription
+    updateShelterDescription,
+    updateShelterAvatar
 } = require ('../controllers/shelter.controller')
 
 const { checkAuth } = require ('../utils/middlewares.js')
@@ -23,6 +24,8 @@ router.get('/:id',checkAuth, getOneShelter)
 router.put('/:id',checkAuth, updateShelter)
 
 router.patch('/shelterdescription',checkAuth, updateShelterDescription)
+
+router.patch('/shelteravatar',checkAuth, updateShelterAvatar)
 
 router.delete('/:id', deleteShelter)
 

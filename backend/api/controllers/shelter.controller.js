@@ -108,6 +108,29 @@ const updateShelterDescription = async (req, res) => {
     }
 }
 
+const updateShelterAvatar = async (req, res) => {
+    try {
+        const [shelter] = await Shelter.update(req.body, {
+            where: {
+                id: res.locals.shelter.id
+            }
+        })
+        if(!shelter) {
+            return res.status(404).send('Shelter not found')
+        } else {
+        res.status(200).json({
+            message: 'Shelter updated succesfully',
+            result: req.body
+        }) 
+    }
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error updating Shelter',
+            result: error 
+            })
+    }
+}
+
 const deleteShelter = async (req, res) => {
     try {
         const shelter = await Shelter.destroy({
@@ -139,5 +162,6 @@ module.exports = {
     updateShelter,
     deleteShelter,
     getOwnShelter,
-    updateShelterDescription
+    updateShelterDescription,
+    updateShelterAvatar
 }
