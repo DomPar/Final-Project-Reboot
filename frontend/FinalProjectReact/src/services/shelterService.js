@@ -67,6 +67,19 @@ const updateShelterDescription = async (body) => {
     }   
 }
 
+const updateShelterAvatar = async (body) => {
+    try {
+        const {data} = await api.patch(`/shelter/shelteravatar`, body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }   
+}
+
 const deleteOneShelter = async (id) => {
     try {
         const {data} = await api.delete(`/shelter/${id}`)
@@ -78,4 +91,4 @@ const deleteOneShelter = async (id) => {
 
 
 
-export { createShelter, getAllShelter, getOneShelter, updateShelter, deleteOneShelter, getOwnShelter, updateShelterDescription }
+export { createShelter, getAllShelter, getOneShelter, updateShelter, deleteOneShelter, getOwnShelter, updateShelterDescription, updateShelterAvatar }

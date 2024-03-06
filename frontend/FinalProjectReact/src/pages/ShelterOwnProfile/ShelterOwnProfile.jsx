@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getAllPetsByShelter } from "../../services/petService";
 import { getOwnShelter } from "../../services/shelterService";
-import { updateShelterDescription } from "../../services/shelterService";
+import { updateShelterDescription, updateShelterAvatar } from "../../services/shelterService";
 import UploadWidgetAvatar from "../../componentes/UploadWidgetAvatar/UploadWidgetAvatar";
 
 function SquarePicturesInShelter() {
@@ -49,13 +49,20 @@ function ShelterOwnProfile() {
   const { shelterId } = useParams();
   const [shelterDatas, setShelterDatas] = useState([]);
   const navigate = useNavigate();
+  const [shelterAvatar, setShelterAvatar] = useState(shelterDatas.avatar)
+  const [update, setUpdate] = useState(false)
+
   useEffect(() => {
     const getDatas = async () => {
       const { result } = await getOwnShelter(shelterId);
       setShelterDatas(result);
     };
     getDatas();
-  }, []);
+  }, [update]);
+
+  useEffect(() => {
+    sendAvatarShelter()
+  }, [shelterAvatar]);
 
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
@@ -66,9 +73,20 @@ function ShelterOwnProfile() {
   };
 
   const sendDescription = async (e) => {
+    e.preventDefault()
     const { result } = await updateShelterDescription({ description });
+    setUpdate(!update)
+    setShowTextBox(false)
     return result;
   };
+
+  const sendAvatarShelter = async (e) => {
+    console.log(shelterAvatar)
+    const result = await updateShelterAvatar({ avatar: shelterAvatar });
+    setUpdate(!update)
+    return result;
+  };
+
   return (
     <div id="shelter-profile-container">
       <button id="shelter-profile-button-add-pet" onClick={()=>navigate('/app/createpet')}>
@@ -82,8 +100,8 @@ function ShelterOwnProfile() {
 
       <div id="shelter-profile-info">
         <div id="shelter-profile-avatar" style={{backgroundImage: `url(${shelterDatas.avatar})`}}>
-          <button id='edit-avatar'>
-            <UploadWidgetAvatar id='change-avatar-button' /* setter={} *//>
+          <button id='edit-avatar' style={{maxHeight: '10px'}}>
+            <UploadWidgetAvatar id='change-avatar-button'  setter={setShelterAvatar}/>
           </button>
         </div>
         <div id="shelter-profile-data">

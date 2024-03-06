@@ -57,7 +57,10 @@ function OwnProfile() {
   }
 
   const sendDescription = async (e) => {
+    e.preventDefault()
     const {result} = await updateUserDescription({description})
+    setUpdate(!update)
+    setShowTextBox(false)
     return result;
   }
 
@@ -83,10 +86,10 @@ function OwnProfile() {
             <UploadWidgetAvatar id='change-avatar-button' setter={setAvatar}/>
           </button>
         </div>
-        <p id='description-user'>
+        <div id='description-user'>
           <h1>{user.name}</h1>
-          {user.description}
-        </p>
+          <p>{user.description}</p>
+        </div>
         <button id='edit-profile-user' onClick={handleButtonClick}>Edit Profile</button>
         <div>{showTextBox && (
           <form onSubmit={sendDescription}>

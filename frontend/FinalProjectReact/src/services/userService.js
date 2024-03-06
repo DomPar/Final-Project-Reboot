@@ -112,6 +112,7 @@ const restFromFavorites = async (userId, petId) => {
 
 const updateUserDescription = async (body) => {
     try {
+        console.log('hola')
         const {data} = await api.patch(`/user/userdescription`, body, {
             headers: {
                 authorization: localStorage.getItem("token"),

@@ -27,6 +27,8 @@
   grid-template-rows: 1fr 1fr;
   border: 1px solid;
   border-radius: 20px;
+  height: 90%;
+  width: 90%;
 
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   box-shadow: 10px 5px 5px rgb(233, 222, 222);
@@ -36,10 +38,8 @@
 
 #shelter-profile-avatar {
   background-color: #FAFAFA;
-
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: 10px 5px 5px rgb(233, 222, 222);
