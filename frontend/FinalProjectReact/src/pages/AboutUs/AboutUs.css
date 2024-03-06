@@ -19,7 +19,7 @@
 
 
 #foto2{
-    background-image: url("../../../public/Images/Foto2.png");
+    background-image: url("./public/Images/Foto2.png");
     background-size: cover;
     grid-area: 2/14/6/18;
     resize: none;
@@ -35,7 +35,7 @@
 }
 
 #foto1{
-    background-image: url("../../../public/Images/Foto1.png");
+    background-image: url("./public/Images/Foto1.png");
     background-size: cover;
     resize: none;
     grid-area: 6/4/10/8;

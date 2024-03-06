@@ -1,5 +1,5 @@
 #welcome-container {
-    background-image: url('../../../public/Images/Welcome\ Picture.jpg');
+    background-image: url('./public/Images/WelcomePicture.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;

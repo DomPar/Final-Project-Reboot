@@ -1,5 +1,5 @@
 #signupS-container {
-    background-image: url('../../../public/Images/ShelterRegister.jpg');
+    background-image: url('./public/Images/ShelterRegister.jpg');
     background-size: cover;
     height: 100vh;
     display: flex;
