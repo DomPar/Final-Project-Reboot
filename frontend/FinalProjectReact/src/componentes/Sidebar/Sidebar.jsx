@@ -9,7 +9,7 @@ const navigate = useNavigate()
         <button id='home-button' onClick={()=>{navigate('/app/')}}></button>
         <button id='profile-button' onClick={()=>{navigate('/app/ownprofile')}}></button>
         <button id='shelters-button' onClick={()=>{navigate('/app/listofshelters')}}></button>
-        <button id='about-us-button' onClick={()=>{navigate('/app/listofshelters')}}></button>
+        <button id='about-us-button' onClick={()=>{navigate('/app/aboutus')}}></button>
     </div>
   )
 }
