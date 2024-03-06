@@ -9,26 +9,28 @@ import { getOneUser } from '../../services/userService'
 
 function ViewPost() {
   const [post, setPost] = useState([]);
-  const [user, setUser] = useState([]);
-
+  const [user, setUser] = useState({});
+console.log(user)
   const id = useParams()
 
   useEffect(() => {
     const getPost = async () => {
       const {result} = await getOnePost(id.postId)
       setPost(result)
-      }
-      getPost()
-      console.log(post)
+      localStorage.setItem('userId', post.userId)
+    }
+    getPost()
   }, []);
+
+  const userId = localStorage.getItem('userId')
   
   useEffect(() => {
     const getUser = async () => {
 
-      const {result} = await getOneUser(post.userId) //localStorage.getItem('id')
+      const {result} = await getOneUser(userId) //localStorage.getItem('id')
       setUser(result)
       }
-      getUser()
+       getUser()
   }, [post]);
 
   return (
@@ -41,7 +43,7 @@ function ViewPost() {
           <CustomizedRating/>
         </div>
         <div id='detailed-post-avatar'>
-          <img src={user.avatar} alt="Avatar" />
+          <img src={user?.avatar} alt="Avatar" />
         </div>
         <div id='detailed-post-title'> <h1>{post.title}</h1> </div>
         <div id='detailed-post-description'> {post.description} </div>

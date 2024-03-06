@@ -63,8 +63,10 @@ const getAllPostsById = async (req, res) => {
 
 const getOnePost = async (req, res) => {
     try {
-        const posts = await Post.findByPk(req.params.id)
-        console.log(req.params.id)
+        const posts = await Post.findByPk(req.params.id, {
+            include: User
+        })
+
         res.status(200).json({
             message: 'Here is the Post',
             result: posts
