@@ -20,7 +20,7 @@
     height: 70px;
     border-radius: 100px;
     border: none;
-    background-image: url('/Images/2.png');
+    background-image: url('/images/2.png');
     background-position: center;
     background-size: contain;
 }
@@ -36,7 +36,7 @@
     height: 70px;
     border-radius: 100px;
     border: none;
-    background-image: url('/Images/3.png');
+    background-image: url('/images/3.png');
     background-position: center;
     background-size: contain;
 }
@@ -52,7 +52,7 @@
     height: 70px;
     border-radius: 100px;
     border: none;
-    background-image: url('/Images/5.png');
+    background-image: url('/images/5.png');
     background-position: center;
     background-size: contain;
 }
@@ -68,7 +68,7 @@
     height: 70px;
     border-radius: 100px;
     border: none;
-    background-image: url('/Images/1.png');
+    background-image: url('/images/1.png');
     background-position: center;
     background-size: contain;
 }
