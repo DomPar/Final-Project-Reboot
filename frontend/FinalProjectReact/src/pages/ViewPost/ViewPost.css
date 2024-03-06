@@ -1,25 +1,33 @@
 #detailed-post-container{
     width: 90%;
-    height: 80%;
+    height: 70vh;
     display: grid;
-    grid-template-columns: 1.5fr 3fr 0.2fr 2fr 1.5fr;
-    grid-template-rows: 1fr 0.2fr 1fr 0.2fr 3fr 0.5fr;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    position: relative;
+    z-index: 1;
+}
+
+#bg-viewpost {
+    position: absolute;
+    background-color: rgb(253, 234, 210);
+    grid-area: 2/5/10/17;
+    border-radius: 30px;
+    width: 900px;
+    height: 550px;
+    z-index:-1
+
 }
 
 #detailed-post-hearts {
-    grid-column: 2/3;
-    grid-row: 6/7;
+    grid-area: 9/6/10/11;
     
 }
 #detailed-post-picture{
     background-color: rgba(255, 255, 255, 0);
     width: 500px;
     height: 500px;
-    grid-column: 2/3;
-    grid-row:1/6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-area: 3/6/14/17;
 }
 
 #detailed-post-picture > img {
@@ -29,19 +37,20 @@
 }
 
 #detailed-post-title{
-    grid-column: 4/5;
-    grid-row: 3/4;
+    grid-column: 12/18;
+    grid-row: 4/5;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 #detailed-post-description{
     width: 100%;
-    grid-column: 4/5;
-    grid-row: 5/6
+    grid-column: 12/18;
+    grid-row: 5/8;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #detailed-post-avatar {
-    grid-column: 4/5;
-    grid-row: 1/2;
+    grid-area: 3/12/4/13;
     align-self: center;
     border: none;
     width: 90px;

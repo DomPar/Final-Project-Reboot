@@ -27,7 +27,7 @@ const PostCard = ({title, media, postId, avatar}) => {
         <img src={avatar} alt="User Picture" id="profile-picture"/> 
         <div id="postcard-img" style={{backgroundImage:`url(${media})`}} onClick={handleClick}></div>
         <div id="postcard-rating"><HeartsRating/></div>
-        <div id="portcard-title"><h1>{title}</h1></div>
+        <div id="portcard-title"><h2>{title}</h2></div>
         
     </div>
   )

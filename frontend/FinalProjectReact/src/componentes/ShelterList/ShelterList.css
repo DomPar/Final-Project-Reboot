@@ -39,3 +39,7 @@
     background-color: #B47039;
     color: white;
 }
+
+#go-shelter-button:hover {
+    cursor: pointer;
+}

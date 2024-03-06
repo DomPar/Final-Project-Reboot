@@ -25,10 +25,7 @@
   grid-area: 2/13/9/19;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  border: 1px solid;
   border-radius: 20px;
-
-
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   box-shadow: 10px 5px 5px rgb(233, 222, 222);
   border: none;

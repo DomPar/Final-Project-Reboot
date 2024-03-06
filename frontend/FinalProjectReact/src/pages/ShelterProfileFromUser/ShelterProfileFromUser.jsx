@@ -34,7 +34,7 @@ function ShelterProfileFromUser() {
             <SquarePicturesWithMargin/>
         </div>
         <div id='shelter-card'>
-            <p id='description-shelter'>Description: {shelterDatas.description} </p>
+            <p id='description-shelter'>{shelterDatas.description} </p>
             <a href="https://www.google.es/maps/@28.1271824,-15.4412337,15z?entry=ttu">Encuentranos Aqui</a>
         </div>
     </div>

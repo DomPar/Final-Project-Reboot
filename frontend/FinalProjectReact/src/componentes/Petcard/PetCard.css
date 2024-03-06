@@ -21,7 +21,6 @@
 
 #pet-description {
     grid-area: 2/3/3/4;
-    border: 1px solid;
     height: 50vh;
     display: grid;
     grid-template-rows: repeat(20, 1fr);

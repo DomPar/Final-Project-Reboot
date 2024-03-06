@@ -15,11 +15,11 @@ const Dashboard = () => {
         </div>
         <div id="weekly-container">
           <div id="weekly-pet-img1" className='no-margin'></div>
-          <h2 id='most-popular1-name'>Coquette Deluxe</h2>
+          <h3 id='most-popular1-name'>Coquette Deluxe</h3>
           <div id="weekly-pet-img2" className='no-margin'></div>
-          <h2 id='most-popular2-name'>Mister Michifus</h2>
+          <h3 id='most-popular2-name'>Mister Michifus</h3>
           <div id="weekly-pet-img3" className='no-margin'></div>
-          <h2 id='most-popular3-name'>Abelardo Camaarón</h2>
+          <h3 id='most-popular3-name'>Abelardo Camaarón</h3>
         </div>
 
         {/* <div id="shelter-list">

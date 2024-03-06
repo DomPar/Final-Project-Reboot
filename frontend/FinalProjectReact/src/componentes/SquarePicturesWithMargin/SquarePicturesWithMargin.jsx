@@ -18,7 +18,7 @@ function SquarePicturesWithMargin() {
   }, []);
 
   return (
-    <ImageList sx={{ width: 800, height: 400 }} cols={5} rowHeight={164}>
+    <ImageList sx={{ width: 800, height: 400 }} id='lol' cols={4} rowHeight={164}>
       {pets.map((pet, index) => (
         <Link to={`/app/petprofile/${pet.id}`}>
           <ImageListItem

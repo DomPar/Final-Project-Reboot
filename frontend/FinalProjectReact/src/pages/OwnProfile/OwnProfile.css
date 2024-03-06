@@ -53,6 +53,10 @@
     size: 20px;
 }
 
+#new-post-button:hover {
+    cursor: pointer;
+}
+
 #profile-avatar {
     background-color:#FAFAFA;
     width: 100%;
@@ -96,6 +100,11 @@
     height: 200px;
     background-size: cover;
     background-position: center;
+    transition: filter 0.3s ease;
+}
+.imagepost:hover {
+    cursor: pointer;
+    filter: brightness(0.7);
 }
 
 #edit-profile {

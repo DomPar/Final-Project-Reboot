@@ -8,10 +8,10 @@ import UploadWidget from '../../componentes/UploadWidget/UploadWidget.jsx'
 function NewPost() {
     const navigate = useNavigate()
     
-    const[media, setMedia] = useState('')
     const[title, setTitle]= useState('')
     const[description, setDescription]= useState('')
-
+    const[media, setMedia] = useState('')
+    
     const create = async () => {
     const sendPost = await createPost({media, title, description})
     navigate('/app')

@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     background-color: #FAEBE0;
+    font-family: 'Open Sans', sans-serif;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 #picturesandcard{
@@ -16,19 +17,28 @@
     background-color: whitesmoke;
     border-radius: 10px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
+#lol::-webkit-scrollbar {
+    display: none;
+}
+
+
+
 #shelter-card{
-  grid-area: 5/14/11/18;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   background-color: #F9F1EA;
-   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    grid-area: 5/14/11/18;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F1EA;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
 #shelter-image {
-  border: 1px solid;
   width: 200px;
   height: 200px;
   grid-column: 2/3;
@@ -50,6 +60,8 @@
 }
 
 #description-shelter{
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 #pet-fav{

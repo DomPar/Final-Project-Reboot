@@ -32,9 +32,8 @@ function ViewPost() {
 
   return (
     <div id='detailed-post-container'>
-        
         <div id='detailed-post-picture'>
-                <img src={post.media} alt="Picture"/>
+          <img src={post.media} alt="Picture"/>
         </div>
         <div id='detailed-post-hearts'>
           <CustomizedRating/>
@@ -44,6 +43,7 @@ function ViewPost() {
         </div>
         <div id='detailed-post-title'> <h1>{post.title}</h1> </div>
         <div id='detailed-post-description'> {post.description} </div>
+        <div id="bg-viewpost"></div>
     </div>
   )
 }

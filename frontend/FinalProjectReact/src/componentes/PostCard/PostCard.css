@@ -18,7 +18,10 @@
     height: 70px;
     grid-area: 1/2/3/4;
     align-self: center;
+}
 
+#postcard-img:hover {
+    cursor: pointer;
 }
 
 #postcard-img {
@@ -36,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #postcard-rating {
