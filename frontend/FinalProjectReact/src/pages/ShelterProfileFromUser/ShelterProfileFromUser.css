@@ -35,6 +35,12 @@
   align-self: center;
 }
 
+#shelter-image > img {
+  height: 100%;
+  width: 100%;
+}
+
+
 #shelter-info {
   height: 150px;
   align-self: center;
