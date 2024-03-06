@@ -16,6 +16,7 @@ import ChooseTypeUser from "../pages/ChooseTypeUser/ChooseTypeUser.jsx"
 import NewPet from "../componentes/NewPet/NewPet.jsx";
 import ShelterOwnProfile from "../pages/ShelterOwnProfile/ShelterOwnProfile.jsx"
 import ListOfShelters from "../pages/ListOfShelters/ListOfShelters.jsx";
+import AboutUs from "../pages/AboutUs/AboutUs.jsx";
 
 const router = createBrowserRouter([
     {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
             {
                 path: '/app/shelterownprofile/:shelterId',
                 element: <ShelterOwnProfile/>
+            },
+            {
+                path: '/app/aboutus',
+                element: <AboutUs/>
             },
         ]
     }, 
