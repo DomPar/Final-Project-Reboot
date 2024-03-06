@@ -11,7 +11,7 @@ const Dashboard = () => {
         </div>
     
         <div id="weekly-title">
-            <img src="../../Public/Images/MostPopularPets.png" alt="" style={{width: '100%'}}/>
+            <img src="../../public/Images/MostPopularPets.png" alt="" style={{width: '100%'}}/>
         </div>
         <div id="weekly-container">
           <div id="weekly-pet-img1" className='no-margin'></div>

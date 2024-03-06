@@ -24,7 +24,7 @@ function ChooseUser() {
         alignItems: 'center!important',
        }}
        avatar={<img
-                src="../../Public/Images/LogoPetFriends.png" 
+                src="../../public/Images/LogoPetFriends.png" 
                 alt="Logo" 
                 style={{ 
                   width: '100px', 

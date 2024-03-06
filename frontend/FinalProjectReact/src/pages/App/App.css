@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 10fr;
     grid-template-rows: 0.5fr 5fr;
     margin: 0;
-    background-image: url(../../../Public/Images/Background.png);
+    background-image: url(../../../public/Images/Background.png);
     background-size: cover;
 }
 
