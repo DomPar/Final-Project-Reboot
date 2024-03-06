@@ -8,21 +8,16 @@
 }
 #shelter-profile-button-add-pet {
   grid-area: 1/1/2/2;
-  background-color: rgb(247, 244, 239);
+  background-color: #DFB898;
   border-radius: 20px;
   width: 110px;
   height: 35px;
   font-size: 15px;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-  box-shadow: 10px 5px 5px rgb(233, 222, 222);
-  size: 20px;
-  place-content: center
-
+  border: none;
 }
 
 #shelter-profile-pets {
   grid-area: 2/1/3/2;
-  border: 1px solid
 }
 
 #shelter-profile-info {

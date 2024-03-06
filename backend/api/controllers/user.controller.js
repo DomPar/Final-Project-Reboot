@@ -120,6 +120,31 @@ const updateUserDescription = async (req, res) => {
     }
 }
 
+const updateUserAvatar= async (req, res) => {
+    try {
+        console.log(req.body)
+        const [result] = await User.update(req.body, {
+            where: {
+                id: res.locals.user.id
+            }
+        })
+        
+        if(!result) {
+            return res.status(404).send('User not found')
+        } else {
+        res.status(200).json({
+            message: 'User updated succesfully',
+            result: req.body
+        }) 
+    }
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error updating user',
+            result: error 
+            })
+    }
+}
+
 
 const updatePassword = async (req, res) => {
     try {
@@ -274,5 +299,6 @@ module.exports = {
     RestToUser,
     AddToUser,
     getOwnUser,
-    updateUserDescription
+    updateUserDescription,
+    updateUserAvatar
 }

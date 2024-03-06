@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react"
-import "./UploadWidget.css"
 import EditIcon from '@mui/icons-material/Edit';
 
-const UploadWidget = ({setter}) => {
+const UploadWidgetAvatar = ({setter}) => {
     const cloudinaryRef = useRef();
     const widgetRef = useRef();
         useEffect(() => {
@@ -17,10 +16,10 @@ const UploadWidget = ({setter}) => {
             })
         }, []);
     return (
-    <button id="button-upload" style={{height: 30, width: 100 }} onClick={() => widgetRef.current.open()}>
-        Upload
+    <button id="button-upload" style={{height: 30, width: 30, boxShadow:"none", backgroundColor: 'rgba(255, 255, 255, 0)' }} onClick={() => widgetRef.current.open()}>
+        <EditIcon/>
     </button>)
 }
 
 
-export default UploadWidget
+export default UploadWidgetAvatar

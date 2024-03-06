@@ -28,23 +28,24 @@ const petId = useParams()
   return (
     <div id='petcard-container' >
         <img id="pet-picture" src={petDatas.media} alt="Pet Photo" />
-           
-            <div id="pet-description">
-                <h1>{petDatas.name}: {petDatas.age} años</h1>
-                <button id="petcard-add-fav" onClick={handleClick} >
-                    <div id="fav-icon"> 
-                        <FavoriteIcon fontSize='large' sx={{color:'red'}}/>
-                    </div>
-                </button>
-                <span>Raza Canina: {petDatas.species} <div>{petDatas.description}</div></span>
-            </div>
-            <div id="hobbiesbox">
-                <h2 id= "hobbies">¡Conoce a {petDatas.name}!</h2>
-                <div id= "text"> 
-                <span> 🐾 {petDatas.preferences}</span> <br></br>  <br></br>
-                
+    
+        <div id="pet-description">
+            <h1>{petDatas.name}: {petDatas.age} años</h1>
+            <button id="petcard-add-fav" onClick={handleClick} >
+                <div id="fav-icon"> 
+                    <FavoriteIcon fontSize='large' sx={{color:'red'}}/>
                 </div>
+            </button>
+            <h6>Categoria: {petDatas.species}</h6>
+            <p>{petDatas.description}</p>
+        </div>
+        <div id="hobbiesbox">
+            <h2 id= "hobbies">¡Conoce a {petDatas.name}!</h2>
+            <div id= "text"> 
+            <span> 🐾 {petDatas.preferences}</span> <br></br>  <br></br>
+                
             </div>
+        </div>
 
         
     </div>

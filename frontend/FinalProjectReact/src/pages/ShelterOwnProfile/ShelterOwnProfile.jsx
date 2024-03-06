@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { getAllPetsByShelter } from "../../services/petService";
 import { getOwnShelter } from "../../services/shelterService";
 import { updateShelterDescription } from "../../services/shelterService";
+import UploadWidgetAvatar from "../../componentes/UploadWidgetAvatar/UploadWidgetAvatar";
 
 function SquarePicturesInShelter() {
   const { shelterId } = useParams();
@@ -47,10 +48,10 @@ function ShelterOwnProfile() {
   const [description, setDescription] = useState("");
   const { shelterId } = useParams();
   const [shelterDatas, setShelterDatas] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const getDatas = async () => {
       const { result } = await getOwnShelter(shelterId);
-      console.log(result)
       setShelterDatas(result);
     };
     getDatas();
@@ -70,19 +71,20 @@ function ShelterOwnProfile() {
   };
   return (
     <div id="shelter-profile-container">
-      <div id="shelter-profile-button-add-pet">
-        <Link to="/app/createpet">
-          <button onClick={()=>navigate('app/createpet')}>Add Pet</button>
-        </Link>
-      </div>
+      <button id="shelter-profile-button-add-pet" onClick={()=>navigate('/app/createpet')}>
+        Add Pet
+      </button>
+    
       <div id="shelter-profile-pets">
         {SquarePicturesInShelter()}
         <div></div>
       </div>
 
       <div id="shelter-profile-info">
-        <div id="shelter-profile-avatar">
-          <img src={shelterDatas.avatar} alt="" id="shelter-profile-avatar-photo" />
+        <div id="shelter-profile-avatar" style={{backgroundImage: `url(${shelterDatas.avatar})`}}>
+          <button id='edit-avatar'>
+            <UploadWidgetAvatar id='change-avatar-button' /* setter={} *//>
+          </button>
         </div>
         <div id="shelter-profile-data">
           <h1 id="shelter-name">{shelterDatas.shelterName}</h1>
