@@ -42,6 +42,7 @@ const getAllUsers = async (req, res) => {
 const getOneUser = async (req, res) => {
     try {
         const users = await User.findByPk(req.params.id)
+        
         res.status(200).json({
             message: 'Here is the User',
             result: users

@@ -19,15 +19,17 @@ function ViewPost() {
       setPost(result)
       }
       getPost()
+      console.log(post)
   }, []);
-
+  
   useEffect(() => {
     const getUser = async () => {
-      const {result} = await getOneUser(localStorage.getItem('id'))
+
+      const {result} = await getOneUser(post.userId) //localStorage.getItem('id')
       setUser(result)
       }
       getUser()
-  }, []);
+  }, [post]);
 
   return (
     <div id='detailed-post-container'>

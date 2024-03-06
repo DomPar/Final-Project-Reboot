@@ -20,7 +20,7 @@ const getOneUser = async (id) => {
         const {data} = await api.get(`/user/${id}`, {
             headers: {
                 authorization: localStorage.getItem("token"),
-              }
+            }
         })
     return data;
     } catch (error) {

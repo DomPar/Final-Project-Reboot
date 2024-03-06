@@ -30,11 +30,9 @@ const Header = ({setter}) => {
   useEffect(() => {
     if (localStorage.getItem('role') === 'user') {
       setAvatar(user.avatar)
-      console.log(user.avatar)
     }
     if (localStorage.getItem('role') === 'manager') {
       setAvatar(shelter.avatar)
-      console.log(shelter.avatar)
     }
   }, [user, shelter]);
 
