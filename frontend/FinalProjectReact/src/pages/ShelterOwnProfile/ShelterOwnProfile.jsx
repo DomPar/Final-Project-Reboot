@@ -52,7 +52,6 @@ function ShelterOwnProfile() {
   useEffect(() => {
     const getDatas = async () => {
       const { result } = await getOwnShelter(shelterId);
-      console.log(result)
       setShelterDatas(result);
     };
     getDatas();
