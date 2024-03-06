@@ -30,7 +30,11 @@ const getAllPetsByShelter = async (shelterId) =>{
 
 const getOnePet = async (id) => {
     try {
-        const {data} = await api.get(`/pet/${id}`)
+        const {data} = await api.get(`/pet/${id}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)

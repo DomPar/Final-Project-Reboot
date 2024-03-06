@@ -3,30 +3,81 @@
     flex-direction: column;
     width: 150px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 100px;
     height: 80%;
 }
 
 .sidebar-nav-button {
     background-color: red;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 90px;
 }
 
 #shelters-button {
-    width: 80px;
-    height: 80px;
-    border-radius: 90px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
     border: none;
-    background-image: url('../../../Public/Images/ShelterRegister.jpg');
+    background-image: url('../../../Public/Images/2.png');
     background-position: center;
     background-size: contain;
 }
 
 #shelters-button:hover {
     cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+}
+
+#home-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: none;
+    background-image: url('../../../Public/Images/3.png');
+    background-position: center;
+    background-size: contain;
+}
+
+#home-button:hover {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+}
+
+#profile-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: none;
+    background-image: url('../../../Public/Images/5.png');
+    background-position: center;
+    background-size: contain;
+}
+
+#profile-button:hover {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+}
+
+#about-us-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: none;
+    background-image: url('../../../Public/Images/1.png');
+    background-position: center;
+    background-size: contain;
+}
+
+#about-us-button:hover {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+    
 }
 
 .hidden {

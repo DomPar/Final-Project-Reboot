@@ -4,7 +4,11 @@ import api from "./config";
 
 const getAllUsers = async () => {
     try {
-        const {data} = await api.get('/user/')
+        const {data} = await api.get('/user/', {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data
     } catch (error) {
         console.log(error.response.data)
@@ -13,7 +17,11 @@ const getAllUsers = async () => {
 
 const getOneUser = async (id) => {
     try {
-        const {data} = await api.get(`/user/${id}`)
+        const {data} = await api.get(`/user/${id}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)
@@ -115,6 +123,33 @@ const updateUserDescription = async (body) => {
     }   
 }
 
+const updateUserAvatar = async (body) => {
+    try {
+        console.log(body)
+        const {data} = await api.patch(`/user/useravatar`, body, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
+    return data;
+    } catch (error) {
+        console.log(error.response.data)
+    }   
+}
 
 
-export {updateUserName, updateUserDescription, restFromFavorites, deleteOwnProfile, addUserToFavorites, getAllUsers, getOneUser, updateUser, updatePassword, getOwnUser, updateEmail}
+
+export {
+    updateUserName, 
+    updateUserDescription, 
+    restFromFavorites, 
+    deleteOwnProfile, 
+    addUserToFavorites, 
+    getAllUsers, 
+    getOneUser, 
+    updateUser, 
+    updatePassword, 
+    getOwnUser, 
+    updateEmail,
+    updateUserAvatar
+}

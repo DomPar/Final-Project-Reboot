@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { getAllPetsByShelter } from "../../services/petService";
 import { getOwnShelter } from "../../services/shelterService";
 import { updateShelterDescription } from "../../services/shelterService";
+import UploadWidgetAvatar from "../../componentes/UploadWidgetAvatar/UploadWidgetAvatar";
 
 function SquarePicturesInShelter() {
   const { shelterId } = useParams();
@@ -41,9 +42,13 @@ function SquarePicturesInShelter() {
   );
 }
 
-function getMydatas() {
+function ShelterOwnProfile() {
+  
+  const [showTextBox, setShowTextBox] = useState(false);
+  const [description, setDescription] = useState("");
   const { shelterId } = useParams();
   const [shelterDatas, setShelterDatas] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const getDatas = async () => {
       const { result } = await getOwnShelter(shelterId);
@@ -51,14 +56,6 @@ function getMydatas() {
     };
     getDatas();
   }, []);
-
-  return shelterDatas.shelterName; 
-}
-
-function ShelterOwnProfile() {
-  
-  const [showTextBox, setShowTextBox] = useState(false);
-  const [description, setDescription] = useState("");
 
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
@@ -70,45 +67,53 @@ function ShelterOwnProfile() {
 
   const sendDescription = async (e) => {
     const { result } = await updateShelterDescription({ description });
-    console.log(result);
     return result;
   };
   return (
     <div id="shelter-profile-container">
-      <div>
-      <button id="edit-profile-shelter" onClick={handleButtonClick}>
-        Edit Profile
+      <button id="shelter-profile-button-add-pet" onClick={()=>navigate('/app/createpet')}>
+        Add Pet
       </button>
-      <div>
-        {showTextBox && (
-          <form onSubmit={sendDescription}>
-            <input
-              type="text"
-              value={description}
-              onChange={handleDescriptionChange}
-              placeholder="Ingrese Description..."
-              cols="30"
-              rows="10"
-            />
-            <button type="submit" id="submit-description-shelter">
-              Confirm Changes
-            </button>
-          </form>
-        )}
-      </div>
-      </div>
-      <div id="shelter-profile-button-add-pet">
-        <Link to="/app/createpet">
-          <button>Add Pet</button>
-        </Link>
-      </div>
+    
       <div id="shelter-profile-pets">
         {SquarePicturesInShelter()}
-        <div>{getMydatas()}</div>
+        <div></div>
       </div>
 
       <div id="shelter-profile-info">
-        <div id="shelter-profile-avatar"></div>
+        <div id="shelter-profile-avatar" style={{backgroundImage: `url(${shelterDatas.avatar})`}}>
+          <button id='edit-avatar'>
+            <UploadWidgetAvatar id='change-avatar-button' /* setter={} *//>
+          </button>
+        </div>
+        <div id="shelter-profile-data">
+          <h1 id="shelter-name">{shelterDatas.shelterName}</h1>
+          <h2 id="shelter-description">
+            Descripcion: {shelterDatas.description}
+          </h2>
+          <div>
+            <button id="edit-profile-shelter" onClick={handleButtonClick}>
+              Edit Profile
+            </button>
+            <div>
+              {showTextBox && (
+                <form onSubmit={sendDescription}>
+                  <input
+                    type="text"
+                    value={description}
+                    onChange={handleDescriptionChange}
+                    placeholder="Ingrese Description..."
+                    cols="30"
+                    rows="10"
+                  />
+                  <button type="submit" id="submit-description-shelter">
+                    Confirm Changes
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

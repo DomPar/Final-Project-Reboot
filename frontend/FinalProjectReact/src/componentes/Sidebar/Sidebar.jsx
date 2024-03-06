@@ -6,10 +6,10 @@ const Sidebar = ({sidebarDisplay}) => {
 const navigate = useNavigate()
   return (
     <div id='sidebar-container' className={sidebarDisplay}>
+        <button id='home-button' onClick={()=>{navigate('/app/')}}></button>
+        <button id='profile-button' onClick={()=>{navigate('/app/ownprofile')}}></button>
         <button id='shelters-button' onClick={()=>{navigate('/app/listofshelters')}}></button>
-        <div className="sidebar-nav-button"></div>
-        <div className="sidebar-nav-button"></div>
-        <div className="sidebar-nav-button"></div>
+        <button id='about-us-button' onClick={()=>{navigate('/app/aboutus')}}></button>
     </div>
   )
 }
