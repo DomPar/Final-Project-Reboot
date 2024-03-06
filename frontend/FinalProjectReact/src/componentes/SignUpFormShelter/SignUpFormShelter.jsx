@@ -115,6 +115,7 @@ function SignUpSCard() {
         />
          <TextField
           onChange={(e) => setPasswordR(e.target.value)}
+          type='password'
           label="Repeat Password"
           variant="outlined"
           fullWidth={true}

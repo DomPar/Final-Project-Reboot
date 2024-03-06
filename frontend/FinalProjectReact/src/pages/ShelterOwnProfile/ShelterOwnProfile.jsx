@@ -25,7 +25,7 @@ function SquarePicturesInShelter() {
   }, []);
 
   return (
-    <>
+    <div id='pets-shelter-container'>
       {pets.map((pet, index) => (
         <div key={index} style={{ margin: 20, alignItems: "center" }}>
           <img
@@ -38,7 +38,7 @@ function SquarePicturesInShelter() {
           <div>{`Edad: ${pet.age}`}</div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 
@@ -81,7 +81,6 @@ function ShelterOwnProfile() {
   };
 
   const sendAvatarShelter = async (e) => {
-    console.log(shelterAvatar)
     const result = await updateShelterAvatar({ avatar: shelterAvatar });
     setUpdate(!update)
     return result;

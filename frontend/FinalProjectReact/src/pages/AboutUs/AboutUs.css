@@ -6,10 +6,10 @@
 }
 
 #newaboutuscontainer {
-    grid-area: 2/2/10/20;
+    grid-area: 2/3/10/17;
     display: grid;
-    grid-template-columns: 0.5fr 2fr 0.5fr 2fr 0.5fr;
-    grid-template-rows: 0.5fr 0.3fr 0.5fr 2fr 1fr;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     position: relative;
     box-shadow: 10px 5px 5px rgb(179, 171, 171);
     border: none;
@@ -21,20 +21,24 @@
 #foto2{
     background-image: url("../../../Public/Images/Foto2.png");
     background-size: cover;
-    grid-column: 4/5;
-    grid-row: 4/5;
+    grid-area: 2/14/6/18;
     resize: none;
     border: none;
     border-radius: 20px;
+}
+
+#text-about-us1 {
+    grid-area: 2/2/5/12;
+}
+#text-about-us2 {
+    grid-area: 7/9/10/20;
 }
 
 #foto1{
     background-image: url("../../../Public/Images/Foto1.png");
     background-size: cover;
     resize: none;
-    grid-column: 2/3;
-    grid-row: 4/5;
-    height: 50px;
+    grid-area: 6/4/10/8;
     border-radius: 20px;
     box-shadow: 10px 5px 5px rgb(179, 171, 171);
     border: none;
