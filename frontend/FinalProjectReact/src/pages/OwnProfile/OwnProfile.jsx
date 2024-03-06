@@ -42,19 +42,18 @@ function OwnProfile() {
     getPosts()
   }, [user]);
 
-  useEffect(() => {
-    sendAvatar()
-  }, [avatar]);
-
-
   const displayPosts = () => {
     const result = posts.map((post) => {
       return (
         <div className="imagepost" style={{backgroundImage:`url(${post.media})`}} onClick={() => {navigate(`/app/viewpost/${post.id}`)}}></div>
-      )
-    })
-    return result;
-  }
+        )
+      })
+      return result;
+    }
+    
+  useEffect(() => {
+    sendAvatar()
+  }, [avatar]);
 
   const sendDescription = async (e) => {
     e.preventDefault()
@@ -74,7 +73,6 @@ function OwnProfile() {
     <div id='profile-container' >
       <div id='square-pictures'>
         <button onClick={() => {navigate('/app/newpost')}} id='new-post-button'>New Post 🐾</button>
-
         <div id="post-pictures">
           {displayPosts()}
         </div>
