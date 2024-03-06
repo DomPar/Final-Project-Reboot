@@ -1,5 +1,5 @@
 #signup-container {
-    background-image: url('./public/Images/UserRegister.png');
+    background-image: url('/Images/UserRegister.png');
     background-size: cover;
     height: 100vh;
     display: flex;

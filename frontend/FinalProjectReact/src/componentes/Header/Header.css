@@ -41,7 +41,7 @@
 }
 
 #header-logo {
-    background-image: url('./public/Images/LogoPetFriends.png');
+    background-image: url('/Images/LogoPetFriends.png');
     background-size: contain;
     z-index: 100;
     width: 90px;
@@ -51,7 +51,7 @@
 
 #header-titulo {
     grid-column: 6/12;
-    background-image: url('./public/Images/PetFriendsTitle1.png');
+    background-image: url('/Images/PetFriendsTitle1.png');
     background-size: contain;
     background-repeat: no-repeat;
 }

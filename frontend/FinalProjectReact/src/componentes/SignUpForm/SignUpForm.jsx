@@ -52,7 +52,7 @@ function SignUpCard() {
           alignItems: 'center!important',
          }}
          avatar={<img
-                  src="../../public/Images/LogoPetFriends.png" 
+                  src=".././Images/LogoPetFriends.png" 
                   alt="Logo" 
                   style={{ 
                     width: '100px', 
