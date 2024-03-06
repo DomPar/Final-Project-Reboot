@@ -18,11 +18,11 @@ router.get('/', getAllShelters)
 
 router.get('/ownshelter/:id', checkAuth, getOwnShelter)
 
-router.get('/:id', getOneShelter)
+router.get('/:id',checkAuth, getOneShelter)
 
 router.put('/:id',checkAuth, updateShelter)
 
-router.patch('/shelterdescription/:id',checkAuth, updateShelterDescription)
+router.patch('/shelterdescription',checkAuth, updateShelterDescription)
 
 router.delete('/:id', deleteShelter)
 

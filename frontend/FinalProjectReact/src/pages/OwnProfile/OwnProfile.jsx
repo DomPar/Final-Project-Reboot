@@ -1,23 +1,22 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './OwnProfile.css'
-import SquarePicture from '../../componentes/SquarePictures/SquarePicture'
-import CardLayers3d from '../../componentes/CardLayers/CardLayers'
-import { getOwnUser } from '../../services/userService';
+import { getOwnUser, updateUserAvatar } from '../../services/userService';
 import { useState, useEffect } from 'react';
-import EditIcon from '@mui/icons-material/Edit';
 import { getAllPostsByUser } from '../../services/postService';
 import { updateUserDescription } from '../../services/userService';
-import UploadWidget from '../../componentes/UploadWidget/UploadWidget';
+import UploadWidgetAvatar from '../../componentes/UploadWidgetAvatar/UploadWidgetAvatar';
 
 function OwnProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useState({})
   const [posts, setPosts] = useState([])
-  const [avatar, setAvatar] = useState('') //Necesitamos una funcion para mandar esto al usuario
-  
+  const [avatar, setAvatar] = useState(user.avatar) //Necesitamos una funcion para mandar esto al usuario
+  const [update, setUpdate] = useState(false)
 
   const [showTextBox, setShowTextBox] = useState(false)
   const [description, setDescription] = useState('')
+
+
 
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value)
@@ -33,7 +32,7 @@ function OwnProfile() {
         setUser(result)
       }
       getProfile()
-  }, [])
+  }, [update])
 
   useEffect(() => {
     const getPosts = async () => {
@@ -43,10 +42,15 @@ function OwnProfile() {
     getPosts()
   }, [user]);
 
+  useEffect(() => {
+    sendAvatar()
+  }, [avatar]);
+
+
   const displayPosts = () => {
     const result = posts.map((post) => {
       return (
-        <div className="imagepost" style={{backgroundImage:`url(${post.media})`}}></div>
+        <div className="imagepost" style={{backgroundImage:`url(${post.media})`}} onClick={() => {navigate(`/app/viewpost/${post.id}`)}}></div>
       )
     })
     return result;
@@ -54,7 +58,12 @@ function OwnProfile() {
 
   const sendDescription = async (e) => {
     const {result} = await updateUserDescription({description})
-    console.log(result)
+    return result;
+  }
+
+  const sendAvatar = async (e) => {
+    const result = await updateUserAvatar({avatar})
+    setUpdate(!update)
     return result;
   }
   
@@ -70,19 +79,19 @@ function OwnProfile() {
 
       <div id='profile-description'>
         <div id="profile-avatar" style={{backgroundImage: `url(${user.avatar})`}}>
-          <button id='edit-avatar'><EditIcon/>
-            <UploadWidget id='change-avatar-button' setter={setAvatar}/>
+          <button id='edit-avatar'>
+            <UploadWidgetAvatar id='change-avatar-button' setter={setAvatar}/>
           </button>
         </div>
         <p id='description-user'>
           <h1>{user.name}</h1>
           {user.description}
-          </p>
-        <button id='edit-profile' onClick={handleButtonClick}>Edit Profile</button>
+        </p>
+        <button id='edit-profile-user' onClick={handleButtonClick}>Edit Profile</button>
         <div>{showTextBox && (
           <form onSubmit={sendDescription}>
         <input type="text" value={description} onChange={handleDescriptionChange} placeholder="Ingrese Description..." cols="30" rows="10"/>
-        <button type='submit' id='submit-description'>Confirm Changes</button>
+        <button type='submit' id='submit-description-user'>Confirm Changes</button>
         </form>
         )}</div>
 

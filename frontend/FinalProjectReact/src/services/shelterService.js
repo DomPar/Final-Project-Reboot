@@ -21,7 +21,11 @@ const getAllShelter = async () => {
 
 const getOneShelter = async (id) => {
     try {
-        const {data} = await api.get(`/shelter/${id}`)
+        const {data} = await api.get(`/shelter/${id}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)
@@ -50,9 +54,9 @@ const updateShelter = async (id, body) => {
     }   
 }
 
-const updateShelterDescription = async (id, body) => {
+const updateShelterDescription = async (body) => {
     try {
-        const {data} = await api.patch(`/shelter/shelterdescription/${id}`, body, {
+        const {data} = await api.patch(`/shelter/shelterdescription`, body, {
             headers: {
                 authorization: localStorage.getItem("token"),
               }

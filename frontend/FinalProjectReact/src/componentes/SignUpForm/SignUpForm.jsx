@@ -29,6 +29,7 @@ function SignUpCard() {
       localStorage.setItem('token', result.token)
       localStorage.setItem('email', email)
       localStorage.setItem('id', result.id)
+      localStorage.setItem('role', result.role)
       navigate('/app')
     }
   }
@@ -107,6 +108,7 @@ function SignUpCard() {
         />
           <TextField
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
           label="Password"
           variant="outlined"
           fullWidth={true}

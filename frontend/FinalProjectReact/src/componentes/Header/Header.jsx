@@ -1,6 +1,7 @@
 import './Header.css'
 import { Link, useNavigate } from 'react-router-dom'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import { useState, useEffect } from 'react';
 import { getOwnUser } from '../../services/userService';
 import { getOwnShelter } from '../../services/shelterService';
@@ -33,9 +34,15 @@ const Header = ({setter}) => {
     }
     if (localStorage.getItem('role') === 'manager') {
       setAvatar(shelter.avatar)
+      console.log(shelter.avatar)
     }
   }, [user, shelter]);
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/')
+  }
+  
   const handleClick = () => {
     if (toggle === false) {
       setter('visible')
@@ -66,7 +73,6 @@ const Header = ({setter}) => {
   }
   handleHome()
 
-
   return (
     <div id='header-container'>
       <div id="sidebar-button-container">
@@ -87,7 +93,11 @@ const Header = ({setter}) => {
       </div>
       <div id="link-profile">
         <button id='profile-button' style={{backgroundImage:`url(${avatar})`}} onClick={handleProfile}>
-         {/*  <img id='profile-button-photo' src={user.avatar} /> */}
+        </button>
+      </div>
+      <div id="logout-button-container">
+        <button id="logout-button" onClick={handleLogout}>
+          <LogoutRoundedIcon sx={{color: 'black'}}/>
         </button>
       </div>
     </div>

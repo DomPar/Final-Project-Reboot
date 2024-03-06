@@ -4,8 +4,8 @@ import './ListOfShelters.css'
 
 function ListOfShelters() {
   return (
-    <div id='shelterlist-container'>
-    <div id='listofshelters'>{ShelterList()}</div>
+    <div id='list-of-shelter-container'>
+      <ShelterList/>
     </div>
   )
 }

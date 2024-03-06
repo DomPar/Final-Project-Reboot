@@ -18,7 +18,7 @@ router.get('/', getAllPets)
 
 router.get('/shelter/:shelterId', getAllPetsByShelter)
 
-router.get('/:id', getOnePet)
+router.get('/:id', checkAuth, getOnePet)
 
 router.put('/:id', updatePet)
 

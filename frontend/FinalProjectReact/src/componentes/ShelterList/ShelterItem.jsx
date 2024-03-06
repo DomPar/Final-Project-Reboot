@@ -1,19 +1,17 @@
 import './ShelterList.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ShelterItem = ({image , name, shelterId}) => {
-  
-  
+  const navigate = useNavigate()
   return (
-    <Link to={`/app/shelterownprofile/${shelterId}`}>
     <div id="shelter">
       <div id="shelter-profile" style={{backgroundImage: `url(${image})`}}>
       </div>
-      <div id="shelter-name">
-      {name}
+      <div id="shelter-list-info">
+      <h1>{name}</h1>
+      <button id='go-shelter-button' onClick={()=>{navigate(`/app/shelter/${shelterId}`)}}>Go to shelter</button>
       </div>
     </div>
-    </Link>
   )
 }
 

@@ -38,7 +38,11 @@ const getAllPostsByUser = async (userId, name) => {
 
 const getOnePost = async (id) => {
     try {
-        const {data} = await api.get(`/post/${id}`)
+        const {data} = await api.get(`/post/${id}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
     return data;
     } catch (error) {
         console.log(error.response.data)

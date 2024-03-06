@@ -16,8 +16,11 @@ import ChooseTypeUser from "../pages/ChooseTypeUser/ChooseTypeUser.jsx"
 import NewPet from "../componentes/NewPet/NewPet.jsx";
 import ShelterOwnProfile from "../pages/ShelterOwnProfile/ShelterOwnProfile.jsx"
 import ListOfShelters from "../pages/ListOfShelters/ListOfShelters.jsx";
+import AboutUs from "../pages/AboutUs/AboutUs.jsx";
+
 
 const router = createBrowserRouter([
+    
     {
         path: '/app',
         element: <App/>,
@@ -59,7 +62,7 @@ const router = createBrowserRouter([
                 element: <PetCard/>
             },
             {
-                path: '/app/viewpost',
+                path: '/app/viewpost/:postId',
                 element: <ViewPost/>
             },
             {
@@ -67,12 +70,16 @@ const router = createBrowserRouter([
                 element: <NewPet/>
             },
             {
-                path: '/app/listofshelters',
+                path: '/app/listofshelters', 
                 element: <ListOfShelters/>
             },
             {
                 path: '/app/shelterownprofile/:shelterId',
                 element: <ShelterOwnProfile/>
+            },
+            {
+                path: '/app/aboutus',
+                element: <AboutUs/>
             },
         ]
     }, 

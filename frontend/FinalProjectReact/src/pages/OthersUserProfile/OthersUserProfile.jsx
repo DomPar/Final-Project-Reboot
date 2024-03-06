@@ -17,7 +17,6 @@ function OthersUserProfile() {
         <p id='others-description'>Description soy bla bla bla etc etc etc bfjkb. vmfv afdn.mf dfdfmnbknd vkjbvkbf,d vnf.vnv  vk.naev jnv.a v</p>
         <button id='follow'>Follow</button>
       </div>
-
     </div>
     
   )

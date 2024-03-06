@@ -1,5 +1,6 @@
 const {Post} = require ('../models/post.model')
 const bcrypt = require ('bcrypt')
+const {User} = require ('../models/user.model.js')
 
 const createPost = async (req, res) => {
     
@@ -27,7 +28,8 @@ const createPost = async (req, res) => {
 
 const getAllPosts = async (req, res) => {
     try {
-        const posts = await Post.findAll()
+        const posts = await Post.findAll({include: User})
+        posts.sort((a,b) => b.id - a.id);
         res.status(200).json({
             message: 'Here are the Posts',
             result: posts
@@ -62,6 +64,7 @@ const getAllPostsById = async (req, res) => {
 const getOnePost = async (req, res) => {
     try {
         const posts = await Post.findByPk(req.params.id)
+        console.log(req.params.id)
         res.status(200).json({
             message: 'Here is the Post',
             result: posts

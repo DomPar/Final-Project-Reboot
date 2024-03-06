@@ -1,8 +1,7 @@
-#shelterlist-container{
-    height: 80%;
-    width: 60%;
-}
+#list-of-shelter-container {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    height: 70vh;
+    overflow: auto;
 
-#shelter{
-margin: 5%;
-}
+} 
