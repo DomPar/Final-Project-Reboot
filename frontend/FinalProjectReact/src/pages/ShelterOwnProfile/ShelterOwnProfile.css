@@ -1,34 +1,33 @@
 #shelter-profile-container{
     display: grid;
-    grid-template-columns:6fr 0.5fr 2.5fr 1.5fr;
-    grid-template-rows: 0.4fr 7fr 0.5fr;
+    grid-template-columns:repeat(20, 1fr);
+    grid-template-rows: repeat(10,1fr);
     width: 100%;
-    height: 100%;
+    height: 90vh;
     
 }
 #shelter-profile-button-add-pet {
-  grid-area: 1/1/2/2;
+  grid-area: 1/3/2/5;
   background-color: #DFB898;
   border-radius: 20px;
   width: 110px;
   height: 35px;
   font-size: 15px;
   border: none;
+  align-self: center;
 }
 
 #shelter-profile-pets {
-  grid-area: 2/1/3/2;
+  grid-area: 2/2/9/12;
 }
 
 #shelter-profile-info {
-  grid-column: 3/4;
-  grid-row: 1/3;
+  grid-area: 2/13/9/19;
   display: grid;
   grid-template-rows: 1fr 1fr;
   border: 1px solid;
   border-radius: 20px;
-  height: 90%;
-  width: 90%;
+
 
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   box-shadow: 10px 5px 5px rgb(233, 222, 222);
@@ -44,6 +43,8 @@
   border-top-right-radius: 20px;
   box-shadow: 10px 5px 5px rgb(233, 222, 222);
   padding: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #shelter-profile-avatar-photo {
@@ -72,17 +73,20 @@
   place-content: center;
   grid-column: 3/4;
   grid-row: 1/3;
-  margin-left: 10px;
-  margin-top: 10px;
 }
 
 #shelter-profile-data {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 #pets-shelter-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+#shelter-description {
+  margin: 0 20px;
 }

@@ -105,9 +105,9 @@ function ShelterOwnProfile() {
         </div>
         <div id="shelter-profile-data">
           <h1 id="shelter-name">{shelterDatas.shelterName}</h1>
-          <h2 id="shelter-description">
+          <p id="shelter-description">
             Descripcion: {shelterDatas.description}
-          </h2>
+          </p>
           <div>
             <button id="edit-profile-shelter" onClick={handleButtonClick}>
               Edit Profile
