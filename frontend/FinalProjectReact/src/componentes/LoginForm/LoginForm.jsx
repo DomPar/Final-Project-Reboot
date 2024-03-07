@@ -50,7 +50,7 @@ function LoginCard() {
           variant="outlined"
           fullWidth={true}
           sx={{ 
-            width: 300,
+            width: 400,
             marginBottom: '20px', 
             bgcolor: 'whitesmoke', 
             borderRadius: 6,
@@ -66,7 +66,7 @@ function LoginCard() {
           variant="outlined"
           fullWidth={true}
           sx={{ 
-            width: 300,
+            width: 400,
             bgcolor: 'whitesmoke', 
             borderRadius: 6,
               '& .MuiOutlinedInput-root': {
