@@ -75,7 +75,7 @@ function LoginCard() {
               }}
         />
       </CardContent>
-      <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
         <Button sx={{ textTransform: 'none', bgcolor: '#87ab69', borderRadius: 20, color: 'white' }} onClick={onLogin} color="success">
             Log In
         </Button> 
